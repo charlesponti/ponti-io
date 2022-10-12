@@ -21,14 +21,20 @@ export default function HomePage() {
       <main>
         <section>
           <div className='layout flex min-h-screen flex-col items-center justify-center text-center'>
-            <h1 className='mt-4 mb-1'>Ponti Studios</h1>
-            <p className='mt-2 text-md mb-8'>
+            <h1 className='mt-4 mb-1 text-neutral-content'>Ponti Studios</h1>
+            <p className='mt-2 text-md mb-3'>
               The next-generation production company.
             </p>
 
             <footer className='absolute bottom-2'>
-              © {new Date().getFullYear()} By{' '}
-              <UnderlineLink href='https://twitter.com/thechaseponti'>
+              <span className='text-accent-content'>
+                © {new Date().getFullYear()}
+              </span>{' '}
+              by{' '}
+              <UnderlineLink
+                className='text-neutral-content'
+                href='https://twitter.com/thechaseponti'
+              >
                 @thechaseponti
               </UnderlineLink>
             </footer>
