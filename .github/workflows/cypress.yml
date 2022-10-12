@@ -68,6 +68,5 @@ jobs:
             "target_url": "https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
           }'
 
-
 # Required Config
 # Add CYPRESS_RECORD_KEY to github secrets
