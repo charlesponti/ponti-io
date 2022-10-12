@@ -3,3 +3,4 @@
 
 pnpx lint-staged
 pnpm typecheck
+pnpm build

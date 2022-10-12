@@ -1,13 +1,14 @@
 import { render, screen } from '@testing-library/react';
+import { describe, expect, test } from 'vitest';
 
-import NotFoundPage from '@/pages/404';
+import NotFoundPage from 'src/pages/404';
 
 describe('404', () => {
-  it('renders a heading', () => {
+  test('renders a heading', () => {
     render(<NotFoundPage />);
 
     const heading = screen.getByText(/not found/i);
 
-    expect(heading).toBeInTheDocument();
+    expect(heading).to.exist;
   });
 });

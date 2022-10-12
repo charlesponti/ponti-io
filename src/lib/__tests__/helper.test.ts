@@ -1,7 +1,9 @@
-import { openGraph } from '@/lib/helper';
+import { describe, expect, test } from 'vitest';
+
+import { openGraph } from 'src/lib/helper';
 
 describe('Open Graph function should work correctly', () => {
-  it('should not return templateTitle when not specified', () => {
+  test('should not return templateTitle when not specified', () => {
     const result = openGraph({
       description: 'Test description',
       siteName: 'Test site name',
@@ -9,7 +11,7 @@ describe('Open Graph function should work correctly', () => {
     expect(result).not.toContain('&templateTitle=');
   });
 
-  it('should return templateTitle when specified', () => {
+  test('should return templateTitle when specified', () => {
     const result = openGraph({
       templateTitle: 'Test Template Title',
       description: 'Test description',

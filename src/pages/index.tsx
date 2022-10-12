@@ -1,8 +1,8 @@
 import * as React from 'react';
 
-import Layout from '@/components/layout/Layout';
-import UnderlineLink from '@/components/links/UnderlineLink';
-import Seo from '@/components/Seo';
+import Layout from 'src/components/layout/Layout';
+import UnderlineLink from 'src/components/links/UnderlineLink';
+import Seo from 'src/components/Seo';
 
 /**
  * SVGR Support

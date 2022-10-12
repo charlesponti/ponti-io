@@ -1,10 +1,10 @@
 import * as React from 'react';
 
-import clsxm from '@/lib/clsxm';
+import clsxm from 'src/lib/clsxm';
 
 import UnstyledLink, {
   UnstyledLinkProps,
-} from '@/components/links/UnstyledLink';
+} from 'src/components/links/UnstyledLink';
 
 enum ButtonVariant {
   'primary',

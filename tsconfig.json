@@ -15,12 +15,12 @@
     "jsx": "preserve",
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"],
+      "src/*": ["./src/*"],
       "~/*": ["./public/*"]
     },
     "incremental": true
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
-  "exclude": ["node_modules", "cypress"],
+  "exclude": ["node_modules", "cypress", "vitest.*"],
   "moduleResolution": ["node_modules", ".next", "node"]
 }
