@@ -26,8 +26,6 @@ export default function HomePage() {
               The next-generation production company.
             </p>
 
-            <button className='btn'>Click me</button>
-
             <footer className='absolute bottom-2'>
               © {new Date().getFullYear()} By{' '}
               <UnderlineLink href='https://twitter.com/thechaseponti'>
