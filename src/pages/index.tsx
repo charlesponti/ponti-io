@@ -1,7 +1,7 @@
+import Link from 'next/link';
 import * as React from 'react';
 
 import Layout from 'src/components/layout/Layout';
-import UnderlineLink from 'src/components/links/UnderlineLink';
 import Seo from 'src/components/Seo';
 
 /**
@@ -31,12 +31,12 @@ export default function HomePage() {
                 © {new Date().getFullYear()}
               </span>{' '}
               by{' '}
-              <UnderlineLink
+              <Link
                 className='text-neutral-content'
                 href='https://twitter.com/thechaseponti'
               >
                 @thechaseponti
-              </UnderlineLink>
+              </Link>
             </footer>
           </div>
         </section>
