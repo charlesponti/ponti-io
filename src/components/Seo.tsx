@@ -1,22 +1,16 @@
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 
-import { openGraph } from 'src/lib/helper';
-
 // !STARTERCONF Change these default meta
 const defaultMeta = {
   title: 'Ponti Studios',
   siteName: 'Ponti Studios',
   description: 'The next-generation production company.',
-  /** Without additional '/' on the end, e.g. https://ponti.io */
-  url: 'https://ponti.io',
+  // ! Do not include trailing '/' on the end, e.g. https://ponti.io
+  url: 'https://ponti-io.vercel.app',
   type: 'website',
   robots: 'follow, index',
-  /**
-   * No need to be filled, will be populated with openGraph function
-   * If you wish to use a normal image, just specify the path below
-   */
-  image: 'https://ponti.io/images/large-og.png',
+  image: 'https://ponti-io.vercel.app/favicon/large-og.jpg',
 };
 
 type SeoProps = {
@@ -33,16 +27,6 @@ export default function Seo(props: SeoProps) {
   meta['title'] = props.templateTitle
     ? `${props.templateTitle} | ${meta.siteName}`
     : meta.title;
-
-  // Use siteName if there is templateTitle
-  // but show full title if there is none
-  // !STARTERCONF Follow config for opengraph, by deploying one on https://github.com/theodorusclarence/og
-  // ? Uncomment code below if you want to use default open graph
-  meta['image'] = openGraph({
-    description: meta.description,
-    siteName: props.templateTitle ? meta.siteName : meta.title,
-    templateTitle: props.templateTitle,
-  });
 
   return (
     <Head>
