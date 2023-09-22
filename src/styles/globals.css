@@ -2,6 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+html, 
+body,
+#__next {
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+}
+
 @layer base {
   /* inter var - latin */
   @font-face {
@@ -45,12 +53,6 @@
     @apply font-primary text-sm md:text-base;
   }
   /* #endregion  /**======== Typography =========== */
-
-  .layout {
-    /* 1100px */
-    max-width: 68.75rem;
-    @apply mx-auto w-11/12;
-  }
 
   .bg-dark a.custom-link {
     @apply border-gray-200 hover:border-gray-200/0;
