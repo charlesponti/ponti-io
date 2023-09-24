@@ -35,3 +35,6 @@ npm-debug.log*
 robots.txt
 sitemap.xml
 sitemap-*.xml
+
+# E2E testing
+cypress/**/*.mp4
