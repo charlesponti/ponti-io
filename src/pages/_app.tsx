@@ -2,13 +2,15 @@ import { AppProps } from 'next/app';
 
 import 'src/styles/globals.css';
 
-/**
- * !STARTERCONF info
- * ? `Layout` component is called in every page using `np` snippets. If you have consistent layout across all page, you can add it here too
- */
-
-function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />;
+function App({ Component, pageProps }: AppProps) {
+  return (
+    <div
+      data-theme='luxury'
+      className='flex h-full w-full bg-[#fff7f4] text-white antialiased'
+    >
+      <Component {...pageProps} />
+    </div>
+  );
 }
 
-export default MyApp;
+export default App;

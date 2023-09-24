@@ -1,6 +1,5 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
-pnpx lint-staged
-pnpm typecheck
-pnpm build
+npm run lint:strict
+npm run typecheck

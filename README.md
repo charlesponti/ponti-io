@@ -3,13 +3,14 @@
   <p>Next.js + Tailwind CSS + TypeScript starter packed with useful development features.</p>
   <p>Made by <a href="https://twitter.com/thechaseponti">thechaseponti</a></p>
   
-  
-  [![CodeFactor](https://www.codefactor.io/repository/theponti/create-ponti-ui/badge/main)](https://www.codefactor.io/repository/github/theponti/create-ponti-ui/overview/main)
-  [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=theponti_create-ponti-ui&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=theponti_create-ponti-ui)
-  [![Bugs](https://sonarcloud.io/api/project_badges/measure?project=theponti_create-ponti-ui&metric=bugs)](https://sonarcloud.io/dashboard?id=theponti_create-ponti-ui)
-  [![GitHub Repo stars](https://img.shields.io/github/stars/theponti/create-ponti-ui/)](https://github.com/theponti/create-ponti-ui/stargazers)
-  
-  [![Depfu](https://badges.depfu.com/badges/fc6e730632ab9dacaf7df478a08684a7/overview.svg)](https://depfu.com/github/theponti/create-ponti-ui/?project_id=30160)
+  <!-- [![github test](https://github.com/charlesponti/ponti-io/actions/workflows/test.yml/badge.svg?branch=main)](https://github.com/charlesponti/ponti-io/actions/workflows/test.yml) -->
+  [![codecov](https://codecov.io/gh/charlesponti/ponti-io/branch/main/graph/badge.svg?token=365VCE2C4N)](https://codecov.io/gh/charlesponti/ponti-io)
+  [![cypress](https://img.shields.io/endpoint?url=https://dashboard.cypress.io/badge/simple/ssvz5r&style=flat&logo=cypress)](https://dashboard.cypress.io/projects/ssvz5r/runs)
+  [![commitizen](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
+  [![license](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/wtchnm/Vitamin/blob/main/LICENSE)  
+  [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=charlesponti_ponti-io&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=charlesponti_ponti-io)
+  [![Bugs](https://sonarcloud.io/api/project_badges/measure?project=charlespont_ponti-io&metric=bugs)](https://sonarcloud.io/dashboard?id=charlesponti_ponti-io)
+  [![Depfu](https://badges.depfu.com/badges/fc6e730632ab9dacaf7df478a08684a7/overview.svg)](https://depfu.com/github/charlesponti/ponti-io/?project_id=30160)
   [![Last Update](https://img.shields.io/badge/deps%20update-every%20sunday-blue.svg)](https://shields.io/)
 </div>
 
@@ -21,7 +22,6 @@ This repository is 🔋 battery packed with:
 - ⚛️ React 18
 - ✨ TypeScript
 - 💨 Tailwind CSS 3 — Configured with CSS Variables to extend the **primary** color
-- 💎 Pre-built Components — Components that will **automatically adapt** with your brand color, [check here for the demo](https://tsnext-tw.thcl.dev/components)
 - 🧪 Vitest — Configured for unit testing
 - 📈 Absolute Import and Path Alias — Import components using `src/` prefix
 - 📏 ESLint — Find and fix problems in your code, also will **auto sort** your imports
@@ -32,11 +32,7 @@ This repository is 🔋 battery packed with:
 - 👷 Github Actions — Lint your code on PR
 - 🚘 Automatic Branch and Issue Autolink — Branch will be automatically created on issue **assign**, and auto linked on PR
 - 🔥 Snippets — A collection of useful snippets
-- 👀 Default Open Graph — Awesome open graph generated using [og](https://github.com/theodorusclarence/og), fork it and deploy!
 - 🗺 Site Map — Automatically generate sitemap.xml
-- 📦 Expansion Pack — Easily install common libraries, additional components, and configs
-
-See the 👉 [feature details and changelog](https://github.com/theponti/create-ponti-ui/blob/main/CHANGELOG.md) 👈 for more.
 
 ## Getting Started
 
@@ -53,13 +49,13 @@ See the 👉 [feature details and changelog](https://github.com/theponti/create-
 2. Using `create-next-app`
 
    ```bash
-   npx create-next-app -e https://github.com/theponti/create-ponti-ui/ project-name
+   npx create-next-app -e https://github.com/charlesponti/ponti-io/ project-name
    ```
 
 3. Using `degit`
 
    ```bash
-   npx degit theponti/create-ponti-ui/ YOUR_APP_NAME
+   npx degit charlesponti/ponti-io/ YOUR_APP_NAME
    ```
 
 4. Deploy to Vercel
@@ -68,10 +64,8 @@ See the 👉 [feature details and changelog](https://github.com/theponti/create-
 
 ### 2. Install dependencies
 
-It is encouraged to use **pnpm** so the husky hooks can work properly.
-
 ```bash
-pnpm install
+npm install
 ```
 
 ### 3. Run the development server
@@ -79,7 +73,7 @@ pnpm install
 You can start the server using this command:
 
 ```bash
-pnpm dev
+npm dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result. You can start editing the page by modifying `src/pages/index.tsx`.
@@ -104,7 +98,7 @@ TEMPLATE
 - [sitename](https://sitelink.com)
 -->
 
-Are you using this starter? Please add your page (and repo) to the end of the list via a [Pull Request](https://github.com/theponti/create-ponti-ui/edit/main/README.md). 😃
+Are you using this starter? Please add your page (and repo) to the end of the list via a [Pull Request](https://github.com/charlesponti/ponti-io/edit/main/README.md). 😃
 
 ## Expansion Pack 📦
 
