@@ -10,11 +10,16 @@ jobs:
   Deploy-Production:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - name: 🛑 Cancel Previous Runs
+        uses: styfle/cancel-workflow-action@0.9.1
+
+      - name: ⬇️ Checkout repo
+        uses: actions/checkout@v2
+
       - name: Set up PNPM
         uses: pnpm/action-setup@v2.2.2
         with:
-          version: latest
+          version: 7.29.1
           run_install: true
       - name: Set up Node.js
         uses: actions/setup-node@v3

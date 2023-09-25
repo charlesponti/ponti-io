@@ -7,10 +7,16 @@ jobs:
     if: github.event.deployment_status.state == 'success'
     runs-on: ubuntu-latest
     steps:
+      - name: 🛑 Cancel Previous Runs
+        uses: styfle/cancel-workflow-action@0.9.1
+
+      - name: 🛎 Checkout repo
+        uses: actions/checkout@v2
+
       - name: Set up PNPM
         uses: pnpm/action-setup@v2.2.1
         with:
-          version: latest
+          version: 7.29.1
           run_install: true
 
       - name: Set up Node.js
@@ -24,9 +30,6 @@ jobs:
 
       - name: Print GitHub env variables 🖨
         run: pnpx @bahmutov/print-env GITHUB
-
-      - name: Checkout 🛎
-        uses: actions/checkout@v1
 
       - name: Run Cypress 🌲
         uses: cypress-io/github-action@v2

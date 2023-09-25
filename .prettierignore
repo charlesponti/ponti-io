@@ -1,10 +1,9 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
-
 # dependencies
 /node_modules
 /.pnp
 .pnp.js
 pnpm-lock.yaml
+npm-debug.log*
 
 # testing
 /coverage
@@ -21,15 +20,10 @@ pnpm-lock.yaml
 .DS_Store
 *.pem
 manifest.json
-
-# debug
-npm-debug.log*
+.eslintrc.json
 
 # local env files
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
+.env*
 
 # vercel
 .vercel
