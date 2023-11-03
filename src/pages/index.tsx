@@ -12,7 +12,7 @@ export default function HomePage() {
         <section>
           <div className='layout flex min-h-screen flex-col'>
             {/* Hero */}
-            <div className='flex items-center py-2'>
+            <div className='flex items-center py-2' data-testid='navbar'>
               <span className='text-neutral-content font-bold text-lg'>
                 Ponti Studios
               </span>
