@@ -46,6 +46,10 @@
   }
   /* #endregion  /**======== Typography =========== */
 
+  .card {
+    @apply bg-[#222225] rounded-lg shadow-md p-4;
+  }
+
   .layout {
     /* 1100px */
     max-width: 68.75rem;
