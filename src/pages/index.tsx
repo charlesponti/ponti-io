@@ -7,7 +7,10 @@ export default function HomePage() {
   return (
     <Layout>
       <Seo />
-      <header className='flex items-center py-2 px-2' data-testid='navbar'>
+      <header
+        className='layout flex items-center py-2 md:w-[700px]'
+        data-testid='navbar'
+      >
         <span className='text-neutral-content font-bold text-3xl'>
           Ponti Studios
         </span>
@@ -24,7 +27,6 @@ export default function HomePage() {
               <span className='font-semibold'>Period.</span>
             </p>
           </section>
-          <hr className='pb-[25px] md:hidden' />
           <section className='flex flex-col gap-4 py-6 mb-[50px] text-lg md:text-base'>
             <p>
               We're a team of international engineers, designers, and data
