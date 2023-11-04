@@ -4,6 +4,6 @@ describe('Index Page', () => {
   });
 
   it('should display correct heading', () => {
-    cy.get('h1').should('contain', 'Ponti Studios');
+    cy.get('[data-testid="navbar"]').should('contain', 'Ponti Studios');
   });
 });
