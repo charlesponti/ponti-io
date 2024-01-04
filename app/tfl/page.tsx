@@ -7,12 +7,14 @@ import {
   Map,
   Marker,
   useMap,
+  useMapsLibrary,
 } from '@vis.gl/react-google-maps';
 import React, { useEffect } from 'react';
 import { Camera, CamerasResponse } from '../../utils/types';
 
 const TFLMap = () => {
   const map = useMap();
+  const google = useMapsLibrary('core');
   const [infowindow, setInfowindow] = React.useState<{
     content: string;
     id: string;
@@ -31,12 +33,11 @@ const TFLMap = () => {
 
   useEffect(() => {
     // Once the map is loaded, add the cameras to it
-    if (data && map) {
-      map.setCenter(new google.maps.LatLng(51.508742, -0.12085));
+    if (data && map && google) {
+      map.setCenter(new google.LatLng(51.508742, -0.12085));
       map.setZoom(11);
-      map.setMapTypeId(google.maps.MapTypeId.ROADMAP);
     }
-  }, [data, map]);
+  }, [data, google, map]);
 
   const onMarkerClick = (camera: Camera) => {
     setInfowindow({
@@ -64,6 +65,7 @@ const TFLMap = () => {
         center={{ lat: 22.54992, lng: 0 }}
         gestureHandling='greedy'
         disableDefaultUI={true}
+        viewState={{ latitude: 22.54992, longitude: 0, zoom: 3 }}
       >
         {infowindow ? (
           <InfoWindow position={{ lat: infowindow.lat, lng: infowindow.lng }}>
@@ -85,8 +87,8 @@ const TFLMap = () => {
             position={{ lat: +camera.lat, lng: +camera.lng }}
             title={camera.location}
             icon={{
-              anchor: new google.maps.Point(30, 30),
-              scaledSize: new google.maps.Size(25, 25),
+              anchor: google && new google.Point(30, 30),
+              scaledSize: google && new google.Size(25, 25),
               url: '/camera.png',
             }}
             onClick={() => onMarkerClick(camera)}
