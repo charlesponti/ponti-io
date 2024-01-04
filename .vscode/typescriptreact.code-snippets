@@ -157,7 +157,7 @@
   },
   "Import useRouter": {
     "prefix": "imust",
-    "body": ["import { useRouter } from 'next/router';"]
+    "body": ["import { useRouter } from 'next/navigation';"]
   },
   "Import Next Image": {
     "prefix": "imimg",
