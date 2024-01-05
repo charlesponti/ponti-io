@@ -2,7 +2,6 @@ import * as React from 'react';
 
 import Services from '@/components/landing/Services';
 import Layout from '@/components/layout/Layout';
-import Seo from '@/components/Seo';
 
 const Section = ({ children }: React.PropsWithChildren) => (
   <div className='bg-primary rounded-lg shadow-lg overflow-hidden my-9 p-8'>
@@ -13,7 +12,6 @@ const Section = ({ children }: React.PropsWithChildren) => (
 export default function HomePage() {
   return (
     <Layout>
-      <Seo />
       <main>
         <div className='layout flex min-h-screen flex-col md:w-[700px]'>
           {/* Hero */}
