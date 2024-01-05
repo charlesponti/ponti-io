@@ -65,7 +65,6 @@ const TFLMap = () => {
         center={{ lat: 22.54992, lng: 0 }}
         gestureHandling='greedy'
         disableDefaultUI={true}
-        viewState={{ latitude: 22.54992, longitude: 0, zoom: 3 }}
       >
         {infowindow ? (
           <InfoWindow position={{ lat: infowindow.lat, lng: infowindow.lng }}>
