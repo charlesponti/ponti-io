@@ -1,7 +1,7 @@
-/* eslint-disable @typescript-eslint/no-magic-numbers */
-import { render, screen } from '@testing-library/react';
+import { screen } from '@testing-library/react';
 import { beforeEach, describe, expect, test, vi } from 'vitest';
 
+import renderWithProviders from '@/tests/testUtils';
 import RegionalData from '.';
 
 describe('RegionalData', () => {
@@ -10,7 +10,7 @@ describe('RegionalData', () => {
   });
 
   test('should render progressbar', async () => {
-    render(<RegionalData countryCode='global' />);
+    renderWithProviders(<RegionalData countryCode='global' />);
     const progressbar = await screen.findByRole('progressbar');
     expect(progressbar).toBeDefined();
   });
