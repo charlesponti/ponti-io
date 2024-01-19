@@ -54,20 +54,18 @@ export default function Home() {
     <main className='flex flex-col items-center justify-between'>
       <div className='layout flex flex-col md:w-[700px]'>
         {/* Hero */}
-        <div className='bg-primary overflow-hidden p-8'>
-          <p
-            className='text-4xl mt-4 text-primary font-semibold'
-            style={{ textWrap: 'pretty' }}
-          >
+        <div
+          className='bg-primary overflow-hidden'
+          style={{ textWrap: 'pretty' }}
+        >
+          <p className='text-4xl mt-4 text-primary font-semibold lg:text-5xl'>
             We build <b>lovable</b> technology for <b>humans</b>.
           </p>
-          <p className='text-primary mt-16 text-xl'>
+          <p className='text-primary mt-6 text-lg md:text-xl'>
             We're a diverse team of international designers and technologists
-            using{' '}
-            <i>
-              design thinking, exploratory data analysis, and machine learning
-            </i>{' '}
-            to build <b>humanity-focused</b> solutions.
+            using <i>humanity-centered design</i> and <i>data science</i> to
+            understand user needs to produce highly efficient and effective
+            solutions.
           </p>
         </div>
       </div>
