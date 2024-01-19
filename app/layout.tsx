@@ -73,7 +73,7 @@ export default function RootLayout({
         />
       </Head>
       <body className={inter.className}>
-        <nav className='mb-8 text-black font-mono font-semibold p-4'>
+        <nav className='mb-8 text-black font-mono font-semibold p-4 text-lg'>
           <a href='/'>Ponti Studios</a>
         </nav>
         <Providers>{children}</Providers>
