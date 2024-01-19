@@ -1,4 +1,4 @@
-const sections = [
+const _sections = [
   {
     url: '/services',
     title: 'Services',
@@ -22,7 +22,7 @@ const sections = [
   // },
 ];
 
-const Section = ({
+const _Section = ({
   newTab = false,
   url,
   title,
@@ -51,33 +51,31 @@ const Section = ({
 
 export default function Home() {
   return (
-    <main className='flex flex-col items-center justify-between p-24 gap-24'>
-      <div className='layout flex min-h-screen flex-col md:w-[700px]'>
+    <main className='flex flex-col items-center justify-between'>
+      <div className='layout flex flex-col md:w-[700px]'>
         {/* Hero */}
-        <div className='bg-primary rounded-lg shadow-lg overflow-hidden my-9 p-8'>
-          {/* <h1 className='mb-6 text-3xl text-indigo-500'>
-                The next-generation production company.
-              </h1> */}
-          <p className='text-lg md:text-lg text-primary mt-4'>
-            We don't just build products.{' '}
-          </p>
-          <p className='text-lg md:text-4xl mt-2 text-primary font-semibold'>
-            We build solutions people{'   '}
-            <span className='font-extrabold'>love.</span>
+        <div className='bg-primary overflow-hidden p-8'>
+          <p
+            className='text-4xl mt-4 text-primary font-semibold'
+            style={{ textWrap: 'pretty' }}
+          >
+            We build <b>lovable</b> technology for <b>humans</b>.
           </p>
           <p className='text-primary mt-16 text-xl'>
-            We're a team of international engineers, designers, and data
-            scientists who use <i>design thinking and machine learning</i> to
-            meticulously build{' '}
-            <span className='font-semibold'>humanity-focused</span> solutions.
+            We're a diverse team of international designers and technologists
+            using{' '}
+            <i>
+              design thinking, exploratory data analysis, and machine learning
+            </i>{' '}
+            to build <b>humanity-focused</b> solutions.
           </p>
         </div>
       </div>
-      <div className='grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left'>
+      {/* <div className='grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left'>
         <Section {...sections[0]} />
         <Section {...sections[1]} />
         <Section {...sections[2]} />
-      </div>
+      </div> */}
     </main>
   );
 }
