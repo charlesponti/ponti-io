@@ -51,22 +51,56 @@ const _Section = ({
 
 export default function Home() {
   return (
-    <main className='flex flex-col items-center justify-between'>
-      <div className='layout flex flex-col md:w-[700px]'>
+    <main className='flex flex-col justify-between'>
+      <div className='layout flex flex-col'>
         {/* Hero */}
-        <div
-          className='bg-primary overflow-hidden'
-          style={{ textWrap: 'pretty' }}
-        >
-          <p className='text-4xl mt-4 text-primary font-semibold lg:text-5xl'>
-            We build <b>lovable</b> technology for <b>humans</b>.
-          </p>
-          <p className='text-primary mt-6 text-lg md:text-xl'>
-            We're a diverse team of international designers and technologists
-            using <i>humanity-centered design</i> and <i>data science</i> to
-            understand user needs to produce highly efficient and effective
-            solutions.
-          </p>
+        <div className='flex flex-col justify-center h-[350px] p-4 mb-8'>
+          <div
+            className='bg-primary overflow-hidden max-w-3xl'
+            style={{ textWrap: 'pretty' }}
+          >
+            <p className='text-4xl mt-4 text-primary font-semibold lg:text-5xl lg:leading-[3.5rem]'>
+              We build <b className='text-pink-500'>lovable</b> technology for{' '}
+              <b className='text-green-800'>humans</b>.
+            </p>
+            <p className='text-primary mt-6 text-lg md:text-xl'>
+              We're a diverse team of international designers and technologists
+              using <i>humanity-centered design</i> and <i>data science</i> to
+              produce efficient and effective solutions that solve <i>sticky</i>{' '}
+              problems.
+            </p>
+          </div>
+        </div>
+        <div className='flex flex-col justify-center p-4 bg-black text-white'>
+          <h2 className='text-6xl pb-3'>Services</h2>
+          <div className='flex flex-col gap-4 md:flex-row md:space-between'>
+            <div className='flex flex-col justify-center flex-1'>
+              <p className='text-2xl text-slate-600 uppercase'>
+                Ideation & MVPs
+              </p>
+              <p className='text-2xl text-slate-600 uppercase'>
+                Design & Engineering Workshops
+              </p>
+              <p className='text-2xl text-slate-600 uppercase'>
+                Brand Design & Consulting
+              </p>
+              <p className='text-2xl text-slate-600 uppercase'>
+                Products & Experiences
+              </p>
+              <p className='text-2xl text-slate-600 uppercase'>
+                Media & Connections
+              </p>
+              <p className='text-2xl text-slate-600 uppercase'>
+                Brand Relationship Design
+              </p>
+            </div>
+            <div className='flex flex-col justify-center flex-1 text-3xl'>
+              We partner with clients across communications, brand design and
+              consulting, experience design, technology strategy and
+              engineering, media planning and buying, and relationship design.
+              {/* See how we can help */}
+            </div>
+          </div>
         </div>
       </div>
       {/* <div className='grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left'>
