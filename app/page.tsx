@@ -39,7 +39,7 @@ const _Section = ({
     rel='noopener noreferrer'
     className='group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30'
   >
-    <h2 className='mb-3 text-2xl font-semibold'>
+    <h2 className='mb-3 text-4xl font-semibold'>
       {title}{' '}
       <span className='inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none'>
         -&gt;
@@ -52,14 +52,14 @@ const _Section = ({
 export default function Home() {
   return (
     <main className='flex flex-col justify-between'>
-      <div className='layout flex flex-col'>
+      <div className='container flex flex-col'>
         {/* Hero */}
         <div className='flex flex-col justify-center h-[350px] p-4 mb-8'>
           <div
             className='bg-primary overflow-hidden max-w-3xl'
             style={{ textWrap: 'pretty' }}
           >
-            <p className='text-4xl mt-4 text-primary font-semibold lg:text-5xl lg:leading-[3.5rem]'>
+            <p className='text-4xl md:text-6xl mt-4 text-primary font-semibold lg:text-5xl lg:leading-[3.5rem]'>
               We build <b className='text-pink-500'>lovable</b> technology for{' '}
               <b className='text-green-800'>humans</b>.
             </p>
@@ -72,29 +72,26 @@ export default function Home() {
           </div>
         </div>
         <div className='flex flex-col justify-center p-4 bg-black text-white'>
-          <h2 className='text-6xl pb-3'>Services</h2>
+          <h2 className='text-6xl md:text-8xl mb-8'>Services</h2>
           <div className='flex flex-col gap-4 md:flex-row md:space-between'>
             <div className='flex flex-col justify-center flex-1'>
-              <p className='text-2xl text-slate-600 uppercase'>
+              <p className='text-3xl md:text-4xl text-slate-600 mb-1'>
                 Ideation & MVPs
               </p>
-              <p className='text-2xl text-slate-600 uppercase'>
-                Design & Engineering Workshops
+              <p className='text-3xl md:text-4xl text-slate-600 mb-1'>
+                Design & Engineering
               </p>
-              <p className='text-2xl text-slate-600 uppercase'>
-                Brand Design & Consulting
+              <p className='text-3xl md:text-4xl text-slate-600 mb-1'>
+                Branding
               </p>
-              <p className='text-2xl text-slate-600 uppercase'>
+              <p className='text-3xl md:text-4xl text-slate-600 mb-1'>
                 Products & Experiences
               </p>
-              <p className='text-2xl text-slate-600 uppercase'>
-                Media & Connections
-              </p>
-              <p className='text-2xl text-slate-600 uppercase'>
-                Brand Relationship Design
+              <p className='text-3xl md:text-4xl text-slate-600 mb-1'>
+                Social & Community
               </p>
             </div>
-            <div className='flex flex-col justify-center flex-1 text-3xl'>
+            <div className='flex flex-col justify-center flex-1 text-3xl md:text-4xl'>
               We partner with clients across communications, brand design and
               consulting, experience design, technology strategy and
               engineering, media planning and buying, and relationship design.
