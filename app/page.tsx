@@ -75,23 +75,23 @@ export default function Home() {
           <h2 className='text-6xl md:text-8xl mb-8'>Services</h2>
           <div className='flex flex-col gap-4 md:flex-row md:space-between'>
             <div className='flex flex-col justify-center flex-1 font-light'>
-              <p className='text-3xl md:text-4xl text-slate-600 mb-3'>
+              <p className='text-4xl md:text-4xl text-slate-600 mb-1 md:mb-3'>
                 Ideation & MVPs
               </p>
-              <p className='text-3xl md:text-4xl text-slate-600 mb-3'>
+              <p className='text-4xl md:text-4xl text-slate-600 mb-1 md:mb-3'>
                 Design & Engineering
               </p>
-              <p className='text-3xl md:text-4xl text-slate-600 mb-3'>
+              <p className='text-4xl md:text-4xl text-slate-600 mb-1 md:mb-3'>
                 Branding
               </p>
-              <p className='text-3xl md:text-4xl text-slate-600 mb-3'>
+              <p className='text-4xl md:text-4xl text-slate-600 mb-1 md:mb-3'>
                 Products & Experiences
               </p>
-              <p className='text-3xl md:text-4xl text-slate-600 mb-3'>
+              <p className='text-4xl md:text-4xl text-slate-600 mb-1 md:mb-3'>
                 Social & Community
               </p>
             </div>
-            <div className='flex flex-col justify-center flex-1 text-3xl md:text-4xl font-light'>
+            <div className='flex flex-col justify-center flex-1 text-2xl md:text-4xl font-light'>
               We partner with clients across communications, brand design and
               consulting, experience design, technology strategy and
               engineering, media planning and buying, and relationship design.
