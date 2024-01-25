@@ -51,7 +51,7 @@ const _Section = ({
 
 export default function Home() {
   return (
-    <main className='flex flex-col justify-between'>
+    <main className='flex flex-col justify-between items-center'>
       <div className='container flex flex-col'>
         {/* Hero */}
         <div className='flex flex-col justify-center h-[350px] p-4 mb-16'>
@@ -73,25 +73,25 @@ export default function Home() {
         </div>
         <div className='flex flex-col justify-center p-4 bg-black text-white mb-24 pt-8 pb-12'>
           <h2 className='text-6xl md:text-8xl mb-8'>Services</h2>
-          <div className='flex flex-col gap-4 md:flex-row md:space-between'>
+          <div className='flex flex-col gap-4 lg:flex-row lg:space-between'>
             <div className='flex flex-col justify-center flex-1 font-light'>
-              <p className='text-4xl md:text-4xl text-slate-600 mb-1 md:mb-3'>
+              <p className='text-4xl lg:text-4xl text-slate-600 mb-1 md:mb-3'>
                 Ideation & MVPs
               </p>
-              <p className='text-4xl md:text-4xl text-slate-600 mb-1 md:mb-3'>
+              <p className='text-4xl lg:text-4xl text-slate-600 mb-1 md:mb-3'>
                 Design & Engineering
               </p>
-              <p className='text-4xl md:text-4xl text-slate-600 mb-1 md:mb-3'>
+              <p className='text-4xl lg:text-4xl text-slate-600 mb-1 md:mb-3'>
                 Branding
               </p>
-              <p className='text-4xl md:text-4xl text-slate-600 mb-1 md:mb-3'>
+              <p className='text-4xl lg:text-4xl text-slate-600 mb-1 md:mb-3'>
                 Products & Experiences
               </p>
-              <p className='text-4xl md:text-4xl text-slate-600 mb-1 md:mb-3'>
+              <p className='text-4xl lg:text-4xl text-slate-600 mb-1 md:mb-3'>
                 Social & Community
               </p>
             </div>
-            <div className='flex flex-col justify-center flex-1 text-2xl md:text-4xl font-light'>
+            <div className='flex flex-col justify-center flex-1 text-2xl md:text-3xl lg:text-4xl font-light'>
               We partner with clients across communications, brand design and
               consulting, experience design, technology strategy and
               engineering, media planning and buying, and relationship design.
