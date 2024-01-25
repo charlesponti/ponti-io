@@ -73,8 +73,13 @@ export default function RootLayout({
         />
       </Head>
       <body className={inter.className}>
-        <nav className='mb-8 text-black font-mono font-semibold p-4 text-lg'>
-          <a href='/'>Ponti Studios</a>
+        <nav className='navbar flex justify-between text-black font-semibold text-lg rounded-md shadow-md mx-4 mt-2 mb-8 w-auto pr-4'>
+          <a className='btn-ghost p-2' href='/'>
+            Ponti Studios
+          </a>
+          <span className='text-sm text-slate-500'>
+            Based in Los Angeles, CA, USA
+          </span>
         </nav>
         <Providers>{children}</Providers>
       </body>
