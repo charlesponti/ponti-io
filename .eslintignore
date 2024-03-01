@@ -9,11 +9,9 @@
 *.yml
 
 # Directories
-cypress/fixtures/**
-cypress/support/**
+
 
 # Files
-cypress.config.ts
 package.json
 package-lock.json
 tsconfig.json
