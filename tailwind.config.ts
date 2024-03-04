@@ -17,16 +17,17 @@ const config: Config = {
         'part-full': 'calc(100% - 1.5rem)',
       },
       fontSize: {
-        'fluid-1': 'clamp(1.89rem, calc(1.48rem + 2.03vw), 2.93rem)',
-        'fluid-2': 'clamp(32px, calc(32px + 4.79vw), 75px)',
-        'fluid-3': 'clamp(3rem, calc(2.31rem + 4.79vw), 5rem)',
+        'fluid-1': 'clamp(16px, calc(16px + 2.03vw), 45px)',
+        'fluid-2': 'clamp(32px, calc(32px + 3.50vw), 75px)',
+        'fluid-3': 'clamp(42px, calc(42px + 4.79vw), 85px)',
       },
       margin: {
         'fluid-2': 'clamp(32px, calc(32px + 4.79vw), 75px)',
       },
       lineHeight: {
-        'fluid-2': 'clamp(50px, calc(50px + 2.03vw), 75px)',
-        'fluid-3': 'clamp(3rem, calc(3rem + 4.79vw), 5.25rem)',
+        'fluid-1': 'clamp(16px, calc(16px + 2.03vw), 45px)',
+        'fluid-2': 'clamp(32px, calc(32px + 3.50vw), 75px)',
+        'fluid-3': 'clamp(42px, calc(42px + 4.79vw), 85px)',
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',

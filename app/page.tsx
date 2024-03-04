@@ -21,15 +21,14 @@ const GradialCard = ({
 export default function Home() {
   return (
     <div className='container flex flex-col items-center w-full max-w-[1200px] gap-6'>
-      {/* Hero */}
       <GradialCard className='from-slate-200 to-white'>
-        <p className='text-primary text-fluid-3 leading-fluid-3 uppercase whitespace-pre-wrap'>
+        <p className='text-primary text-fluid-1 leading-fluid-2 md:text-center font-thin opacity-75 uppercase whitespace-pre-wrap'>
           <span className='text-slate-800'>Lovable</span> technology for{' '}
           <span className='text-slate-800'>humans</span>.
         </p>
       </GradialCard>
       <GradialCard className='from-slate-200 to-white'>
-        <p className='text-primary text-lg md:text-4xl w-[90%]'>
+        <p className='text-primary text-lg md:text-4xl w-[90%] font-thin'>
           We're a diverse team of international designers and technologists
           using <i>humanity-centered design</i> and <i>data science</i> to
           produce efficient and effective solutions that solve <i>sticky</i>{' '}
@@ -39,27 +38,27 @@ export default function Home() {
       <GradialCard className='from-slate-200 to-white'>
         <h2 className='mb-fluid-2 text-fluid-2'>Services</h2>
         <div className='flex flex-col gap-12'>
-          <div className='flex flex-col justify-center flex-1 font-light'>
-            <p className='text-2xl md:text-4xl text-slate-600 mb-1 md:mb-3'>
+          <div className='flex flex-col justify-center flex-1 font-light gap-3'>
+            <p className='text-2xl md:text-4xl text-slate-600 mb-1 md:mb-3 font-light'>
               Product Feasbility & Workshops
             </p>
-            <p className='text-2xl md:text-4xl text-slate-600 mb-1 md:mb-3'>
+            <p className='text-2xl md:text-4xl text-slate-600 mb-1 md:mb-3 font-light'>
               Design & Engineering
             </p>
-            <p className='text-2xl md:text-4xl text-slate-600 mb-1 md:mb-3'>
+            <p className='text-2xl md:text-4xl text-slate-600 mb-1 md:mb-3 font-light'>
               Branding & Marketing
             </p>
-            <p className='text-2xl md:text-4xl text-slate-600 mb-1 md:mb-3'>
+            <p className='text-2xl md:text-4xl text-slate-600 mb-1 md:mb-3 font-light'>
               Events & Experienes
             </p>
-            <p className='text-2xl md:text-4xl text-slate-600 mb-1 md:mb-3'>
+            <p className='text-2xl md:text-4xl text-slate-600 mb-1 md:mb-3 font-light'>
               Social Media & Community
             </p>
           </div>
         </div>
       </GradialCard>
       <GradialCard className='from-slate-200 to-white'>
-        <p className='text-primary text-lg md:text-4xl w-[90%]'>
+        <p className='text-primary text-lg md:text-4xl w-[90%] font-thin'>
           We partner with clients across communications, brand design and
           consulting, experience design, technology strategy and engineering,
           media planning and buying, and relationship design.
