@@ -10,7 +10,7 @@ import {
 	useMapsLibrary,
 } from "@vis.gl/react-google-maps";
 import React, { useEffect } from "react";
-import type { Camera, CamerasResponse } from "../../utils/types";
+import type { Camera, Cameras } from "../../utils/types";
 
 const TFLMap = () => {
 	const map = useMap();
@@ -22,11 +22,11 @@ const TFLMap = () => {
 		lat: number;
 		lng: number;
 	} | null>(null);
-	const { data, isLoading } = useQuery<CamerasResponse>({
+	const { data, isLoading } = useQuery<Cameras>({
 		queryKey: ["cameras"],
 		queryFn: async () => {
 			const res = await fetch("/tfl/api/");
-			const json = await res.json();
+			const json = (await res.json()) as { cameras: Cameras };
 			return json.cameras;
 		},
 	});
