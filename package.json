@@ -91,7 +91,7 @@
 		"wrangler": "^3.30.1"
 	},
 	"lint-staged": {
-		"**/*.{js,jsx,ts,tsx}": ["biome lint", "biome format --write"],
-		"**/*.{json,css,scss,md}": ["biome format --write"]
+		"**/*.{js,jsx,ts,tsx}": ["biome lint --apply", "biome format --write"],
+		"**/*.{json,css,scss,md}": ["biome lint --apply", "biome format --write"]
 	}
 }
