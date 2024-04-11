@@ -6,6 +6,7 @@
 		"source.fixAll",
 		"source.organizeImports"
 	],
+	"editor.defaultFormatter": "biomejs.biome",
 	"editor.foldingImportsByDefault": false,
 	"editor.formatOnSave": true,
 	"editor.tabSize": 2,
