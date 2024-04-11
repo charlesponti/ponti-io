@@ -1,20 +1,13 @@
-import { screen } from '@testing-library/react';
-import { describe, expect, test } from 'vitest';
-import App from '../app/corona/page';
-import renderWithProviders from './testUtils';
+import { screen } from "@testing-library/react";
+import { describe, expect, test } from "vitest";
 
-describe('App', () => {
-  test('renders without crashing', () => {
-    const { container } = renderWithProviders(<App />);
-    expect(container).toMatchSnapshot();
-  });
+import App from "../app/corona/page";
 
-  // Test that the CountryPicker is rendered after loading.
-  test('renders CountryPicker after loading', async () => {
-    renderWithProviders(<App />);
+import renderWithProviders from "./testUtils";
 
-    // Wait for the loading indicator to disappear.
-    const picker = await screen.findByTestId('country-picker');
-    expect(picker).toMatchSnapshot();
-  });
+describe("App", () => {
+	test("renders CountryPicker after loading successfully", async () => {
+		renderWithProviders(<App />);
+		expect(await screen.findByText("US")).toBeInTheDocument();
+	});
 });

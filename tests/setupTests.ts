@@ -1,8 +1,11 @@
+import "@testing-library/jest-dom";
+import { cleanup } from "@testing-library/react";
+import "whatwg-fetch";
+
 import mediaQuery from "css-mediaquery";
 import { http, HttpResponse } from "msw";
 import { setupServer } from "msw/node";
 import { afterAll, afterEach, beforeAll, beforeEach, vi } from "vitest";
-import "whatwg-fetch";
 
 // Allow router mocks.
 vi.mock("next/navigation", () => require("next-router-mock"));
@@ -71,15 +74,8 @@ const restHandlers = [
 const server = setupServer(...restHandlers);
 
 // Start server before all tests
-beforeAll(() => server.listen({ onUnhandledRequest: "error" }));
-
-//  Close server after all tests
-afterAll(() => server.close());
-
-// Reset handlers after each test `important for test isolation`
-afterEach(() => server.resetHandlers());
-
 beforeAll(() => {
+	server.listen({ onUnhandledRequest: "error" });
 	Object.defineProperty(window, "matchMedia", {
 		writable: true,
 		value: (query: string) => {
@@ -130,5 +126,15 @@ beforeAll(() => {
 });
 
 beforeEach(() => {
+	// Clear the screen before each test.
 	window.resizeTo(DESKTOP_RESOLUTION_WIDTH, DESKTOP_RESOLUTION_HEIGHT);
+});
+
+//  Close server after all tests
+afterAll(() => server.close());
+
+// Reset handlers after each test `important for test isolation`
+afterEach(() => {
+	server.resetHandlers();
+	cleanup();
 });

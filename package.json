@@ -20,14 +20,13 @@
 		"run-stylelint": "stylelint --cache --fix --ignore-path .gitignore app/**/*.css",
 		"run-tsc": "tsc",
 		"start": "next start",
-		"test:ci": "vitest run --coverage",
+		"test": "vitest --run",
 		"test:coverage": "open coverage/jest/lcov-report/index.html ",
 		"test:e2e:ci": "next build && npm run preview:test 'npx playwright test'",
 		"test:e2e": "npm run preview:test 'npx playwright test'",
-		"test:update": "vitest run -u",
-		"test": "vitest",
+		"test:watch": "vitest",
 		"typecheck": "tsc --noEmit --incremental false",
-		"validate": "run-p lint test:ci test:e2e:ci"
+		"validate": "run-p lint test test:e2e:ci"
 	},
 	"dependencies": {
 		"@tailwindcss/forms": "^0.5.7",
