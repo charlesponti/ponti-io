@@ -17,7 +17,7 @@
 		"preview:next": "npx next dev -p 4173",
 		"refresh-deps": "rm package-lock.json && rm -rf node_modules && npm install",
 		"run-lint": "npx biome lint src",
-		"run-stylelint": "stylelint --cache --fix --ignore-path .gitignore \"**/*.css\"",
+		"run-stylelint": "stylelint --cache --fix --ignore-path .gitignore app/**/*.css",
 		"run-tsc": "tsc",
 		"start": "next start",
 		"test:ci": "vitest run --coverage",
