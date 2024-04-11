@@ -1,0 +1,16 @@
+.spinnerBorderLight {
+  position: absolute;
+  top: 0px;
+  width: 50%;
+  height: 50%;
+  left: 0px;
+  background: linear-gradient(96.42deg, #d12222 20.31%, #202328 95.53%);
+  transform-origin: bottom right;
+  -webkit-transform: skew(-50deg);
+  -moz-transform: skew(-50deg);
+  -ms-transform: skew(-50deg);
+  transform: skew(-50deg);
+  -webkit-animation: animation-8ff5jv 5s linear infinite;
+  animation: animation-8ff5jv 5s linear infinite;
+  border-radius: var(--chakra-radii-xl);
+}
