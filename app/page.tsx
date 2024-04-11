@@ -1,69 +1,74 @@
+import Image from "next/image";
 import type { PropsWithChildren } from "react";
-import { twMerge } from "tailwind-merge";
 
 const ServiceChip = ({ children }: PropsWithChildren) => (
-	<p className="card bg-white border-blue-400 border-2 max-w-fit rounded-xl text-lg flex-1 md:min-w-[200px]">
+	<p className="card bg-white border-blue-400 border-2 rounded-xl text-lg flex-1 flex justify-center min-h-[110px] min-w-[200px] bg-opacity-20">
 		{children}
 	</p>
 );
-const GradialCard = ({
-	children,
-	className,
-}: PropsWithChildren & {
-	className?: string;
-}) => (
-	<div
-		className={twMerge(
-			"flex flex-col justify-center w-part-full py-16 px-4 mb-16",
-			className,
-		)}
-		style={{ textWrap: "balance" }}
-	>
+const LandingSection = ({ children }: PropsWithChildren) => (
+	<div className="flex flex-col w-full max-w-[1200px] px-4 my-20 md:my-32 text-pretty z-10">
 		{children}
 	</div>
 );
 
 export default function Home() {
 	return (
-		<div className="container flex flex-col items-center w-full max-w-[1200px] gap-6">
-			<div className="flex flex-col items-center w-full max-w-[800px] gap-6 py-32">
-				<h1>Lovable technology for humans.</h1>
-				<p className="font-light text-lg text-center">
-					We're a diverse team of international designers and technologists
-					using humanity-centered design and data science to produce efficient
-					and effective solutions that solve sticky problems.
+		<div className="container flex flex-col items-center w-full max-w-[1200px] mt-12 mb-24">
+			<LandingSection>
+				<h2 className="font-display font-semibold text-4xl leading-[1.15] text-balance text-black sm:text-6xl sm:leading-[1.15] mb-6 md:text-center">
+					Lovable technology for humans.
+				</h2>
+				<p className="font-light text-lg text-gray-600 sm:text-xl md:text-2xl md:text-center">
+					Build, scale, and grow your dreams.
 				</p>
-			</div>
-			<GradialCard className="from-slate-200 to-white">
-				<h2 className="mb-fluid-2 text-fluid-2">Services</h2>
-				<div className="flex flex-col gap-12">
-					<div className="flex flex-col md:flex-row justify-around gap-3">
-						<ServiceChip>
-							Product Feasbility <br /> & Workshops
-						</ServiceChip>
-						<ServiceChip>
-							Design <br /> & Engineering
-						</ServiceChip>
-						<ServiceChip>
-							Branding <br />& Marketing
-						</ServiceChip>
-						<ServiceChip>
-							Events <br />& Experienes
-						</ServiceChip>
-						<ServiceChip>
-							Social Media <br />& Community
-						</ServiceChip>
-					</div>
+			</LandingSection>
+			<LandingSection>
+				<h2 className="leading-fluid-1 text-fluid-1 mb-6">What we do</h2>
+				<div className="flex flex-row justify-stretch gap-3 flex-wrap">
+					<ServiceChip>
+						Product Feasbility <br /> & Workshops
+					</ServiceChip>
+					<ServiceChip>
+						Design <br /> & Engineering
+					</ServiceChip>
+					<ServiceChip>
+						Branding <br />& Marketing
+					</ServiceChip>
+					<ServiceChip>
+						Events <br />& Experienes
+					</ServiceChip>
+					<ServiceChip>
+						Social Media <br />& Community
+					</ServiceChip>
 				</div>
-			</GradialCard>
-			<GradialCard className="from-slate-200 to-white">
-				<p className="text-primary text-lg md:text-4xl w-[90%] font-thin">
-					We partner with clients across communications, brand design and
-					consulting, experience design, technology strategy and engineering,
-					media planning and buying, and relationship design.
-					{/* See how we can help */}
-				</p>
-			</GradialCard>
+			</LandingSection>
+			<LandingSection>
+				<h2 className="leading-fluid-1 text-fluid-1 mb-4">Who we are</h2>
+				<div className="flex flex-col md:flex-row-reverse">
+					<Image
+						alt=""
+						height={200}
+						width={1200}
+						src="https://assets-global.website-files.com/5bff8886c3964a992e90d465/5c00621b7aefa4f9ee0f4303_wide-shot.svg"
+						className="md:w-1/2"
+						style={{
+							willChange: "transform",
+							transform:
+								"translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)",
+							transformStyle: "preserve-3d",
+						}}
+					/>
+					<p className="text-lg font-light text-pretty">
+						We're a diverse team of international designers and technologists
+						using
+						<span className="italic underline mx-1 underline-offset-4">
+							humanity-centered design
+						</span>
+						and data science to produce effective solutions to sticky problems.
+					</p>
+				</div>
+			</LandingSection>
 		</div>
 	);
 }
