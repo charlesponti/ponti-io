@@ -79,7 +79,7 @@ export default function RootLayout({
 					<a className="btn-ghost p-2 text-2xl md:text-lg z-10" href="/">
 						Ponti Studios
 					</a>
-					<span className="text-sm font-thin pl-2 md:pl-0 z-10">
+					<span className="text-xs font-medium text-gray-400 pl-2 md:pl-0 z-10">
 						Based in Los Angeles, CA, USA
 					</span>
 				</nav>
