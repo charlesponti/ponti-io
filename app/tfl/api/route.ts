@@ -1,5 +1,5 @@
-import * as xml2js from "xml2js";
 import type { Camera, CameraResponse } from "@/utils/types";
+import * as xml2js from "xml2js";
 
 export async function GET() {
 	const response = await fetch(
