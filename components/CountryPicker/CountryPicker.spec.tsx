@@ -1,5 +1,5 @@
-import renderWithProviders from "@/tests/testUtils";
-import { beforeEach, describe, expect, type Mock, test, vi } from "vitest";
+import renderWithProviders from "@/tests/test.utils";
+import { beforeEach, describe, expect, test, vi, type Mock } from "vitest";
 
 import CountryPicker from ".";
 
