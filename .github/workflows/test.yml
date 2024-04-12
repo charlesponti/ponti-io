@@ -28,6 +28,6 @@ jobs:
         run: npm run test
 
       - name: Upload coverage
-        uses: codecov/codecov-action@v4
-        with:
-          fail_ci_if_error: true
+        uses: codecov/codecov-action@v4.2.0
+        env:
+      	  CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
