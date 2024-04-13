@@ -1,4 +1,4 @@
-name: Test
+name: code-quality
 
 on:
   push:
@@ -7,7 +7,7 @@ on:
     branches: [main]
 
 jobs:
-  Test:
+  code-quality:
     runs-on: ubuntu-latest
 
     steps:
