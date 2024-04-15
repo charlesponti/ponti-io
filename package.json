@@ -8,7 +8,7 @@
 		"commit": "cz",
 		"deploy": "npm run pages:build && wrangler pages deploy .vercel/output/static --project-name theponti",
 		"dev": "next dev --turbo",
-		"format": "npx biome lint src --apply && npx biome format --write src",
+		"format": "npx biome lint src --apply --no-errors-on-unmatched && npx biome format --write src",
 		"lint": "run-p run-tsc run-lint run-stylelint",
 		"pages:build": "npx @cloudflare/next-on-pages",
 		"prepare": "husky install",
@@ -93,11 +93,11 @@
 	},
 	"lint-staged": {
 		"**/*.{js,jsx,ts,tsx}": [
-			"biome lint --apply",
+			"biome lint --apply --no-errors-on-unmatched",
 			"biome format --write"
 		],
 		"**/*.{json,css,scss,md}": [
-			"biome lint --apply",
+			"biome lint --apply --no-errors-on-unmatched",
 			"biome format --write"
 		]
 	}
