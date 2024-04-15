@@ -6,10 +6,13 @@
 		"indentWidth": 2,
 		"lineWidth": 80,
 		"lineEnding": "lf",
-		"ignore": []
+		"ignore": ["app/tfl/api/*.json"]
 	},
 	"linter": {
-		"ignore": ["app/tfl/api/cameras.json"],
+		"ignore": [
+			"app/tfl/api/cameras.json",
+			"app/tfl/api/cameras-formatted.json"
+		],
 		"rules": {
 			"suspicious": {
 				"noExplicitAny": "off"
