@@ -1,36 +1,36 @@
-import type { Camera, CameraResponse } from "@/utils/types";
-import * as xml2js from "xml2js";
+import type { BaseCamera, Cameras, PropertyKey } from "@/app/tfl/types";
+import cameras from "./cameras.json";
 
-export async function GET() {
-	const response = await fetch(
-		"https://www.tfl.gov.uk/cdn/static/cms/documents/camera-list.xml",
-		{
-			headers: {
-				"Content-Type": "application/xml",
+type Properties = {
+	[PropertyKey.available]: string;
+	[PropertyKey.videoUrl]: string;
+	[PropertyKey.view]: string;
+	[PropertyKey.imageUrl]: string;
+};
+
+export async function GET(): Promise<Response> {
+	const formattedCameras: Cameras = (cameras as BaseCamera[]).map((camera) => {
+		const properties = camera.additionalProperties.reduce(
+			(acc: { [key: string]: string }, property) => {
+				acc[property.key] = property.value;
+				return acc;
 			},
-		},
-	);
-	const text: CameraResponse = await xml2js.parseStringPromise(
-		await response.text(),
-	);
+			{},
+		) as Properties;
+
+		return {
+			commonName: camera.commonName,
+			lat: camera.lat,
+			lng: camera.lon,
+			id: camera.id,
+			available: properties.available,
+			videoUrl: properties.videoUrl,
+			view: properties.view,
+			imageUrl: properties.imageUrl,
+		};
+	});
 
 	return Response.json({
-		cameras: text.syndicatedFeed.cameraList[0].camera.map<Camera>((camera) => {
-			return {
-				id: camera.$.id,
-				available: camera.$.available,
-				captureTime: camera.captureTime[0],
-				corridor: camera.corridor[0],
-				currentView: camera.currentView[0],
-				easting: camera.easting[0],
-				file: camera.file[0],
-				lat: camera.lat[0],
-				lng: camera.lng[0],
-				location: camera.location[0],
-				northing: camera.northing[0],
-				osgr: camera.osgr[0],
-				postCode: camera.postCode[0],
-			};
-		}),
+		cameras: formattedCameras,
 	});
 }
