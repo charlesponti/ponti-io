@@ -83,7 +83,7 @@ export default function RootLayout({
 						Based in Los Angeles, CA, USA
 					</span>
 				</nav>
-				<main className="flex flex-col justify-between items-center">
+				<main className="flex flex-col justify-between items-center h-[calc(100vh-80px)]">
 					<Providers>{children}</Providers>
 				</main>
 			</body>

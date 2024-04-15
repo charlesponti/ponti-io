@@ -9,6 +9,7 @@
 		"ignore": []
 	},
 	"linter": {
+		"ignore": ["app/tfl/api/cameras.json"],
 		"rules": {
 			"suspicious": {
 				"noExplicitAny": "off"
