@@ -7,9 +7,12 @@ env:
   NEXT_PUBLIC_GOOGLE_MAPS_API_KEY: ${{ secrets.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY }}
 
 on:
-  push:
-    branches-ignore:
-      - main
+  workflow_run:
+    workflows: ["code-quality"]
+    branches-ignore: [main]
+    types: 
+      - completed
+
 jobs:
   Deploy-Preview:
     runs-on: ubuntu-latest
