@@ -1,8 +1,6 @@
 name: 🚀 Deployment - Production
 
 env:
-  VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
-  VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
   NEXT_PUBLIC_GOOGLE_MAPS_API_KEY: ${{ secrets.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY }}
 
 on:
@@ -29,7 +27,7 @@ jobs:
         run: npm install
 
       - name: Build
-        run: npm run build
+        run: npm run build:pages
 
       - name: Publish to Cloudflare Pages
         uses: cloudflare/pages-action@v1
@@ -37,5 +35,5 @@ jobs:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           projectName: ponti-io
-          directory: apps/web/build
+          directory: .vercel/output/static
           wranglerVersion: '3'
