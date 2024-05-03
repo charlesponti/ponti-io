@@ -12,22 +12,74 @@ const LandingSection = ({ children }: PropsWithChildren) => (
 	</div>
 );
 
+const BrandsWeWorkWith = () => (
+	<LandingSection>
+		<h2 className="leading-fluid-1 text-fluid-1 mb-6">Past clients</h2>
+		<div className="flex flex-row justify-evenly gap-3 flex-wrap">
+			<Image
+				alt=""
+				className="h-32 w-44 grayscale"
+				height={25}
+				width={150}
+				src="/images/companies/streamyard.jpeg"
+			/>
+			<Image
+				alt=""
+				className="h-32 w-32 grayscale"
+				height={25}
+				width={150}
+				src="/images/companies/kensho.jpg"
+			/>
+			<Image
+				alt=""
+				className="h-32 w-32 grayscale rounded-xl"
+				height={50}
+				width={200}
+				src="/images/companies/humana.jpg"
+			/>
+			<Image
+				alt=""
+				className="h-32 w-32 grayscale rounded-xl"
+				height={50}
+				width={200}
+				src="/images/companies/mimecast.jpg"
+			/>
+			<Image
+				alt=""
+				className="h-32 w-32 grayscale rounded-xl"
+				height={50}
+				width={200}
+				src="/images/companies/thomson-reuters.jpg"
+			/>
+			<Image
+				alt=""
+				className="h-32 w-32 grayscale rounded-xl"
+				height={50}
+				width={200}
+				src="/images/companies/your-logo.jpg"
+			/>
+		</div>
+	</LandingSection>
+);
+
 export default function Home() {
 	return (
 		<div className="container flex flex-col items-center w-full max-w-[1200px] mt-12 mb-24">
 			<LandingSection>
 				<h2 className="font-display font-semibold text-4xl leading-[1.15] text-balance text-black sm:text-6xl sm:leading-[1.15] mb-6 md:text-center">
-					Lovable technology for humans.
+					Lovable technology for <span className="text-purple-400">humans</span>
+					.
 				</h2>
-				<p className="font-light text-lg text-gray-600 sm:text-xl md:text-2xl md:text-center">
-					Build, scale, and grow your dreams.
-				</p>
+				{/* <p className="font-light text-lg text-gray-600 sm:text-xl md:text-2xl md:text-center">
+					We build, scale, and grow lovable technlogy.
+				</p> */}
 			</LandingSection>
+			<BrandsWeWorkWith />
 			<LandingSection>
-				<h2 className="leading-fluid-1 text-fluid-1 mb-6">What we do</h2>
+				<h2 className="leading-fluid-1 text-fluid-1 mb-6">Services</h2>
 				<div className="flex flex-row justify-stretch gap-3 flex-wrap">
 					<ServiceChip>
-						Product Feasbility <br /> & Workshops
+						Product Management <br />& Strategy
 					</ServiceChip>
 					<ServiceChip>
 						Design <br /> & Engineering
