@@ -75,13 +75,18 @@ export default function RootLayout({
 			</Head>
 			<body className={inter.className}>
 				<GradientBackground />
-				<nav className="navbar flex flex-col md:flex-row items-start md:items-center md:justify-between font-semibold shadow-md w-full px-4 py-6 bg-white bg-opacity-95">
-					<a className="btn-ghost text-2xl md:text-lg z-10" href="/">
-						Ponti Studios
-					</a>
-					<span className="text-xs font-medium text-gray-400 z-10">
-						Based in Los Angeles, CA, USA
-					</span>
+				<nav className="navbar fixed top-0 z-50 flex flex-col md:flex-row items-start justify-center font-semibold w-full ">
+					<div className="flex justify-between max-w-[1200px] w-full px-4 py-6 border-2 bg-white">
+						<a
+							className="btn-ghost font-serif italic tracking-tighter text-lime-600 text-2xl md:text-lg z-10"
+							href="/"
+						>
+							Ponti Studios
+						</a>
+						<span className="text-xs font-medium text-gray-400 z-10">
+							Based in Los Angeles, CA, USA
+						</span>
+					</div>
 				</nav>
 				<main className="z-10 relative flex flex-col justify-between items-center h-[calc(100vh-80px)]">
 					<Providers>{children}</Providers>
