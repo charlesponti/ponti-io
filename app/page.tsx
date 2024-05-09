@@ -12,9 +12,8 @@ export default function Home() {
 					<br /> <span className="text-gray-400 font-light"> for humans. </span>
 				</h2>
 			</section>
-			<BrandsWeWorkWith />
-			<LandingSection>
-				<h2 className="leading-fluid-1 text-fluid-1 mb-6">Services</h2>
+			<section className="flex flex-col w-full mt-28 mb-14">
+				<SectionTitle>What we do</SectionTitle>
 				<div className="flex flex-row justify-stretch gap-3 flex-wrap">
 					<ServiceChip>
 						Product Management <br />& Strategy
@@ -32,9 +31,10 @@ export default function Home() {
 						Social Media <br />& Community
 					</ServiceChip>
 				</div>
-			</LandingSection>
+			</section>
+			<BrandsWeWorkWith />
 			<LandingSection>
-				<h2 className="leading-fluid-1 text-fluid-1 mb-4">Who we are</h2>
+				<SectionTitle>Who we are</SectionTitle>
 				<div className="flex flex-col md:flex-row-reverse">
 					<Image
 						alt=""
@@ -69,11 +69,15 @@ const LandingSection = ({ children }: PropsWithChildren) => (
 	</div>
 );
 
+const SectionTitle = ({ children }: PropsWithChildren) => (
+	<h2 className="text-3xl font-serif tracking-tight italic mb-4 text-gray-400">
+		{children}
+	</h2>
+);
+
 const BrandsWeWorkWith = () => (
-	<section className="mt-10">
-		<h2 className="text-3xl italic mb-2 text-gray-400 font-semibold">
-			Past clients
-		</h2>
+	<section className="flex flex-col w-full mt-10">
+		<SectionTitle>Who we've worked with</SectionTitle>
 		<div className="flex flex-row justify-stretch gap-3 flex-wrap">
 			<Image
 				alt=""
