@@ -1,79 +1,17 @@
 import Image from "next/image";
 import type { PropsWithChildren } from "react";
 
-const ServiceChip = ({ children }: PropsWithChildren) => (
-	<p className="card bg-white border-blue-400 border-2 rounded-xl text-lg flex-1 flex justify-center min-h-[110px] min-w-[200px] bg-opacity-20">
-		{children}
-	</p>
-);
-const LandingSection = ({ children }: PropsWithChildren) => (
-	<div className="flex flex-col w-full max-w-[1200px] px-4 my-20 md:my-32 text-pretty z-10">
-		{children}
-	</div>
-);
-
-const BrandsWeWorkWith = () => (
-	<LandingSection>
-		<h2 className="leading-fluid-1 text-fluid-1 mb-6">Past clients</h2>
-		<div className="flex flex-row justify-evenly gap-3 flex-wrap">
-			<Image
-				alt=""
-				className="h-32 w-44 grayscale"
-				height={25}
-				width={150}
-				src="/images/companies/streamyard.jpeg"
-			/>
-			<Image
-				alt=""
-				className="h-32 w-32 grayscale"
-				height={25}
-				width={150}
-				src="/images/companies/kensho.jpg"
-			/>
-			<Image
-				alt=""
-				className="h-32 w-32 grayscale rounded-xl"
-				height={50}
-				width={200}
-				src="/images/companies/humana.jpg"
-			/>
-			<Image
-				alt=""
-				className="h-32 w-32 grayscale rounded-xl"
-				height={50}
-				width={200}
-				src="/images/companies/mimecast.jpg"
-			/>
-			<Image
-				alt=""
-				className="h-32 w-32 grayscale rounded-xl"
-				height={50}
-				width={200}
-				src="/images/companies/thomson-reuters.jpg"
-			/>
-			<Image
-				alt=""
-				className="h-32 w-32 grayscale rounded-xl"
-				height={50}
-				width={200}
-				src="/images/companies/your-logo.jpg"
-			/>
-		</div>
-	</LandingSection>
-);
-
 export default function Home() {
 	return (
-		<div className="container flex flex-col items-center w-full max-w-[1200px] mt-12 mb-24">
-			<LandingSection>
-				<h2 className="font-display font-semibold text-4xl leading-[1.15] text-balance text-black sm:text-6xl sm:leading-[1.15] mb-6 md:text-center">
-					Lovable technology for <span className="text-purple-400">humans</span>
-					.
+		<div className="container flex flex-col items-center w-full max-w-[1200px] mb-24 lg:border-x-2 px-2 md:px-8">
+			<section className="flex items-center justify-center max-h-[500px] min-h-[500px] h-[calc(100vh-300px)] mt-8">
+				<h2 className="text-balance font-serif text-black text-[60px] leading-[75px] md:text-[100px] md:leading-[95px] mb-6 md:text-center">
+					<i className="font-serif font-medium tracking-tighter">
+						Lovable technology
+					</i>{" "}
+					<br /> <span className="text-gray-400 font-light"> for humans. </span>
 				</h2>
-				{/* <p className="font-light text-lg text-gray-600 sm:text-xl md:text-2xl md:text-center">
-					We build, scale, and grow lovable technlogy.
-				</p> */}
-			</LandingSection>
+			</section>
 			<BrandsWeWorkWith />
 			<LandingSection>
 				<h2 className="leading-fluid-1 text-fluid-1 mb-6">Services</h2>
@@ -124,3 +62,67 @@ export default function Home() {
 		</div>
 	);
 }
+
+const LandingSection = ({ children }: PropsWithChildren) => (
+	<div className="flex flex-col w-full my-20 md:my-32 text-pretty z-10">
+		{children}
+	</div>
+);
+
+const BrandsWeWorkWith = () => (
+	<section className="mt-10">
+		<h2 className="text-3xl italic mb-2 text-gray-400 font-semibold">
+			Past clients
+		</h2>
+		<div className="flex flex-row justify-stretch gap-3 flex-wrap">
+			<Image
+				alt=""
+				className="h-[150px] max-w-[175px] rounded-xl"
+				height={150}
+				width={230}
+				src="/images/companies/streamyard.jpeg"
+			/>
+			<Image
+				alt=""
+				className="h-[150px] max-w-[175px] rounded-xl"
+				height={150}
+				width={200}
+				src="/images/companies/kensho.jpg"
+			/>
+			<Image
+				alt=""
+				className="h-[150px] max-w-[175px] rounded-xl"
+				height={250}
+				width={250}
+				src="/images/companies/humana.jpg"
+			/>
+			<Image
+				alt=""
+				className="h-[150px] max-w-[175px] rounded-xl"
+				height={150}
+				width={200}
+				src="/images/companies/mimecast.jpg"
+			/>
+			<Image
+				alt=""
+				className="h-[150px] max-w-[150px] rounded-xl"
+				height={150}
+				width={200}
+				src="/images/companies/thomson-reuters.jpg"
+			/>
+			<Image
+				alt=""
+				className="h-[150px] max-w-[175px] grayscale rounded-xl"
+				height={150}
+				width={200}
+				src="/images/companies/your-logo.jpg"
+			/>
+		</div>
+	</section>
+);
+
+const ServiceChip = ({ children }: PropsWithChildren) => (
+	<p className="card bg-white border-blue-400 border-2 rounded-xl text-lg flex-1 flex justify-center min-h-[110px] min-w-[200px] bg-opacity-20">
+		{children}
+	</p>
+);
