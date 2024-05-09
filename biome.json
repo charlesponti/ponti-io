@@ -10,6 +10,7 @@
 	},
 	"linter": {
 		"ignore": [
+			".vscode",
 			"app/tfl/api/cameras.json",
 			"app/tfl/api/cameras-formatted.json"
 		],
