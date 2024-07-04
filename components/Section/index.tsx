@@ -5,3 +5,9 @@ export default function Section({ children }: React.PropsWithChildren) {
 		</div>
 	);
 }
+
+export const SectionTitle = ({ children }: React.PropsWithChildren) => (
+	<h2 className="text-3xl font-serif tracking-tight italic mb-4 text-gray-400">
+		{children}
+	</h2>
+);
