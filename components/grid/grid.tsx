@@ -1,11 +1,11 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 type GridProps = {
-  xs?: number;
-  sm?: number;
-  md?: number;
+	xs?: number;
+	sm?: number;
+	md?: number;
 };
-const Grid = styled.div<GridProps>`
+export const Grid = styled.div<GridProps>`
   display: flex;
   margin: 0 auto;
   width: 100%;
@@ -25,5 +25,3 @@ const Grid = styled.div<GridProps>`
     column-count: ${({ md }) => md};
   }
 `;
-
-export default Grid;

@@ -1,21 +1,18 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 
-import GradientBackground from "@/components/GradiantBackground";
 import Head from "next/head";
 import Providers from "../utils/Providers";
 import "./globals.css";
 
-// !STARTERCONF Change these default meta
 const defaultMeta = {
 	title: "Ponti Studios",
 	siteName: "Ponti Studios",
 	description: "The next-generation production company.",
-	// ! Do not include trailing '/' on the end, e.g. https://ponti.io
-	url: "https://ponti-io.vercel.app",
+	url: "https://ponti.io", // ! Do not include trailing '/'
 	type: "website",
 	robots: "follow, index",
-	image: "https://ponti-io.vercel.app/favicon/large-og.jpg",
+	image: "https://ponti.io/favicon/large-og.jpg",
 };
 
 const inter = Inter({ subsets: ["latin"] });
@@ -74,14 +71,16 @@ export default function RootLayout({
 				/>
 			</Head>
 			<body className={inter.className}>
-				<GradientBackground />
-				<nav className="navbar fixed top-0 z-50 flex flex-col md:flex-row items-start justify-center font-semibold w-full ">
-					<div className="flex justify-between max-w-[1200px] w-full px-4 py-6 border-2 bg-white">
+				<nav className="navbar fixed top-0 z-50 flex flex-col md:flex-row items-start justify-center font-semibold w-full">
+					<div className="flex justify-between max-w-[1200px] w-full px-4 py-6 bg-white border-2 max-[1200px]:rounded-xl">
 						<a
 							className="btn-ghost font-serif italic tracking-tighter text-lime-600 text-2xl md:text-lg z-10"
 							href="/"
 						>
-							Ponti Studios
+							<span role="img" className="mr-3">
+								👋
+							</span>
+							<span>Ponti Studios</span>
 						</a>
 						<span className="text-xs font-medium text-gray-400 z-10">
 							Based in Los Angeles, CA, USA
@@ -89,7 +88,11 @@ export default function RootLayout({
 					</div>
 				</nav>
 				<main className="z-10 relative flex flex-col justify-between items-center h-[calc(100vh-80px)]">
-					<Providers>{children}</Providers>
+					<Providers>
+						<div className="container flex flex-col w-full max-w-[1200px] mb-24 lg:border-x-2 px-4 md:px-8">
+							{children}
+						</div>
+					</Providers>
 				</main>
 			</body>
 		</html>
