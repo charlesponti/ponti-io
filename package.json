@@ -92,13 +92,9 @@
 		"wrangler": "^3.30.1"
 	},
 	"lint-staged": {
-		"**/*.{js,jsx,ts,tsx}": [
+		"**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
 			"biome lint --apply --no-errors-on-unmatched",
-			"biome format --write"
-		],
-		"**/*.{json,css,scss,md}": [
-			"biome lint --apply --no-errors-on-unmatched",
-			"biome format --write"
+			"biome format --write --no-errors-on-unmatched"
 		]
 	}
 }
