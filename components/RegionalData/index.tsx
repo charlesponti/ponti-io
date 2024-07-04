@@ -1,5 +1,5 @@
 import Card from "@/components/Card";
-import Grid from "@/components/Grid";
+import { Grid } from "@/components/grid";
 import { fetchCountryRegionalData } from "@/utils/corona.api";
 import CountUpTo from "../CountUpTo";
 

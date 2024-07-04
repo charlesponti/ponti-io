@@ -1,4 +1,4 @@
-import { SectionTitle } from "@/components/Section";
+import { SectionTitle } from "@/components/section";
 
 export const Services = () => (
 	<section className="flex flex-col w-full mt-28 mb-14">

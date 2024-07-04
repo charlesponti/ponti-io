@@ -1,0 +1,9 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Grid > should render render 1`] = `
+<div>
+  <div
+    class="sc-beySPh XziIx"
+  />
+</div>
+`;

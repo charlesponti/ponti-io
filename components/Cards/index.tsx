@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 import Card from "@/components/Card";
 import CountUpTo from "@/components/CountUpTo";
-import Grid from "@/components/Grid";
+import { Grid } from "@/components/grid";
 import { fetchCountryData, fetchData } from "@/utils/corona.api";
 import { useQuery } from "@tanstack/react-query";
 import styles from "./Cards.module.css";
