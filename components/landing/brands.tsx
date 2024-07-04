@@ -1,4 +1,4 @@
-import { SectionTitle } from "@/components/Section";
+import { SectionTitle } from "@/components/section";
 import Image from "next/image";
 
 const Brands = () => (

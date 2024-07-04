@@ -1,13 +1,13 @@
+import { useQuery } from "@tanstack/react-query";
 import type { ChangeEvent } from "react";
 import { useCallback } from "react";
 import styled from "styled-components";
 
 import FeedbackBlock from "@/components/FeedbackBlock";
-import Grid from "@/components/Grid";
+import { Grid } from "@/components/grid";
 import { BASE_URL, type CountryData } from "@/utils/corona.api";
 
-import { useQuery } from "@tanstack/react-query";
-import styles from "./CountryPicker.module.css";
+import styles from "./country-picker.module.css";
 
 const Label = styled.label`
   display: block;

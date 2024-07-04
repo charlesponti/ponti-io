@@ -1,5 +1,6 @@
-import { SectionTitle } from "@/components/Section";
 import Image from "next/image";
+
+import { SectionTitle } from "@/components/section";
 
 export const AboutUs = ({ children }: React.PropsWithChildren) => (
 	<section className="flex flex-col w-full my-20 md:my-32 text-pretty z-10">

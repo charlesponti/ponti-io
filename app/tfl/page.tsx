@@ -1,5 +1,6 @@
 "use client";
 
+import { GOOGLE_MAPS_API_KEY } from "@/utils/constant/env";
 import { useQuery } from "@tanstack/react-query";
 import {
 	APIProvider,
@@ -90,7 +91,7 @@ const TFLMap = () => {
 };
 
 export default function TFLCameras() {
-	const apiKey = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY;
+	const apiKey = GOOGLE_MAPS_API_KEY;
 
 	if (!apiKey) {
 		throw new Error("Missing Google Maps API key");

@@ -1,7 +1,7 @@
 import renderWithProviders from "@/tests/test.utils";
-import { beforeEach, describe, expect, test, vi, type Mock } from "vitest";
+import { type Mock, beforeEach, describe, expect, test, vi } from "vitest";
 
-import CountryPicker from ".";
+import CountryPicker from "./country-picker";
 
 describe("Cards", () => {
 	let onCountryChange: Mock;
