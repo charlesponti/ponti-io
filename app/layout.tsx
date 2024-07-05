@@ -71,10 +71,10 @@ export default function RootLayout({
 				/>
 			</Head>
 			<body className={inter.className}>
-				<nav className="navbar fixed top-0 z-50 flex flex-col md:flex-row items-start justify-center font-semibold w-full">
-					<div className="flex justify-between max-w-[1200px] w-full px-4 py-6 bg-white border-2 max-[1200px]:rounded-xl">
+				<nav className="navbar fixed flex justify-center top-0 z-50 w-full">
+					<div className="flex flex-col md:flex-row justify-between items-start md:items-center w-full max-w-[1200px] px-4 py-6 bg-white border-2 max-[1200px]:rounded-xl">
 						<a
-							className="btn-ghost font-serif italic tracking-tighter text-lime-600 text-2xl md:text-lg z-10"
+							className="btn-ghost font-serif font-semibold italic tracking-tighter text-lime-600 text-2xl md:text-lg"
 							href="/"
 						>
 							<span role="img" className="mr-3">
