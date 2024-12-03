@@ -72,7 +72,7 @@ export default function RootLayout({
 			</Head>
 			<body className={inter.className}>
 				<nav className="navbar fixed flex justify-center top-0 z-50 w-full">
-					<div className="flex flex-col md:flex-row justify-between items-start md:items-center w-full max-w-[1200px] px-4 py-6 bg-white border-2 max-[1200px]:rounded-xl">
+					<div className="flex flex-col md:flex-row justify-between items-start md:items-center w-full max-w-[1200px] px-4 py-6 bg-white border-2">
 						<a
 							className="btn-ghost font-serif font-semibold italic tracking-tighter text-lime-600 text-2xl md:text-lg"
 							href="/"
@@ -89,7 +89,7 @@ export default function RootLayout({
 				</nav>
 				<main className="z-10 relative flex flex-col justify-between items-center h-[calc(100vh-80px)]">
 					<Providers>
-						<div className="container flex flex-col w-full max-w-[1200px] mb-24 lg:border-x-2 px-4 md:px-8">
+						<div className="container flex flex-col flex-1 max-w-[1200px] mb-24 lg:border-2 px-4">
 							{children}
 						</div>
 					</Providers>
@@ -106,7 +106,6 @@ type Favicons = {
 	type?: string;
 };
 
-// !STARTERCONF this is the default favicon, you can generate your own from https://www.favicon-generator.org/ then replace the whole /public/favicon folder
 const favicons: Array<Favicons> = [
 	{
 		rel: "apple-touch-icon",
