@@ -28,5 +28,6 @@
 	},
 	"[typescriptreact]": {
 		"editor.defaultFormatter": "biomejs.biome"
-	}
+	},
+	"cSpell.words": ["ponti"]
 }

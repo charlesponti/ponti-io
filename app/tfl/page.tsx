@@ -35,7 +35,7 @@ const TFLMap = () => {
 	}
 
 	return (
-		<div className="relative w-full h-5/6 p-4">
+		<div className="relative w-full h-5/6 p-4 mt-24">
 			{selectedCamera && (
 				<div className="absolute bottom-[-100px] md:top-4 md:left-4 w-[calc(100%-2rem)] max-h-fit md:w-1/4 flex flex-col justify-between bg-white z-10 rounded-t-xl rounded-l-xl rounded-br-xl shadow-md">
 					<div className="relative">
