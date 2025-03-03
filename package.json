@@ -97,6 +97,5 @@
 			"biome lint --apply --no-errors-on-unmatched",
 			"biome format --write --no-errors-on-unmatched"
 		]
-	},
-	"packageManager": "yarn@1.22.22+sha1.ac34549e6aa8e7ead463a7407e1c7390f61a6610"
+	}
 }
