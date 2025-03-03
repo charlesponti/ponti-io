@@ -1,7 +1,7 @@
 import { fetchCountryRegionalData } from "@/utils/corona.api";
 import { useQuery } from "@tanstack/react-query";
 import CountUpTo from "../count-up/count-up-to";
-import styles from "./RegionalData.module.css";
+import styles from "./regional-data.module.css";
 
 interface RegionalDataProps {
 	countryCode: string;
