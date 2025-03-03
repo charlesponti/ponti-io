@@ -1,6 +1,6 @@
+import cn from "classnames";
 import type { Metadata } from "next";
-import { Figtree, Inter } from "next/font/google";
-
+import { Figtree } from "next/font/google";
 import Head from "next/head";
 import Providers from "../utils/Providers";
 import "./globals.css";
@@ -16,7 +16,6 @@ const defaultMeta = {
 };
 
 const figtree = Figtree({ subsets: ["latin"] });
-const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
 	title: "Ponti Studios",
@@ -71,7 +70,12 @@ export default function RootLayout({
 					crossOrigin="anonymous"
 				/>
 			</Head>
-			<body className={figtree.className}>
+			<body
+				className={cn(
+					figtree.className,
+					"antialiased dark:bg-black dark:text-white",
+				)}
+			>
 				<nav className="w-full navbar fixed flex justify-center top-0 z-50">
 					<div className="container mx-auto w-full flex flex-col md:flex-row justify-between items-start md:items-center px-4 md:px-8 py-4 backdrop-blur-lg bg-white/30 border border-gray/20 rounded-3xl shadow-sm">
 						<a
