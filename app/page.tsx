@@ -10,6 +10,19 @@ import { fadeInUp } from "@/utils/animations";
 import { motion } from "framer-motion";
 
 export default function Home() {
+	const scrollToSection = (
+		e: React.MouseEvent<HTMLButtonElement>,
+		id: string,
+	) => {
+		e.preventDefault();
+		const element = document.getElementById(id);
+		if (element) {
+			element.scrollIntoView({
+				behavior: "smooth",
+			});
+		}
+	};
+
 	return (
 		<div className="container px-4 mx-auto flex flex-col gap-4 min-h-screen">
 			{/* Hero Section */}
@@ -29,12 +42,13 @@ export default function Home() {
 					without the overhead of a full-time team.
 				</p>
 				<div className="flex flex-col gap-3 items-center">
-					<a
-						href="#contact"
+					<button
+						type="button"
 						className="inline-block bg-gray-900 text-white px-8 py-4 rounded-xl text-xl hover:opacity-90 transition-all hover:scale-105 shadow-lg"
+						onClick={(e) => scrollToSection(e, "contact")}
 					>
-						Schedule a Call
-					</a>
+						Get started
+					</button>
 				</div>
 			</motion.section>
 
