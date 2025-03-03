@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Figtree, Inter } from "next/font/google";
 
 import Head from "next/head";
 import Providers from "../utils/Providers";
@@ -15,6 +15,7 @@ const defaultMeta = {
 	image: "https://ponti.io/favicon/large-og.jpg",
 };
 
+const figtree = Figtree({ subsets: ["latin"] });
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -70,11 +71,11 @@ export default function RootLayout({
 					crossOrigin="anonymous"
 				/>
 			</Head>
-			<body className={inter.className}>
-				<nav className="navbar fixed flex justify-center top-0 z-50 w-full">
-					<div className="flex flex-col md:flex-row justify-between items-start md:items-center w-full max-w-[1200px] px-4 py-6 bg-white border-2">
+			<body className={figtree.className}>
+				<nav className="w-full navbar fixed flex justify-center top-0 z-50">
+					<div className="container mx-auto w-full flex flex-col md:flex-row justify-between items-start md:items-center px-4 md:px-8 py-4 backdrop-blur-lg bg-white/30 border border-gray/20 rounded-3xl shadow-sm">
 						<a
-							className="btn-ghost font-serif font-semibold italic tracking-tighter text-lime-600 text-2xl md:text-lg"
+							className="btn-ghost font-semibold tracking-tighter text-gray-900 text-2xl md:text-lg transition-all hover:opacity-70"
 							href="/"
 						>
 							<span role="img" className="mr-3">
@@ -82,17 +83,13 @@ export default function RootLayout({
 							</span>
 							<span>Ponti Studios</span>
 						</a>
-						<span className="text-xs font-medium text-gray-400 z-10">
+						<span className="text-xs font-medium text-gray-600 z-10">
 							Based in Los Angeles, CA, USA
 						</span>
 					</div>
 				</nav>
-				<main className="z-10 relative flex flex-col justify-between items-center h-[calc(100vh-80px)]">
-					<Providers>
-						<div className="container flex flex-col flex-1 max-w-[1200px] mb-24 lg:border-2 px-4">
-							{children}
-						</div>
-					</Providers>
+				<main className="z-10 relative flex flex-col justify-between items-center">
+					<Providers>{children}</Providers>
 				</main>
 			</body>
 		</html>

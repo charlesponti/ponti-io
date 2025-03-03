@@ -1,4 +1,4 @@
-import Price from "@/components/landing/Price";
+import Price from "@/components/landing/price";
 import Layout from "@/components/layout/Layout";
 
 const FEATURES = {
