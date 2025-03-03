@@ -1,5 +1,0 @@
-// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
-
-exports[`Cards > should render US data 1`] = `<div />`;
-
-exports[`Cards > should render global states 1`] = `<div />`;

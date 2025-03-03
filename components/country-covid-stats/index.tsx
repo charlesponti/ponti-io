@@ -1,13 +1,14 @@
 import CountUpTo from "@/components/count-up/count-up-to";
 import { fetchCountryData, fetchData } from "@/utils/corona.api";
 import { useQuery } from "@tanstack/react-query";
-import styles from "./Cards.module.css";
 
-type CardsProps = {
+type CountryCovidStatsProps = {
 	readonly countryCode: string;
 };
 
-function Cards({ countryCode }: CardsProps): JSX.Element | null {
+function CountryCovidStats({
+	countryCode,
+}: CountryCovidStatsProps): JSX.Element | null {
 	const { data } = useQuery({
 		queryKey: ["fetchData", countryCode],
 		queryFn: () => {
@@ -29,23 +30,23 @@ function Cards({ countryCode }: CardsProps): JSX.Element | null {
 				<div className="bg-white rounded-lg shadow-md p-6">
 					<div
 						className="grid grid-cols-1 sm:grid-cols-2 gap-4 justify-between"
-						data-testid="cards-container"
+						data-testid="country-covid-stats-container"
 					>
 						<div className="w-full text-center" data-testid="cases-card">
-							<p className={styles.cardStat}>
+							<p className="text-2xl">
 								<CountUpTo value={data.confirmed} />
 							</p>
 							<h3 className="mb-2">Cases</h3>
 						</div>
 						<div className="w-full text-center" data-testid="deaths-card">
-							<p className={styles.cardStat}>
+							<p className="text-2xl">
 								<CountUpTo value={data.deaths} />
 							</p>
 							<h3 className="mb-2">Deaths</h3>
 						</div>
 						<div
 							className="col-span-full text-center my-4"
-							data-testid="cards-summary"
+							data-testid="country-covid-stats-summary"
 						>
 							as of
 							<span className="italic ml-1.5">
@@ -59,4 +60,4 @@ function Cards({ countryCode }: CardsProps): JSX.Element | null {
 	);
 }
 
-export default Cards;
+export default CountryCovidStats;

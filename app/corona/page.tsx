@@ -1,6 +1,6 @@
 "use client";
 
-import Cards from "@/components/cards";
+import CountryCovidStats from "@/components/country-covid-stats";
 import { CountryPicker } from "@/components/country-picker";
 import FeedbackBlock from "@/components/feedback-block";
 import RegionalData from "@/components/regional-data";
@@ -43,7 +43,7 @@ function App() {
 			{!isLoading && !isError ? (
 				<>
 					<CountryPicker onChange={onCountryChange} countryCode={countryCode} />
-					<Cards countryCode={countryCode} />
+					<CountryCovidStats countryCode={countryCode} />
 					{countryCode !== "global" && (
 						<RegionalData countryCode={countryCode} />
 					)}

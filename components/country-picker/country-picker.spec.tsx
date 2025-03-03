@@ -3,7 +3,7 @@ import { type Mock, beforeEach, describe, expect, test, vi } from "vitest";
 
 import CountryPicker from "./country-picker";
 
-describe("Cards", () => {
+describe("CountryPicker", () => {
 	let onCountryChange: Mock;
 
 	beforeEach(() => {
