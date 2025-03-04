@@ -24,14 +24,14 @@ export default function Home() {
 	};
 
 	return (
-		<div className="container max-w-[850px] px-4 mx-auto flex flex-col gap-4 min-h-screen">
+		<div className="container max-w-[700px] px-4 mt-24 mx-auto flex flex-col gap-4">
 			{/* Hero Section */}
 			<motion.section
-				className="max-w-7xl mx-auto px-4 pt-32 pb-20 text-center min-h-svh flex flex-col justify-center items-center"
+				className="max-w-7xl mx-auto pt-44 pb-32 text-center flex flex-col justify-center items-center"
 				{...fadeInUp}
 			>
-				<h1 className="text-5xl lg:text-6xl mb-6 tracking-tighter bg-gradient-to-r from-gray-900 to-gray-700 text-transparent bg-clip-text">
-					Turn Your Vision Into Reality, Faster
+				<h1 className="text-5xl lg:text-6xl pb-4 tracking-tighter bg-gradient-to-r from-pink-900 to-purple-700 text-transparent bg-clip-text">
+					From Vision to Reality. <span className="italic">Fast.</span>
 				</h1>
 				<p className="text-lg lg:text-2xl text-gray-600 tracking-tighter font-light max-w-3xl mb-8">
 					Build exceptional digital products
@@ -69,7 +69,7 @@ export default function Home() {
 				<p className="text-gray-500 mb-4 text-xl">
 					READY TO TRANSFORM YOUR BUSINESS?
 				</p>
-				<h2 className="text-5xl mb-8 bg-gradient-to-r from-gray-900 to-gray-700 text-transparent bg-clip-text">
+				<h2 className="text-5xl pb-4 bg-gradient-to-r from-gray-900 to-gray-700 text-transparent bg-clip-text">
 					Let's Build Something Amazing Together
 				</h2>
 				<div className="flex flex-col items-center gap-4">
@@ -83,25 +83,6 @@ export default function Home() {
 						No commitment required • Response within 24hrs
 					</p>
 				</div>
-				{/* <!-- CTA Section --> */}
-				{/* <div className="rounded-2xl border border-gray-200 bg-gradient-to-br from-blue-50 to-indigo-100 shadow-md overflow-hidden">
-					<div className="p-8 md:p-12 text-center">
-						<h2 className="text-3xl font-semibold mb-4 text-gray-900">
-							Ready to Turn Your Vision Into Reality?
-						</h2>
-						<p className="text-gray-600 max-w-2xl mx-auto mb-8">
-							Let's discuss how our team of experts can help you build
-							exceptional digital products without the overhead of a full-time
-							team.
-						</p>
-						<a
-							href="mailto:hello@ponti.io"
-							className="inline-block px-6 py-3 bg-blue-600 text-white font-medium rounded-lg shadow-sm hover:bg-blue-700 transition"
-						>
-							Schedule a Free Consultation
-						</a>
-					</div>
-				</div> */}
 			</motion.section>
 		</div>
 	);

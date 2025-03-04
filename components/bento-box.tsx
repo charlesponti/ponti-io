@@ -4,7 +4,7 @@ interface BentoBoxProps {
 	title?: string;
 	children: React.ReactNode;
 	className?: string;
-	accent?: "lime" | "blue" | "purple" | "gray";
+	accent?: "lime" | "blue" | "purple" | "gray" | "black";
 	spotlight?: boolean;
 }
 
@@ -18,7 +18,7 @@ export function BentoBox({
 	return (
 		<div
 			className={cn(
-				"p-8 py-24 rounded-2xl border backdrop-blur-sm transition-all duration-300",
+				"p-8 py-12 rounded-2xl border backdrop-blur-sm transition-all duration-300",
 				"hover:transform hover:scale-[1.02]",
 				{
 					"bg-lime-400/5 border-lime-400/20 hover:border-lime-400/40":
@@ -29,6 +29,8 @@ export function BentoBox({
 						accent === "purple",
 					"bg-gray-300/5 border-gray-400/20 hover:border-gray-400/40":
 						accent === "gray",
+					"bg-gray-900 border-gray-900 border-opacity-80 hover:border-opacity-30 text-white":
+						accent === "black",
 					"bg-zinc-800/30 border-zinc-700/30 hover:border-zinc-600": !accent,
 				},
 				className,

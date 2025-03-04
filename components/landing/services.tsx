@@ -1,4 +1,5 @@
 import { BentoBox } from "@/components/bento-box";
+import { ArrowListItem } from "@/components/landing/arrow-list-item";
 import { fadeInUp } from "@/utils/animations";
 import { motion } from "framer-motion";
 import Image from "next/image";
@@ -41,7 +42,7 @@ export const Services = () => (
 );
 
 const ServiceChip = ({ children }: React.PropsWithChildren) => (
-	<p className="flex items-center px-4 py-2 border-2 rounded-3xl text-md font-medium bg-opacity-20 border-dashed border-gray-300">
+	<p className="flex items-center px-4 py-2 border-2 5ounded-3xl text-md font-medium border-dashed border-gray-500">
 		{children}
 	</p>
 );
@@ -49,37 +50,31 @@ const ServiceChip = ({ children }: React.PropsWithChildren) => (
 const Solutions = () => {
 	return (
 		<BentoBox title="Our services" accent="gray">
-			<div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-				<div className="p-6 rounded-xl bg-blue-50 border border-blue-100 transition hover:shadow-md">
-					<h3 className="text-xl font-medium mb-4 text-gray-900">
-						Brand & Identity
-					</h3>
-					<ul className="space-y-2 text-gray-600">
-						<li>• Logo & visual identity design</li>
-						<li>• Brand strategy & positioning</li>
-						<li>• Style guides & design systems</li>
+			<div className="grid grid-cols-1 gap-2">
+				<div className="p-6 rounded-xl border border-gray-200 transition hover:shadow-md">
+					<h3 className="text-xl font-bold mb-4">Brand & Identity</h3>
+					<ul className="space-y-2">
+						<ArrowListItem>Logo & visual identity design</ArrowListItem>
+						<ArrowListItem>Brand strategy & positioning</ArrowListItem>
+						<ArrowListItem>Style guides & design systems</ArrowListItem>
 					</ul>
 				</div>
 
-				<div className="p-6 rounded-xl bg-green-50 border border-green-100 transition hover:shadow-md">
-					<h3 className="text-xl font-medium mb-4 text-gray-900">
-						Product Development
-					</h3>
-					<ul className="space-y-2 text-gray-600">
-						<li>• MVP development & validation</li>
-						<li>• Full-stack web applications</li>
-						<li>• Mobile apps (iOS & Android)</li>
+				<div className="p-6 rounded-xl border border-green-500 transition hover:shadow-md">
+					<h3 className="text-xl font-medium mb-4">Product Development</h3>
+					<ul className="space-y-2">
+						<ArrowListItem>MVP development & validation</ArrowListItem>
+						<ArrowListItem>Full-stack web applications</ArrowListItem>
+						<ArrowListItem>Mobile apps (iOS & Android)</ArrowListItem>
 					</ul>
 				</div>
 
-				<div className="p-6 rounded-xl bg-purple-50 border border-purple-100 transition hover:shadow-md">
-					<h3 className="text-xl font-medium mb-4 text-gray-900">
-						Dedicated Teams
-					</h3>
-					<ul className="space-y-2 text-gray-600">
-						<li>• Engineering team augmentation</li>
-						<li>• Product design squads</li>
-						<li>• Technical leadership</li>
+				<div className="p-6 rounded-xl border border-purple-500 transition hover:shadow-md">
+					<h3 className="text-xl font-medium mb-4">Dedicated Teams</h3>
+					<ul className="space-y-2">
+						<ArrowListItem>Engineering team augmentation</ArrowListItem>
+						<ArrowListItem>Product design squads</ArrowListItem>
+						<ArrowListItem>Technical leadership</ArrowListItem>
 					</ul>
 				</div>
 			</div>

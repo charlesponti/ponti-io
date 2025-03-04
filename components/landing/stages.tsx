@@ -1,16 +1,7 @@
 import { BentoBox } from "@/components/bento-box";
-import {
-	ArrowRight,
-	BabyIcon,
-	LandmarkIcon,
-	LineChartIcon,
-} from "lucide-react";
+import { ArrowListItem } from "@/components/landing/arrow-list-item";
+import { BabyIcon, LandmarkIcon, LineChartIcon } from "lucide-react";
 
-const ArrowListItem = ({ children }: { children: React.ReactNode }) => (
-	<li className="flex items-center gap-2">
-		<ArrowRight size={16} /> {children}
-	</li>
-);
 export function Stages() {
 	return (
 		<BentoBox accent="gray">
@@ -18,7 +9,7 @@ export function Stages() {
 				Solutions for Every Growth Stage
 			</h2>
 
-			<div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+			<div className="grid grid-cols-1 gap-4">
 				<div className="p-6 rounded-xl bg-gradient-to-br from-lime-50 to-lime-100 border border-lime-200 transition hover:shadow-md">
 					<div className="w-12 h-12 flex items-center justify-center rounded-full bg-lime-500 text-white mb-4">
 						<BabyIcon size={24} />
@@ -57,7 +48,7 @@ export function Stages() {
 						Market Leader
 					</h3>
 					<p className="text-gray-600 mb-4">
-						Future-proof your competitive advantage with advanced innovation.
+						Future-proof your competitive advantage with on-tap innovation.
 					</p>
 					<ul className="space-y-2 text-gray-600">
 						<ArrowListItem>Enterprise integrations</ArrowListItem>

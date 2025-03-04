@@ -6,7 +6,7 @@ export const StudioProcess = () => {
 	return (
 		<motion.div className="md:col-span-4" {...fadeInUp}>
 			<BentoBox title="Our proven approach" accent="gray">
-				<div className="grid grid-cols-1 lg:grid-cols-4 gap-8 relative z-10">
+				<div className="grid grid-cols-1 lg:grid-cols-2 gap-8 relative z-10">
 					<div className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
 						<div className="w-12 h-12 flex items-center justify-center rounded-full bg-blue-600 text-white mb-4">
 							<span className="text-lg font-semibold">1</span>
