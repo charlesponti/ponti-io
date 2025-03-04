@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 const FeedbackBlock = styled.div`
   background-color: #db4e43;

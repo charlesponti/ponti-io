@@ -5,9 +5,7 @@ export default function Layout({
 }) {
 	return (
 		<div>
-			<div className="antialiased dark:bg-black dark:text-white">
-				{children}
-			</div>
+			<div className="">{children}</div>
 		</div>
 	);
 }

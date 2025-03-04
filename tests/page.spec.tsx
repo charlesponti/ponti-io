@@ -8,6 +8,6 @@ import renderWithProviders from "./test.utils";
 describe("App", () => {
 	test("renders CountryPicker after loading successfully", async () => {
 		renderWithProviders(<App />);
-		expect(await screen.findByText("US")).toBeInTheDocument();
+		expect(await screen.findByText("United States")).toBeInTheDocument();
 	});
 });

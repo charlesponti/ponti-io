@@ -1,17 +1,103 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`Cards > should render US data 1`] = `
+exports[`CountryPicker > should render US data 1`] = `
 <div>
-  <div>
-    Loading countries...
+  <div
+    class="_container_ef5ebd"
+  >
+    <label
+      class="sc-gjcoXW dAhsdb"
+      data-testid="country-picker"
+      for="country"
+    >
+      Country
+      <select
+        class="_select_ef5ebd"
+        id="country"
+      >
+        <option
+          value="global"
+        >
+          All
+        </option>
+        <option
+          value="USA"
+        >
+          United States
+        </option>
+        <option
+          value="CAN"
+        >
+          Canada
+        </option>
+        <option
+          value="CHN"
+        >
+          China
+        </option>
+        <option
+          value="ITA"
+        >
+          Italy
+        </option>
+        <option
+          value="GLB"
+        >
+          Global
+        </option>
+      </select>
+    </label>
   </div>
 </div>
 `;
 
-exports[`Cards > should render global states 1`] = `
+exports[`CountryPicker > should render global data 1`] = `
 <div>
-  <div>
-    Loading countries...
+  <div
+    class="_container_ef5ebd"
+  >
+    <label
+      class="sc-gjcoXW dAhsdb"
+      data-testid="country-picker"
+      for="country"
+    >
+      Country
+      <select
+        class="_select_ef5ebd"
+        id="country"
+      >
+        <option
+          value="global"
+        >
+          All
+        </option>
+        <option
+          value="USA"
+        >
+          United States
+        </option>
+        <option
+          value="CAN"
+        >
+          Canada
+        </option>
+        <option
+          value="CHN"
+        >
+          China
+        </option>
+        <option
+          value="ITA"
+        >
+          Italy
+        </option>
+        <option
+          value="GLB"
+        >
+          Global
+        </option>
+      </select>
+    </label>
   </div>
 </div>
 `;

@@ -1,51 +1,46 @@
-import { SectionTitle } from "@/components/section";
+import "@/styles/brands.css";
 import Image from "next/image";
 
 const Brands = () => (
-	<section className="flex flex-col w-full mt-24">
-		<SectionTitle>Who we've worked with</SectionTitle>
-		<div className="flex flex-row justify-between gap-3 flex-wrap">
+	<section className="overflow-hidden my-12">
+		<h3 className="mb-4 text-center text-gray-400">
+			Trusted by innovators and industry leaders
+		</h3>
+		<div className="flex flex-row gap-8 animate-marquee items-center">
 			<Image
 				alt=""
-				className="h-[125px] max-w-[150px] border-2 border-green-600 rounded-xl"
-				height={150}
+				className="rounded-2xl border-dashed grayscale hover:grayscale-0 transition-all border-2 border-gray-100 h-[150px] max-h-[100px] w-auto px-4"
+				height={100}
 				width={230}
 				src="/images/companies/streamyard.jpeg"
 			/>
 			<Image
 				alt=""
-				className="h-[125px] max-w-[150px] border-2 border-green-600 rounded-xl"
-				height={150}
+				className="rounded-2xl border-dashed grayscale hover:grayscale-0 transition-all border-2 border-gray-100 h-[150px] max-h-[100px] w-auto px-4"
+				height={100}
 				width={200}
 				src="/images/companies/kensho.jpg"
 			/>
 			<Image
 				alt=""
-				className="h-[125px] max-w-[150px] border-2 border-green-600 rounded-xl"
-				height={250}
+				className="rounded-2xl border-dashed grayscale hover:grayscale-0 transition-all border-2 border-gray-100 h-[150px] max-h-[100px] w-auto px-4"
+				height={100}
 				width={250}
 				src="/images/companies/humana.jpg"
 			/>
 			<Image
 				alt=""
-				className="h-[125px] max-w-[150px] border-2 border-green-600 rounded-xl"
-				height={150}
+				className="rounded-2xl border-dashed grayscale hover:grayscale-0 transition-all border-2 border-gray-100 h-[150px] max-h-[100px] w-auto px-4"
+				height={100}
 				width={200}
 				src="/images/companies/mimecast.jpg"
 			/>
 			<Image
 				alt=""
-				className="h-[125px] max-w-[140px] border-2 border-green-600 rounded-xl"
-				height={150}
+				className="rounded-2xl border-dashed grayscale hover:grayscale-0 transition-all border-2 border-gray-100 h-[150px] max-h-[100px] w-auto px-4"
+				height={100}
 				width={200}
 				src="/images/companies/thomson-reuters.jpg"
-			/>
-			<Image
-				alt=""
-				className="h-[125px] max-w-[150px] border-2 border-green-600 rounded-xl"
-				height={150}
-				width={200}
-				src="/images/companies/your-logo.jpg"
 			/>
 		</div>
 	</section>

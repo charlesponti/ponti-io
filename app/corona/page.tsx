@@ -1,15 +1,14 @@
 "use client";
 
-import { useCallback, useState } from "react";
-
-import Cards from "@/components/Cards";
-import FeedbackBlock from "@/components/FeedbackBlock";
-import RegionalData from "@/components/RegionalData";
+import CountryCovidStats from "@/components/country-covid-stats";
 import { CountryPicker } from "@/components/country-picker";
+import FeedbackBlock from "@/components/feedback-block";
+import RegionalData from "@/components/regional-data";
 import { BASE_URL } from "@/utils/corona.api";
 import { useQuery } from "@tanstack/react-query";
 import Image from "next/image";
 import Link from "next/link";
+import { useCallback, useState } from "react";
 
 function App() {
 	const [countryCode, setCountryCode] = useState<string>("global");
@@ -44,7 +43,7 @@ function App() {
 			{!isLoading && !isError ? (
 				<>
 					<CountryPicker onChange={onCountryChange} countryCode={countryCode} />
-					<Cards countryCode={countryCode} />
+					<CountryCovidStats countryCode={countryCode} />
 					{countryCode !== "global" && (
 						<RegionalData countryCode={countryCode} />
 					)}

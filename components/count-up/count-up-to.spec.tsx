@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import { describe, expect, test } from "vitest";
-import CountUpTo from "./CountUpTo";
+import CountUpTo from "./count-up-to";
 
 const delay = async (ms: number) =>
 	new Promise((resolve) => setTimeout(resolve, ms));

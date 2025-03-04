@@ -1,5 +1,4 @@
-import Price from "@/components/landing/Price";
-import Layout from "@/components/layout/Layout";
+import Price from "@/components/landing/price";
 
 const FEATURES = {
 	showPrice: false,
@@ -73,43 +72,41 @@ const ServiceCard = ({
 
 export default function Services() {
 	return (
-		<Layout>
-			<div className="layout flex min-h-screen flex-col md:w-[700px]">
-				<div className="bg-gray-100 mb-4 rounded-2xl">
-					<div className="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
-						<div className="text-center">
-							<h2 className="text-base font-semibold text-indigo-600 tracking-wide uppercase">
-								Our Services
-							</h2>
-							<p className="mt-1 text-4xl font-extrabold text-gray-900 sm:text-5xl sm:tracking-tight lg:text-6xl">
-								Choose your stage
-							</p>
-							<p className="max-w-xl mt-5 mx-auto text-xl text-gray-500">
-								Each is designed for particular stages of your product journey.
-							</p>
-							<p className="text-md text-gray-400 mt-4 md:mt-0">
-								We're currently accepting new clients, but are <b>extremely</b>{" "}
-								selective.
-							</p>
-						</div>
+		<div className="layout flex min-h-screen flex-col md:w-[700px]">
+			<div className="bg-gray-100 mb-4 rounded-2xl">
+				<div className="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
+					<div className="text-center">
+						<h2 className="text-base font-semibold text-indigo-600 tracking-wide uppercase">
+							Our Services
+						</h2>
+						<p className="mt-1 text-4xl font-extrabold text-gray-900 sm:text-5xl sm:tracking-tight lg:text-6xl">
+							Choose your stage
+						</p>
+						<p className="max-w-xl mt-5 mx-auto text-xl text-gray-500">
+							Each is designed for particular stages of your product journey.
+						</p>
+						<p className="text-md text-gray-400 mt-4 md:mt-0">
+							We're currently accepting new clients, but are <b>extremely</b>{" "}
+							selective.
+						</p>
+					</div>
 
-						<div className="mt-10">
-							<div className="flex flex-col justify-center gap-4">
-								{SERVICES.map((service) => (
-									<ServiceCard
-										key={service.name}
-										name={service.name}
-										description={service.description}
-										price={service.price}
-										pricePer={service.pricePer ? service.pricePer : ""}
-										scheduleUrl={service.scheduleUrl}
-									/>
-								))}
-							</div>
+					<div className="mt-10">
+						<div className="flex flex-col justify-center gap-4">
+							{SERVICES.map((service) => (
+								<ServiceCard
+									key={service.name}
+									name={service.name}
+									description={service.description}
+									price={service.price}
+									pricePer={service.pricePer ? service.pricePer : ""}
+									scheduleUrl={service.scheduleUrl}
+								/>
+							))}
 						</div>
 					</div>
 				</div>
 			</div>
-		</Layout>
+		</div>
 	);
 }

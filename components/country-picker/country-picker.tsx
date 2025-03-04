@@ -3,8 +3,7 @@ import type { ChangeEvent } from "react";
 import { useCallback } from "react";
 import styled from "styled-components";
 
-import FeedbackBlock from "@/components/FeedbackBlock";
-import { Grid } from "@/components/grid";
+import FeedbackBlock from "@/components/feedback-block";
 import { BASE_URL, type CountryData } from "@/utils/corona.api";
 
 import styles from "./country-picker.module.css";
@@ -40,7 +39,7 @@ function CountryPicker({
 	);
 
 	if (isLoading) {
-		return <div>Loading countries...</div>;
+		return <div data-testid="loading-countries">Loading countries...</div>;
 	}
 
 	if (isError || !countries) {
@@ -52,7 +51,7 @@ function CountryPicker({
 	}
 
 	return (
-		<Grid className={styles.container}>
+		<div className={styles.container}>
 			<Label htmlFor="country" data-testid="country-picker">
 				Country
 				<select
@@ -69,7 +68,7 @@ function CountryPicker({
 					))}
 				</select>
 			</Label>
-		</Grid>
+		</div>
 	);
 }
 
