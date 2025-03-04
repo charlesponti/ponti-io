@@ -30,9 +30,6 @@ export default function Home() {
 				className="max-w-7xl mx-auto px-4 pt-32 pb-20 text-center min-h-svh flex flex-col justify-center items-center"
 				{...fadeInUp}
 			>
-				<p className="text-gray-500 text-xl mb-4 font-medium tracking-wide">
-					TRUSTED BY INNOVATIVE TEAMS
-				</p>
 				<h1 className="text-5xl lg:text-6xl mb-6 tracking-tighter bg-gradient-to-r from-gray-900 to-gray-700 text-transparent bg-clip-text">
 					Turn Your Vision Into Reality, Faster
 				</h1>
