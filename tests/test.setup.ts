@@ -14,7 +14,8 @@ import {
 	DESKTOP_RESOLUTION_WIDTH,
 } from "./test.utils";
 
-const server = setupServer(...routeHandlers);
+// Create and export the server so it can be imported by other files
+export const server = setupServer(...routeHandlers);
 
 beforeAll(() => {
 	server.listen({ onUnhandledRequest: "error" });

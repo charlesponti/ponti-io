@@ -1,6 +1,6 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { render } from "@testing-library/react";
-import type { PropsWithChildren, ReactElement } from "react";
+import { type RenderOptions, render } from "@testing-library/react";
+import type { ReactElement, ReactNode } from "react";
 
 const queryClient = new QueryClient({
 	defaultOptions: {
@@ -17,10 +17,15 @@ export const DESKTOP_RESOLUTION_HEIGHT = 800;
 export const MOBILE_RESOLUTION_WIDTH = 414;
 export const MOBILE_RESOLUTION_HEIGHT = 896;
 
-export default function renderWithProviders(ui: ReactElement) {
-	return render(ui, {
-		wrapper: ({ children }: PropsWithChildren<unknown>): ReactElement => (
-			<QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
-		),
-	});
-}
+const AllTheProviders = ({ children }: { children: ReactNode }) => {
+	return (
+		<QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
+	);
+};
+
+const renderWithProviders = (
+	ui: ReactElement,
+	options?: Omit<RenderOptions, "wrapper">,
+) => render(ui, { wrapper: AllTheProviders, ...options });
+
+export default renderWithProviders;

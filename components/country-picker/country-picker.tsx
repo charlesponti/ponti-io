@@ -39,7 +39,7 @@ function CountryPicker({
 	);
 
 	if (isLoading) {
-		return <div>Loading countries...</div>;
+		return <div data-testid="loading-countries">Loading countries...</div>;
 	}
 
 	if (isError || !countries) {

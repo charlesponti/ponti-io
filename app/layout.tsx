@@ -2,7 +2,7 @@ import cn from "classnames";
 import type { Metadata } from "next";
 import { Figtree } from "next/font/google";
 import Head from "next/head";
-import Providers from "../utils/Providers";
+import Providers from "../components/providers";
 import "./globals.css";
 
 const defaultMeta = {
