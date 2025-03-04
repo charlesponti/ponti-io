@@ -22,8 +22,8 @@ function App() {
 	});
 
 	return (
-		<div className="flex items-center justify-center flex-col">
-			<div className="flex items-center w-full text-2xl p-4 mb-8 opacity-80">
+		<div className="mt-24 flex items-center justify-center flex-col">
+			<div className="flex justify-center items-center w-full text-2xl p-4 mb-8 opacity-80">
 				<Image
 					className="w-6 h-6 max-h-6 mr-2"
 					src="/covid@0.25x.webp"

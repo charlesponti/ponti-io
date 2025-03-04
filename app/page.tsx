@@ -24,7 +24,7 @@ export default function Home() {
 	};
 
 	return (
-		<div className="container px-4 mx-auto flex flex-col gap-4 min-h-screen">
+		<div className="container max-w-[850px] px-4 mx-auto flex flex-col gap-4 min-h-screen">
 			{/* Hero Section */}
 			<motion.section
 				className="max-w-7xl mx-auto px-4 pt-32 pb-20 text-center min-h-svh flex flex-col justify-center items-center"

@@ -10,10 +10,7 @@ import {
 
 const ClientBenefits = () => {
 	return (
-		<motion.section
-			className="max-w-7xl mx-auto px-6 py-16 space-y-24"
-			{...fadeInUp}
-		>
+		<motion.section {...fadeInUp}>
 			<BentoBox accent="gray" title="Client success stories">
 				<div className="grid grid-cols-1 md:grid-cols-2 gap-8">
 					<div className="p-6 rounded-xl border border-gray-200 bg-gray-50 transition hover:shadow-md">

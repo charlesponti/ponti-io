@@ -1,6 +1,16 @@
 import { BentoBox } from "@/components/bento-box";
-import { BabyIcon, LandmarkIcon, LineChartIcon } from "lucide-react";
+import {
+	ArrowRight,
+	BabyIcon,
+	LandmarkIcon,
+	LineChartIcon,
+} from "lucide-react";
 
+const ArrowListItem = ({ children }: { children: React.ReactNode }) => (
+	<li className="flex items-center gap-2">
+		<ArrowRight size={16} /> {children}
+	</li>
+);
 export function Stages() {
 	return (
 		<BentoBox accent="gray">
@@ -15,13 +25,12 @@ export function Stages() {
 					</div>
 					<h3 className="text-xl font-medium mb-4 text-gray-900">Startup</h3>
 					<p className="text-gray-600 mb-4">
-						Build a strong foundational MVP to validate your concept and attract
-						early users and investors.
+						Validate your concept to attract early users and investors.
 					</p>
 					<ul className="space-y-2 text-gray-600">
-						<li>• Rapid MVP development</li>
-						<li>• User testing & validation</li>
-						<li>• Investor pitch support</li>
+						<ArrowListItem>Rapid MVP development</ArrowListItem>
+						<ArrowListItem>User testing & validation</ArrowListItem>
+						<ArrowListItem>Investor pitch support</ArrowListItem>
 					</ul>
 				</div>
 
@@ -31,13 +40,12 @@ export function Stages() {
 					</div>
 					<h3 className="text-xl font-medium mb-4 text-gray-900">Growth</h3>
 					<p className="text-gray-600 mb-4">
-						Scale your product with flexible development resources to iterate
-						quickly and find market fit.
+						Scale and iterate quickly with flexible development resources.
 					</p>
 					<ul className="space-y-2 text-gray-600">
-						<li>• Feature expansion</li>
-						<li>• Performance optimization</li>
-						<li>• Analytics implementation</li>
+						<ArrowListItem>Feature expansion</ArrowListItem>
+						<ArrowListItem>Performance optimization</ArrowListItem>
+						<ArrowListItem>Analytics implementation</ArrowListItem>
 					</ul>
 				</div>
 
@@ -49,13 +57,12 @@ export function Stages() {
 						Market Leader
 					</h3>
 					<p className="text-gray-600 mb-4">
-						Maintain your competitive edge with advanced features and ongoing
-						innovation.
+						Future-proof your competitive advantage with advanced innovation.
 					</p>
 					<ul className="space-y-2 text-gray-600">
-						<li>• Enterprise integrations</li>
-						<li>• Advanced security measures</li>
-						<li>• Custom feature development</li>
+						<ArrowListItem>Enterprise integrations</ArrowListItem>
+						<ArrowListItem>Advanced security measures</ArrowListItem>
+						<ArrowListItem>Custom feature development</ArrowListItem>
 					</ul>
 				</div>
 			</div>
