@@ -4,7 +4,6 @@ import { useCallback } from "react";
 import styled from "styled-components";
 
 import FeedbackBlock from "@/components/feedback-block";
-import { BASE_URL, type CountryData } from "@/utils/corona.api";
 
 import styles from "./country-picker.module.css";
 
@@ -13,6 +12,11 @@ const Label = styled.label`
   font-weight: 600;
   width: 100%;
 `;
+
+type Country = {
+	name: string;
+	code: string;
+};
 
 type CountryPickerProps = {
 	readonly onChange: (val: string) => void;
@@ -26,9 +30,10 @@ function CountryPicker({
 		data: countries,
 		isLoading,
 		isError,
-	} = useQuery<CountryData[]>({
+		error,
+	} = useQuery<Country[]>({
 		queryKey: ["countries"],
-		queryFn: () => fetch(`${BASE_URL}/countries`).then((res) => res.json()),
+		queryFn: () => fetch("/api/countries").then((res) => res.json()),
 	});
 
 	const onSelectChange = useCallback(
@@ -38,14 +43,15 @@ function CountryPicker({
 		[onChange],
 	);
 
+	console.log({ isLoading, isError, error, countries });
 	if (isLoading) {
 		return <div data-testid="loading-countries">Loading countries...</div>;
 	}
 
-	if (isError || !countries) {
+	if (isError) {
 		return (
 			<FeedbackBlock>
-				<p>Unable to load countries</p>
+				<p>Unable to load countries {error.message}</p>
 			</FeedbackBlock>
 		);
 	}
@@ -61,8 +67,8 @@ function CountryPicker({
 					value={countryCode}
 				>
 					<option value="global">All</option>
-					{countries.map((country) => (
-						<option key={country.name} value={country.iso3}>
+					{countries?.map((country) => (
+						<option key={country.name} value={country.code}>
 							{country.name}
 						</option>
 					))}

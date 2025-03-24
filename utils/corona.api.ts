@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export const BASE_URL = "https://covid19.mathdro.id/api";
+export const BASE_URL = "https://covid.ponti.io/api";
 
 export interface RegionData {
 	confirmed: number;

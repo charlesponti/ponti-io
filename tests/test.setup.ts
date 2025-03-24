@@ -1,24 +1,21 @@
+import { server } from "@/tests/test.server";
 import "@testing-library/jest-dom";
 import { cleanup } from "@testing-library/react";
 import mediaQuery from "css-mediaquery";
-import { setupServer } from "msw/node";
 import { afterAll, afterEach, beforeAll, beforeEach, vi } from "vitest";
 import "whatwg-fetch";
-
-// Allow router mocks.
-vi.mock("next/navigation", () => require("next-router-mock"));
-
-import routeHandlers from "@/tests/route-handlers";
 import {
 	DESKTOP_RESOLUTION_HEIGHT,
 	DESKTOP_RESOLUTION_WIDTH,
 } from "./test.utils";
 
-// Create and export the server so it can be imported by other files
-export const server = setupServer(...routeHandlers);
+// Allow router mocks.
+vi.mock("next/navigation", () => require("next-router-mock"));
 
 beforeAll(() => {
-	server.listen({ onUnhandledRequest: "error" });
+	server.use();
+	// Change to warn temporarily for debugging
+	server.listen({ onUnhandledRequest: "warn" });
 	Object.defineProperty(window, "matchMedia", {
 		writable: true,
 		value: (query: string) => {

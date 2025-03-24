@@ -17,15 +17,19 @@ export const DESKTOP_RESOLUTION_HEIGHT = 800;
 export const MOBILE_RESOLUTION_WIDTH = 414;
 export const MOBILE_RESOLUTION_HEIGHT = 896;
 
-const AllTheProviders = ({ children }: { children: ReactNode }) => {
-	return (
-		<QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
-	);
-};
-
 const renderWithProviders = (
 	ui: ReactElement,
 	options?: Omit<RenderOptions, "wrapper">,
-) => render(ui, { wrapper: AllTheProviders, ...options });
+) =>
+	render(ui, {
+		wrapper: ({ children }: { children: ReactNode }) => {
+			return (
+				<QueryClientProvider client={queryClient}>
+					{children}
+				</QueryClientProvider>
+			);
+		},
+		...options,
+	});
 
 export default renderWithProviders;
