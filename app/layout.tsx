@@ -73,7 +73,7 @@ export default function RootLayout({
 			<body
 				className={cn(
 					figtree.className,
-					"antialiased dark:bg-black dark:text-white",
+					"antialiased dark:bg-black dark:text-white min-w-full",
 				)}
 			>
 				<nav className="w-full navbar fixed flex justify-center top-0 z-50">
@@ -92,7 +92,7 @@ export default function RootLayout({
 						</span>
 					</div>
 				</nav>
-				<main className="z-10 relative flex flex-col justify-between items-center">
+				<main className="z-10 relative flex flex-col justify-between items-center min-w-full">
 					<Providers>{children}</Providers>
 				</main>
 			</body>

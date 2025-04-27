@@ -18,8 +18,6 @@
 
 body {
   @apply bg-white;
-
-  height: 100vh;
 }
 
 @layer base {

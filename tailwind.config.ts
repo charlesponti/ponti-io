@@ -89,6 +89,17 @@ const config: Config = {
 				},
 			},
 			keyframes: {
+				pulse: {
+					"0%, 100%": {
+						opacity: "0.99",
+						filter:
+							"drop-shadow(0 0 1px rgba(252, 211, 77)) drop-shadow(0 0 15px rgba(245, 158, 11)) drop-shadow(0 0 1px rgba(252, 211, 77))",
+					},
+					"50%": {
+						opacity: "0.4",
+						filter: "none",
+					},
+				},
 				flicker: {
 					"0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100%": {
 						opacity: "0.99",
@@ -110,6 +121,7 @@ const config: Config = {
 				},
 			},
 			animation: {
+				pulse: "pulse 1.5s ease-in-out infinite",
 				flicker: "flicker 3s linear infinite",
 				shimmer: "shimmer 1.3s linear infinite",
 			},

@@ -1,9 +1,9 @@
 "use client";
 
-import CountryCovidStats from "@/components/country-covid-stats";
 import { CountryPicker } from "@/components/country-picker";
+import CountryCovidStats from "@/components/covid/country-data";
+import RegionalData from "@/components/covid/regional-data";
 import FeedbackBlock from "@/components/feedback-block";
-import RegionalData from "@/components/regional-data";
 import { BASE_URL } from "@/utils/corona.api";
 import { useQuery } from "@tanstack/react-query";
 import Image from "next/image";
