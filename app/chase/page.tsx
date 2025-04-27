@@ -29,7 +29,7 @@ export default function Home() {
 	}, []);
 
 	return (
-		<div className="mt-24 flex items-center justify-center min-h-screen w-full">
+		<div className="mt-24 flex items-center justify-center w-full">
 			<Head>
 				<title>Chase Ponti</title>
 				<meta name="viewport" content="width=device-width, initial-scale=1.0" />
