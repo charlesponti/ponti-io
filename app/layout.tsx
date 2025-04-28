@@ -73,13 +73,13 @@ export default function RootLayout({
 			<body
 				className={cn(
 					figtree.className,
-					"antialiased dark:bg-black dark:text-white min-w-full",
+					"antialiased bg-black text-white min-w-full",
 				)}
 			>
 				<nav className="w-full navbar fixed flex justify-center top-0 z-50">
-					<div className="container mx-auto w-full flex flex-col md:flex-row justify-between items-start md:items-center px-4 md:px-8 py-4 backdrop-blur-lg bg-white/30 border border-gray/20 rounded-3xl shadow-sm">
+					<div className="container mx-auto w-full flex flex-col md:flex-row justify-between items-start md:items-center px-4 md:px-8 py-4 backdrop-blur-lg bg-white/5 border border-white/10 rounded-3xl shadow-2xl">
 						<a
-							className="btn-ghost font-semibold tracking-tighter text-gray-900 text-2xl md:text-lg transition-all hover:opacity-70"
+							className="btn-ghost font-semibold tracking-tighter text-white text-2xl md:text-lg transition-all hover:opacity-70"
 							href="/"
 						>
 							<span role="img" className="mr-3">
@@ -87,7 +87,7 @@ export default function RootLayout({
 							</span>
 							<span>Ponti Studios</span>
 						</a>
-						<span className="text-xs font-medium text-gray-600 z-10">
+						<span className="text-xs font-medium text-gray-300 z-10">
 							Based in Los Angeles, CA, USA
 						</span>
 					</div>

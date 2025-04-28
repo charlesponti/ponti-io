@@ -7,7 +7,11 @@ import { fadeInUp } from "../../utils/animations";
 export const StudioAbout = () => {
 	return (
 		<motion.div className="md:col-span-4 h-full" {...fadeInUp}>
-			<BentoBox accent="gray" title="Why Choose Ponti Studios">
+			<BentoBox
+				accent="gray"
+				title="Why Choose Ponti Studios"
+				className="rounded-3xl bg-white/5 border border-white/10 backdrop-blur-lg shadow-2xl"
+			>
 				<div className="flex flex-col md:flex-row-reverse my-14">
 					<Image
 						alt=""
@@ -23,7 +27,7 @@ export const StudioAbout = () => {
 						}}
 					/>
 					<div className="flex flex-col justify-center md:w-1/2">
-						<p className="text-lg font-light text-pretty">
+						<p className="text-lg font-light text-gray-200 text-pretty">
 							We're a diverse team of international designers and technologists
 							using
 							<span className="italic underline mx-1 underline-offset-4">
@@ -37,26 +41,26 @@ export const StudioAbout = () => {
 				<section>
 					<div className="grid grid-cols-1 md:grid-cols-3 gap-8">
 						<div className="space-y-4">
-							<div className="w-12 h-12 flex items-center justify-center rounded-full bg-blue-100 text-blue-600">
+							<div className="w-12 h-12 flex items-center justify-center rounded-full bg-blue-600/80 text-white shadow-lg">
 								<ShieldCheck size={24} />
 							</div>
-							<h3 className="text-xl font-medium text-gray-900">
+							<h3 className="text-xl font-medium text-white drop-shadow-lg">
 								Senior Talent
 							</h3>
-							<p className="text-gray-600">
+							<p className="text-gray-200">
 								Skip the hiring process and get immediate access to seasoned
 								developers and designers with enterprise experience.
 							</p>
 						</div>
 
 						<div className="space-y-4">
-							<div className="w-12 h-12 flex items-center justify-center rounded-full bg-green-100 text-green-600">
+							<div className="w-12 h-12 flex items-center justify-center rounded-full bg-green-600/80 text-white shadow-lg">
 								<ChartNetwork />
 							</div>
-							<h3 className="text-xl font-medium text-gray-900">
+							<h3 className="text-xl font-medium text-white drop-shadow-lg">
 								Proven Process
 							</h3>
-							<p className="text-gray-600">
+							<p className="text-gray-200">
 								Our streamlined workflow ensures efficient delivery, transparent
 								communication, and predictable results.
 							</p>
@@ -64,10 +68,10 @@ export const StudioAbout = () => {
 
 						<div className="space-y-4">
 							<ChartUp />
-							<h3 className="text-xl font-medium text-gray-900">
+							<h3 className="text-xl font-medium text-white drop-shadow-lg">
 								Guaranteed Results
 							</h3>
-							<p className="text-gray-600">
+							<p className="text-gray-200">
 								We deliver high-quality products on time and within budget, with
 								performance guarantees built into every contract.
 							</p>
@@ -80,7 +84,7 @@ export const StudioAbout = () => {
 };
 
 const ChartUp = () => (
-	<div className="w-12 h-12 flex items-center justify-center rounded-full bg-purple-100 text-purple-600">
+	<div className="w-12 h-12 flex items-center justify-center rounded-full bg-gradient-to-br from-purple-400 to-purple-700 text-white shadow-lg">
 		<svg
 			role="img"
 			aria-label="line chart going up"
