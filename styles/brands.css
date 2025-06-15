@@ -13,18 +13,6 @@
   animation: marquee 10s linear infinite;
 }
 
-/* New brand section styles */
-.brands-container {
-  position: relative;
-  overflow: hidden;
-  padding: 2rem 0;
-}
-
-.brand-card {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  position: relative;
-}
-
 /* Subtle float animation for cards */
 @keyframes float {
   0% {

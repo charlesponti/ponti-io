@@ -1,12 +1,11 @@
 import { fadeInUp } from "@/utils/animations";
-import { motion } from "framer-motion";
-import Image from "next/image";
+import { type Easing, motion } from "framer-motion";
 
 // Service categories with their respective services
 const serviceCategories = [
 	{
 		title: "Brand Brilliance",
-		color: "from-rose-500 to-orange-400",
+		color: "from-rose-200 to-amber-200",
 		icon: "✨",
 		services: [
 			"Eye-catching identity design",
@@ -18,7 +17,7 @@ const serviceCategories = [
 	},
 	{
 		title: "Product Magic",
-		color: "from-emerald-500 to-teal-400",
+		color: "from-emerald-200 to-stone-300",
 		icon: "🔮",
 		services: [
 			"Vision-driven product management",
@@ -30,7 +29,7 @@ const serviceCategories = [
 	},
 	{
 		title: "Strategic Firepower",
-		color: "from-violet-500 to-purple-400",
+		color: "from-slate-200 to-amber-300",
 		icon: "🚀",
 		services: [
 			"Next-level strategy",
@@ -48,45 +47,15 @@ export const Services = () => {
 			className="relative w-full py-16 lg:py-24 overflow-hidden"
 			{...fadeInUp}
 		>
-			{/* Background design elements */}
-			<div className="absolute inset-0">
-				<div className="absolute top-0 -left-24 w-64 h-64 bg-gradient-to-br from-purple-500/20 to-transparent rounded-full blur-3xl" />
-				<div className="absolute bottom-24 -right-24 w-80 h-80 bg-gradient-to-br from-orange-500/20 to-transparent rounded-full blur-3xl" />
-			</div>
-
 			<div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 				{/* Section header */}
-				<div className="mb-16 lg:mb-24">
-					<div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-						{/* Image */}
-						<div className="lg:col-span-4">
-							<div className="flex justify-center lg:justify-start">
-								<div className="relative w-40 h-40 lg:w-48 lg:h-48">
-									<Image
-										src="/images/box.png"
-										alt="Services"
-										className="drop-shadow-2xl"
-										fill
-										style={{ objectFit: "contain" }}
-									/>
-								</div>
-							</div>
-						</div>
-
-						{/* Header text */}
-						<div className="lg:col-span-8 text-center lg:text-left">
-							<h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight max-w-2xl mx-auto lg:mx-0">
-								<span className="block text-white">Unlock Your</span>
-								<span className="bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 via-pink-400 to-purple-500">
-									Digital Potential
-								</span>
-							</h2>
-							<p className="mt-4 text-xl text-gray-300 max-w-3xl mx-auto lg:mx-0">
-								Our powerhouse services transform your vision into digital
-								excellence
-							</p>
-						</div>
-					</div>
+				<div className="space-y-4 mb-12 text-center md:text-left">
+					<h2 className="text-4xl md:text-5xl font-bold tracking-tight">
+						Transform Your Idea into Dominance
+					</h2>
+					<p className="text-gray-400 text-lg md:text-xl max-w-2xl">
+						Your vision deserves the best. We deliver.
+					</p>
 				</div>
 
 				{/* Services grid with modern hover interactions */}
@@ -126,7 +95,7 @@ const ServiceCard = ({ category, index }: ServiceCardProps) => {
 			transition: {
 				delay: i * 0.1,
 				duration: 0.5,
-				ease: "easeOut",
+				ease: "easeOut" as Easing,
 			},
 		}),
 	};
