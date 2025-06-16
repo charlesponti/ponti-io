@@ -157,7 +157,7 @@ export default function Home() {
 							</Link>
 							<Link
 								href="#"
-								className="flex items-center border-2 border-gray-200 pr-2 bg-gray-100 text-gray-600 rounded-full max-h-fit  max-w-fit"
+								className="flex items-center border-2 border-gray-200 pr-2 bg-gray-100 text-gray-600 rounded-full max-h-fit max-w-fit"
 							>
 								<span className="bg-yellow-300 px-2 py-1 rounded-full flex justify-center items-center mr-2">
 									🧸

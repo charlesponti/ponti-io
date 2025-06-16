@@ -2,6 +2,7 @@ import cn from "classnames";
 import type { Metadata } from "next";
 import { Figtree } from "next/font/google";
 import Head from "next/head";
+import { NavigationProgress } from "../components/navigation-progress";
 import Providers from "../components/providers";
 import "./globals.css";
 
@@ -76,6 +77,7 @@ export default function RootLayout({
 					"antialiased bg-black text-white min-w-full",
 				)}
 			>
+				<NavigationProgress />
 				<nav className="w-full navbar fixed flex justify-center top-0 z-50">
 					<div className="container mx-auto w-full flex flex-col md:flex-row justify-between items-start md:items-center px-4 md:px-8 py-4 backdrop-blur-lg bg-white/5 border border-white/10 rounded-3xl shadow-2xl">
 						<a

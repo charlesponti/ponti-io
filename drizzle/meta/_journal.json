@@ -1,0 +1,13 @@
+{
+	"version": "7",
+	"dialect": "sqlite",
+	"entries": [
+		{
+			"idx": 0,
+			"version": "6",
+			"when": 1748665727177,
+			"tag": "0000_orange_daredevil",
+			"breakpoints": true
+		}
+	]
+}

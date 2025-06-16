@@ -1,0 +1,504 @@
+{
+	"version": "6",
+	"dialect": "sqlite",
+	"id": "cf35455c-0e74-46ab-b9fe-5721327674f2",
+	"prevId": "00000000-0000-0000-0000-000000000000",
+	"tables": {
+		"covid_data": {
+			"name": "covid_data",
+			"columns": {
+				"id": {
+					"name": "id",
+					"type": "integer",
+					"primaryKey": true,
+					"notNull": true,
+					"autoincrement": true
+				},
+				"iso_code": {
+					"name": "iso_code",
+					"type": "text",
+					"primaryKey": false,
+					"notNull": false,
+					"autoincrement": false
+				},
+				"continent": {
+					"name": "continent",
+					"type": "text",
+					"primaryKey": false,
+					"notNull": false,
+					"autoincrement": false
+				},
+				"location": {
+					"name": "location",
+					"type": "text",
+					"primaryKey": false,
+					"notNull": false,
+					"autoincrement": false
+				},
+				"date": {
+					"name": "date",
+					"type": "text",
+					"primaryKey": false,
+					"notNull": false,
+					"autoincrement": false
+				},
+				"total_cases": {
+					"name": "total_cases",
+					"type": "real",
+					"primaryKey": false,
+					"notNull": false,
+					"autoincrement": false
+				},
+				"new_cases": {
+					"name": "new_cases",
+					"type": "real",
+					"primaryKey": false,
+					"notNull": false,
+					"autoincrement": false
+				},
+				"new_cases_smoothed": {
+					"name": "new_cases_smoothed",
+					"type": "real",
+					"primaryKey": false,
+					"notNull": false,
+					"autoincrement": false
+				},
+				"total_deaths": {
+					"name": "total_deaths",
+					"type": "real",
+					"primaryKey": false,
+					"notNull": false,
+					"autoincrement": false
+				},
+				"new_deaths": {
+					"name": "new_deaths",
+					"type": "real",
+					"primaryKey": false,
+					"notNull": false,
+					"autoincrement": false
+				},
+				"new_deaths_smoothed": {
+					"name": "new_deaths_smoothed",
+					"type": "real",
+					"primaryKey": false,
+					"notNull": false,
+					"autoincrement": false
+				},
+				"total_cases_per_million": {
+					"name": "total_cases_per_million",
+					"type": "real",
+					"primaryKey": false,
+					"notNull": false,
+					"autoincrement": false
+				},
+				"new_cases_per_million": {
+					"name": "new_cases_per_million",
+					"type": "real",
+					"primaryKey": false,
+					"notNull": false,
+					"autoincrement": false
+				},
+				"new_cases_smoothed_per_million": {
+					"name": "new_cases_smoothed_per_million",
+					"type": "real",
+					"primaryKey": false,
+					"notNull": false,
+					"autoincrement": false
+				},
+				"total_deaths_per_million": {
+					"name": "total_deaths_per_million",
+					"type": "real",
+					"primaryKey": false,
+					"notNull": false,
+					"autoincrement": false
+				},
+				"new_deaths_per_million": {
+					"name": "new_deaths_per_million",
+					"type": "real",
+					"primaryKey": false,
+					"notNull": false,
+					"autoincrement": false
+				},
+				"new_deaths_smoothed_per_million": {
+					"name": "new_deaths_smoothed_per_million",
+					"type": "real",
+					"primaryKey": false,
+					"notNull": false,
+					"autoincrement": false
+				},
+				"reproduction_rate": {
+					"name": "reproduction_rate",
+					"type": "real",
+					"primaryKey": false,
+					"notNull": false,
+					"autoincrement": false
+				},
+				"icu_patients": {
+					"name": "icu_patients",
+					"type": "real",
+					"primaryKey": false,
+					"notNull": false,
+					"autoincrement": false
+				},
+				"icu_patients_per_million": {
+					"name": "icu_patients_per_million",
+					"type": "real",
+					"primaryKey": false,
+					"notNull": false,
+					"autoincrement": false
+				},
+				"hosp_patients": {
+					"name": "hosp_patients",
+					"type": "real",
+					"primaryKey": false,
+					"notNull": false,
+					"autoincrement": false
+				},
+				"hosp_patients_per_million": {
+					"name": "hosp_patients_per_million",
+					"type": "real",
+					"primaryKey": false,
+					"notNull": false,
+					"autoincrement": false
+				},
+				"weekly_icu_admissions": {
+					"name": "weekly_icu_admissions",
+					"type": "real",
+					"primaryKey": false,
+					"notNull": false,
+					"autoincrement": false
+				},
+				"weekly_icu_admissions_per_million": {
+					"name": "weekly_icu_admissions_per_million",
+					"type": "real",
+					"primaryKey": false,
+					"notNull": false,
+					"autoincrement": false
+				},
+				"weekly_hosp_admissions": {
+					"name": "weekly_hosp_admissions",
+					"type": "real",
+					"primaryKey": false,
+					"notNull": false,
+					"autoincrement": false
+				},
+				"weekly_hosp_admissions_per_million": {
+					"name": "weekly_hosp_admissions_per_million",
+					"type": "real",
+					"primaryKey": false,
+					"notNull": false,
+					"autoincrement": false
+				},
+				"total_tests": {
+					"name": "total_tests",
+					"type": "real",
+					"primaryKey": false,
+					"notNull": false,
+					"autoincrement": false
+				},
+				"new_tests": {
+					"name": "new_tests",
+					"type": "real",
+					"primaryKey": false,
+					"notNull": false,
+					"autoincrement": false
+				},
+				"total_tests_per_thousand": {
+					"name": "total_tests_per_thousand",
+					"type": "real",
+					"primaryKey": false,
+					"notNull": false,
+					"autoincrement": false
+				},
+				"new_tests_per_thousand": {
+					"name": "new_tests_per_thousand",
+					"type": "real",
+					"primaryKey": false,
+					"notNull": false,
+					"autoincrement": false
+				},
+				"new_tests_smoothed": {
+					"name": "new_tests_smoothed",
+					"type": "real",
+					"primaryKey": false,
+					"notNull": false,
+					"autoincrement": false
+				},
+				"new_tests_smoothed_per_thousand": {
+					"name": "new_tests_smoothed_per_thousand",
+					"type": "real",
+					"primaryKey": false,
+					"notNull": false,
+					"autoincrement": false
+				},
+				"positive_rate": {
+					"name": "positive_rate",
+					"type": "real",
+					"primaryKey": false,
+					"notNull": false,
+					"autoincrement": false
+				},
+				"tests_per_case": {
+					"name": "tests_per_case",
+					"type": "real",
+					"primaryKey": false,
+					"notNull": false,
+					"autoincrement": false
+				},
+				"tests_units": {
+					"name": "tests_units",
+					"type": "text",
+					"primaryKey": false,
+					"notNull": false,
+					"autoincrement": false
+				},
+				"total_vaccinations": {
+					"name": "total_vaccinations",
+					"type": "real",
+					"primaryKey": false,
+					"notNull": false,
+					"autoincrement": false
+				},
+				"people_vaccinated": {
+					"name": "people_vaccinated",
+					"type": "real",
+					"primaryKey": false,
+					"notNull": false,
+					"autoincrement": false
+				},
+				"people_fully_vaccinated": {
+					"name": "people_fully_vaccinated",
+					"type": "real",
+					"primaryKey": false,
+					"notNull": false,
+					"autoincrement": false
+				},
+				"total_boosters": {
+					"name": "total_boosters",
+					"type": "real",
+					"primaryKey": false,
+					"notNull": false,
+					"autoincrement": false
+				},
+				"new_vaccinations": {
+					"name": "new_vaccinations",
+					"type": "real",
+					"primaryKey": false,
+					"notNull": false,
+					"autoincrement": false
+				},
+				"new_vaccinations_smoothed": {
+					"name": "new_vaccinations_smoothed",
+					"type": "real",
+					"primaryKey": false,
+					"notNull": false,
+					"autoincrement": false
+				},
+				"total_vaccinations_per_hundred": {
+					"name": "total_vaccinations_per_hundred",
+					"type": "real",
+					"primaryKey": false,
+					"notNull": false,
+					"autoincrement": false
+				},
+				"people_vaccinated_per_hundred": {
+					"name": "people_vaccinated_per_hundred",
+					"type": "real",
+					"primaryKey": false,
+					"notNull": false,
+					"autoincrement": false
+				},
+				"people_fully_vaccinated_per_hundred": {
+					"name": "people_fully_vaccinated_per_hundred",
+					"type": "real",
+					"primaryKey": false,
+					"notNull": false,
+					"autoincrement": false
+				},
+				"total_boosters_per_hundred": {
+					"name": "total_boosters_per_hundred",
+					"type": "real",
+					"primaryKey": false,
+					"notNull": false,
+					"autoincrement": false
+				},
+				"new_vaccinations_smoothed_per_million": {
+					"name": "new_vaccinations_smoothed_per_million",
+					"type": "real",
+					"primaryKey": false,
+					"notNull": false,
+					"autoincrement": false
+				},
+				"new_people_vaccinated_smoothed": {
+					"name": "new_people_vaccinated_smoothed",
+					"type": "real",
+					"primaryKey": false,
+					"notNull": false,
+					"autoincrement": false
+				},
+				"new_people_vaccinated_smoothed_per_hundred": {
+					"name": "new_people_vaccinated_smoothed_per_hundred",
+					"type": "real",
+					"primaryKey": false,
+					"notNull": false,
+					"autoincrement": false
+				},
+				"stringency_index": {
+					"name": "stringency_index",
+					"type": "real",
+					"primaryKey": false,
+					"notNull": false,
+					"autoincrement": false
+				},
+				"population_density": {
+					"name": "population_density",
+					"type": "real",
+					"primaryKey": false,
+					"notNull": false,
+					"autoincrement": false
+				},
+				"median_age": {
+					"name": "median_age",
+					"type": "real",
+					"primaryKey": false,
+					"notNull": false,
+					"autoincrement": false
+				},
+				"aged_65_older": {
+					"name": "aged_65_older",
+					"type": "real",
+					"primaryKey": false,
+					"notNull": false,
+					"autoincrement": false
+				},
+				"aged_70_older": {
+					"name": "aged_70_older",
+					"type": "real",
+					"primaryKey": false,
+					"notNull": false,
+					"autoincrement": false
+				},
+				"gdp_per_capita": {
+					"name": "gdp_per_capita",
+					"type": "real",
+					"primaryKey": false,
+					"notNull": false,
+					"autoincrement": false
+				},
+				"extreme_poverty": {
+					"name": "extreme_poverty",
+					"type": "real",
+					"primaryKey": false,
+					"notNull": false,
+					"autoincrement": false
+				},
+				"cardiovasc_death_rate": {
+					"name": "cardiovasc_death_rate",
+					"type": "real",
+					"primaryKey": false,
+					"notNull": false,
+					"autoincrement": false
+				},
+				"diabetes_prevalence": {
+					"name": "diabetes_prevalence",
+					"type": "real",
+					"primaryKey": false,
+					"notNull": false,
+					"autoincrement": false
+				},
+				"female_smokers": {
+					"name": "female_smokers",
+					"type": "real",
+					"primaryKey": false,
+					"notNull": false,
+					"autoincrement": false
+				},
+				"male_smokers": {
+					"name": "male_smokers",
+					"type": "real",
+					"primaryKey": false,
+					"notNull": false,
+					"autoincrement": false
+				},
+				"handwashing_facilities": {
+					"name": "handwashing_facilities",
+					"type": "real",
+					"primaryKey": false,
+					"notNull": false,
+					"autoincrement": false
+				},
+				"hospital_beds_per_thousand": {
+					"name": "hospital_beds_per_thousand",
+					"type": "real",
+					"primaryKey": false,
+					"notNull": false,
+					"autoincrement": false
+				},
+				"life_expectancy": {
+					"name": "life_expectancy",
+					"type": "real",
+					"primaryKey": false,
+					"notNull": false,
+					"autoincrement": false
+				},
+				"human_development_index": {
+					"name": "human_development_index",
+					"type": "real",
+					"primaryKey": false,
+					"notNull": false,
+					"autoincrement": false
+				},
+				"population": {
+					"name": "population",
+					"type": "real",
+					"primaryKey": false,
+					"notNull": false,
+					"autoincrement": false
+				},
+				"excess_mortality_cumulative_absolute": {
+					"name": "excess_mortality_cumulative_absolute",
+					"type": "real",
+					"primaryKey": false,
+					"notNull": false,
+					"autoincrement": false
+				},
+				"excess_mortality_cumulative": {
+					"name": "excess_mortality_cumulative",
+					"type": "real",
+					"primaryKey": false,
+					"notNull": false,
+					"autoincrement": false
+				},
+				"excess_mortality": {
+					"name": "excess_mortality",
+					"type": "real",
+					"primaryKey": false,
+					"notNull": false,
+					"autoincrement": false
+				},
+				"excess_mortality_cumulative_per_million": {
+					"name": "excess_mortality_cumulative_per_million",
+					"type": "real",
+					"primaryKey": false,
+					"notNull": false,
+					"autoincrement": false
+				}
+			},
+			"indexes": {},
+			"foreignKeys": {},
+			"compositePrimaryKeys": {},
+			"uniqueConstraints": {},
+			"checkConstraints": {}
+		}
+	},
+	"views": {},
+	"enums": {},
+	"_meta": {
+		"schemas": {},
+		"tables": {},
+		"columns": {}
+	},
+	"internal": {
+		"indexes": {}
+	}
+}
