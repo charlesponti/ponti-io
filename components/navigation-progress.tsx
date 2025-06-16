@@ -1,23 +1,22 @@
 "use client";
 
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useRef, useState } from "react";
 
 export function NavigationProgress() {
-	const [isLoading, setIsLoading] = useState(false);
 	const pathname = usePathname();
+	const [isLoading, setIsLoading] = useState(false);
+	const prevPathnameRef = useRef(pathname);
 
-	useEffect(() => {
-		// Show loading state immediately when pathname changes
-		setIsLoading(true);
-
-		// Hide loading state after a short delay to allow page to render
-		const timer = setTimeout(() => {
-			setIsLoading(false);
-		}, 300);
-
-		return () => clearTimeout(timer);
-	}, [pathname]); // pathname dependency is needed to trigger on route changes
+	// Check if pathname has changed
+	if (prevPathnameRef.current !== pathname) {
+		prevPathnameRef.current = pathname;
+		if (!isLoading) {
+			setIsLoading(true);
+			// Use setTimeout to reset loading state
+			setTimeout(() => setIsLoading(false), 300);
+		}
+	}
 
 	if (!isLoading) return null;
 
