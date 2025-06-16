@@ -26,6 +26,9 @@ RUN npm ci --include=dev --legacy-peer-deps
 # Copy application code
 COPY . .
 
+# Rebuild native modules for the container architecture
+RUN npm rebuild better-sqlite3
+
 # Build application
 RUN npm run build
 
