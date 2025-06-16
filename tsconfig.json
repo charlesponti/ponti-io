@@ -21,7 +21,7 @@
 		"paths": {
 			"@/*": ["./*"]
 		},
-		"types": ["@cloudflare/workers-types/2023-07-01"]
+		"types": []
 	},
 	"include": [
 		"next-env.d.ts",
@@ -30,5 +30,5 @@
 		".next/types/**/*.ts",
 		"vitest.config.mts"
 	],
-	"exclude": ["node_modules"]
+	"exclude": ["node_modules", ".next"]
 }

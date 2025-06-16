@@ -3,7 +3,7 @@ import type { CovidDataSelect } from "@/db/schema";
 import { and, eq, gte, lte, sql } from "drizzle-orm";
 import { NextResponse } from "next/server";
 
-// Force this route to use Node.js runtime (not Edge)
+// Force this route to use Node.js runtime
 export const runtime = "nodejs";
 
 export async function GET(request: Request) {

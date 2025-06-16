@@ -17,7 +17,7 @@ import {
 import { cn } from "@/lib/utils";
 import { useQuery } from "@tanstack/react-query";
 import { Check, ChevronsUpDown, Globe, Search } from "lucide-react";
-import { useCallback, useState } from "react";
+import { type ReactNode, useCallback, useState } from "react";
 
 type Country = {
 	name: string;
@@ -34,7 +34,7 @@ export function CountryPicker({
 	onChange,
 	countryCode,
 	className,
-}: CountryPickerProps): JSX.Element {
+}: CountryPickerProps): ReactNode {
 	const [open, setOpen] = useState(false);
 	const [searchValue, setSearchValue] = useState("");
 
@@ -115,7 +115,6 @@ export function CountryPicker({
 			<PopoverTrigger asChild>
 				<Button
 					variant="outline"
-					role="combobox"
 					aria-expanded={open}
 					className={cn("w-full justify-between", className)}
 				>

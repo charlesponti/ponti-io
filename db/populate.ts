@@ -4,8 +4,8 @@ import fs, { createReadStream } from "node:fs";
 import path from "node:path";
 import { Transform } from "node:stream";
 import { pipeline } from "node:stream/promises";
-import { db } from "../db/index";
-import { covidData } from "../db/schema";
+import { db } from "./index";
+import { covidData } from "./schema";
 
 // Helper function to safely parse numbers
 function safeParseNumber(value: string | null | undefined): number | null {
@@ -44,7 +44,9 @@ async function populateDatabase() {
 		let processedRows = 0;
 		let insertedRows = 0;
 		let errorCount = 0;
-		const batchSize = 10; // Reduced to accommodate SQLite's 999 variable limit with 70+ columns
+
+		// Batch size for SQLite
+		const batchSize = 10;
 		let batch: any[] = [];
 
 		// Create a transform stream to process CSV rows
@@ -179,11 +181,30 @@ async function populateDatabase() {
 
 					// Insert batch when it reaches the batch size
 					if (batch.length >= batchSize) {
-						await db.insert(covidData).values(batch);
-						insertedRows += batch.length;
-						console.log(
-							`Inserted batch of ${batch.length} records. Total processed: ${processedRows}, Total inserted: ${insertedRows}`,
-						);
+						try {
+							await db.insert(covidData).values(batch);
+							insertedRows += batch.length;
+							console.log(
+								`Inserted batch of ${batch.length} records. Total processed: ${processedRows}, Total inserted: ${insertedRows}`,
+							);
+						} catch (insertError) {
+							console.error("Error inserting batch:", insertError);
+							// Try inserting records one by one if batch fails
+							for (const record of batch) {
+								try {
+									await db.insert(covidData).values([record]);
+									insertedRows++;
+								} catch (singleError) {
+									errorCount++;
+									if (errorCount <= 10) {
+										console.warn(
+											"Failed to insert single record:",
+											singleError,
+										);
+									}
+								}
+							}
+						}
 						batch = []; // Clear the batch
 					}
 				} catch (error) {
@@ -211,9 +232,25 @@ async function populateDatabase() {
 
 		// Insert any remaining records in the final batch
 		if (batch.length > 0) {
-			await db.insert(covidData).values(batch);
-			insertedRows += batch.length;
-			console.log(`Inserted final batch of ${batch.length} records`);
+			try {
+				await db.insert(covidData).values(batch);
+				insertedRows += batch.length;
+				console.log(`Inserted final batch of ${batch.length} records`);
+			} catch (insertError) {
+				console.error("Error inserting final batch:", insertError);
+				// Try inserting records one by one if batch fails
+				for (const record of batch) {
+					try {
+						await db.insert(covidData).values([record]);
+						insertedRows++;
+					} catch (singleError) {
+						errorCount++;
+						if (errorCount <= 10) {
+							console.warn("Failed to insert single record:", singleError);
+						}
+					}
+				}
+			}
 		}
 
 		console.log("Database population complete!");
@@ -222,19 +259,18 @@ async function populateDatabase() {
 		console.log(`Error count: ${errorCount}`);
 
 		// Get some stats
-		const totalRecords = await db
-			.select({ count: sql`count(*)` })
-			.from(covidData);
+		const totalRecordsResult = await db
+			.select()
+			.from(covidData)
+			.then((rows) => rows.length);
+
 		const countries = await db
-			.select({
-				isoCode: covidData.isoCode,
-				location: covidData.location,
-			})
+			.select()
 			.from(covidData)
 			.where(sql`iso_code IS NOT NULL AND iso_code != 'OWID_WRL'`)
 			.groupBy(covidData.isoCode, covidData.location);
 
-		console.log(`Total records in database: ${totalRecords[0]?.count || 0}`);
+		console.log(`Total records in database: ${totalRecordsResult}`);
 		console.log(`Number of countries: ${countries.length}`);
 	} catch (error) {
 		console.error("Error populating database:", error);
