@@ -1,54 +1,115 @@
 # syntax = docker/dockerfile:1
 
-# Adjust NODE_VERSION as desired
-ARG NODE_VERSION=20.12.0
+# Adjust NODE_VERSION as desired - using latest LTS
+ARG NODE_VERSION=22.12.0
 FROM node:${NODE_VERSION}-slim as base
 
+# Add labels for better metadata
 LABEL fly_launch_runtime="Next.js"
+LABEL maintainer="ponti-io"
+LABEL version="1.0"
+LABEL description="Next.js application with SQLite"
 
 # Next.js app lives here
 WORKDIR /app
 
 # Set production environment
 ENV NODE_ENV="production"
+ENV NEXT_TELEMETRY_DISABLED=1
+ENV PORT=3000
+
+# Create a non-root user for security
+RUN groupadd --gid 1001 --system nodejs && \
+    useradd --uid 1001 --system --gid nodejs --create-home --shell /bin/bash nextjs
 
 # Throw-away build stage to reduce size of final image
-FROM base as build
+FROM base as deps
 
 # Install packages needed to build node modules
 RUN apt-get update -qq && \
-    apt-get install --no-install-recommends -y build-essential node-gyp pkg-config python-is-python3
+    apt-get install --no-install-recommends -y \
+        build-essential \
+        node-gyp \
+        pkg-config \
+        python-is-python3 \
+        ca-certificates && \
+    rm -rf /var/lib/apt/lists/* /var/cache/apt/archives/*
 
-# Install node modules
-COPY package-lock.json package.json ./
-RUN npm ci --include=dev --legacy-peer-deps --ignore-scripts
+# Install node modules (copy package files first for better caching)
+COPY package.json package-lock.json* ./
+RUN npm ci --include=dev --legacy-peer-deps --ignore-scripts && \
+    npm cache clean --force
+
+# Build stage
+FROM base as builder
+
+# Copy node_modules from deps stage
+COPY --from=deps /app/node_modules ./node_modules
 
 # Copy application code
 COPY . .
 
+# Install build dependencies
+RUN apt-get update -qq && \
+    apt-get install --no-install-recommends -y \
+        build-essential \
+        node-gyp \
+        pkg-config \
+        python-is-python3 && \
+    rm -rf /var/lib/apt/lists/* /var/cache/apt/archives/*
+
 # Rebuild native modules for the container architecture
 RUN npm rebuild better-sqlite3
+
+# Accept build arguments for Next.js public environment variables
+ARG NEXT_PUBLIC_GOOGLE_MAPS_API_KEY
+ARG NEXT_PUBLIC_SHOW_LOGGER=false
+ENV NEXT_PUBLIC_GOOGLE_MAPS_API_KEY=$NEXT_PUBLIC_GOOGLE_MAPS_API_KEY
+ENV NEXT_PUBLIC_SHOW_LOGGER=$NEXT_PUBLIC_SHOW_LOGGER
 
 # Build application
 RUN npm run build
 
-# Remove development dependencies
-RUN npm prune --omit=dev
+# Production stage
+FROM base as runner
 
-# Final stage for app image
-FROM base
-
-# Install packages needed for deployment
+# Install only runtime dependencies
 RUN apt-get update -qq && \
-    apt-get install --no-install-recommends -y sqlite3 && \
-    rm -rf /var/lib/apt/lists /var/cache/apt/archives
+    apt-get install --no-install-recommends -y \
+        sqlite3 \
+        ca-certificates \
+        dumb-init && \
+    rm -rf /var/lib/apt/lists/* /var/cache/apt/archives/*
 
-# Create data directory for SQLite database
-RUN mkdir -p /data && chmod 755 /data
+# Create data directory with proper permissions
+RUN mkdir -p /data && \
+    chown -R nextjs:nodejs /data && \
+    chmod 755 /data
 
-# Copy built application
-COPY --from=build /app /app
+# Don't run production as root
+USER nextjs
 
-# Start the server by default, this can be overwritten at runtime
-EXPOSE 3000
-CMD [ "npm", "start" ]
+# Copy the built application from builder stage
+COPY --from=builder --chown=nextjs:nodejs /app/public ./public
+COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
+COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
+
+# Install curl for health check
+USER root
+RUN apt-get update -qq && \
+    apt-get install --no-install-recommends -y curl && \
+    rm -rf /var/lib/apt/lists/* /var/cache/apt/archives/*
+USER nextjs
+
+# Add health check
+HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
+    CMD curl -f http://localhost:$PORT/api/health || exit 1
+
+# Expose port
+EXPOSE $PORT
+
+# Use dumb-init to handle signals properly
+ENTRYPOINT ["dumb-init", "--"]
+
+# Start the server
+CMD ["node", "server.js"]
