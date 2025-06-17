@@ -1,7 +1,7 @@
 # syntax = docker/dockerfile:1
 
 # Adjust NODE_VERSION as desired - using latest LTS
-ARG NODE_VERSION=22.12.0
+ARG NODE_VERSION=23.11-bookworm-slim
 FROM node:${NODE_VERSION}-slim as base
 
 # Add labels for better metadata
@@ -16,7 +16,6 @@ WORKDIR /app
 # Set production environment
 ENV NODE_ENV="production"
 ENV NEXT_TELEMETRY_DISABLED=1
-ENV PORT=3000
 
 # Create a non-root user for security
 RUN groupadd --gid 1001 --system nodejs && \
@@ -62,10 +61,12 @@ RUN apt-get update -qq && \
 RUN npm rebuild better-sqlite3
 
 # Accept build arguments for Next.js public environment variables
+ARG PORT=3000
 ARG NEXT_PUBLIC_GOOGLE_MAPS_API_KEY
 ARG NEXT_PUBLIC_SHOW_LOGGER=false
 ENV NEXT_PUBLIC_GOOGLE_MAPS_API_KEY=$NEXT_PUBLIC_GOOGLE_MAPS_API_KEY
 ENV NEXT_PUBLIC_SHOW_LOGGER=$NEXT_PUBLIC_SHOW_LOGGER
+ENV PORT=$PORT
 
 # Build application
 RUN npm run build
@@ -106,7 +107,7 @@ HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
     CMD curl -f http://localhost:$PORT/api/health || exit 1
 
 # Expose port
-EXPOSE $PORT
+EXPOSE ${PORT:-3000}
 
 # Use dumb-init to handle signals properly
 ENTRYPOINT ["dumb-init", "--"]
