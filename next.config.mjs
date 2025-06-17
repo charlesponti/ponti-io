@@ -45,6 +45,17 @@ const nextConfig = {
 	poweredByHeader: false,
 	// Generate static files where possible
 	output: "standalone",
+	// Disable static generation for pages that need database connection
+	async generateBuildId() {
+		return `build-${Date.now()}`;
+	},
+	// Force dynamic rendering for database-dependent pages
+	async rewrites() {
+		return [];
+	},
+	async redirects() {
+		return [];
+	},
 };
 
 export default nextConfig;

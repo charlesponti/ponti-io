@@ -58,9 +58,14 @@ RUN apt-get update -qq && \
 ARG PORT=3000
 ARG NEXT_PUBLIC_GOOGLE_MAPS_API_KEY
 ARG NEXT_PUBLIC_SHOW_LOGGER=false
+
+# Set build-time environment variables (only public ones)
 ENV NEXT_PUBLIC_GOOGLE_MAPS_API_KEY=$NEXT_PUBLIC_GOOGLE_MAPS_API_KEY
 ENV NEXT_PUBLIC_SHOW_LOGGER=$NEXT_PUBLIC_SHOW_LOGGER
 ENV PORT=$PORT
+
+# Set a placeholder DATABASE_URL for build time (won't be used during build with our lazy loading)
+ENV DATABASE_URL="postgresql://placeholder:placeholder@placeholder:5432/placeholder"
 
 # Build application
 RUN npm run build
@@ -84,6 +89,9 @@ USER nextjs
 COPY --from=builder --chown=nextjs:nodejs /app/public ./public
 COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
 COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
+
+# Unset the placeholder DATABASE_URL so the real one from runtime takes precedence
+ENV DATABASE_URL=""
 
 # Add health check
 HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \

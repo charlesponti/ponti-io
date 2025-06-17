@@ -8,39 +8,30 @@ interface CoronaDashboardPageProps {
 	};
 }
 
-// Generate static paths for all available countries
+// Generate static paths for common countries only (no database calls during build)
 export async function generateStaticParams() {
-	try {
-		const countries = await getAvailableCountries();
+	// Only generate static paths for most common countries to avoid database calls during build
+	const priorityCountries = [
+		"OWID_WRL", // World data
+		"USA",
+		"GBR",
+		"DEU",
+		"FRA",
+		"ITA",
+		"ESP",
+		"CAN",
+		"AUS",
+		"JPN",
+	];
 
-		// Generate paths for most common countries plus world data
-		const priorityCountries = [
-			"OWID_WRL",
-			"USA",
-			"GBR",
-			"DEU",
-			"FRA",
-			"ITA",
-			"ESP",
-			"CAN",
-			"AUS",
-			"JPN",
-		];
-		const uniqueCountries = Array.from(
-			new Set([...priorityCountries, ...countries]),
-		);
-
-		return uniqueCountries.slice(0, 50).map((countryCode) => ({
-			countryCode,
-		}));
-	} catch (error) {
-		console.error("Error generating static params:", error);
-		return [{ countryCode: "OWID_WRL" }];
-	}
+	return priorityCountries.map((countryCode) => ({
+		countryCode,
+	}));
 }
 
-// Enable ISR (Incremental Static Regeneration)
-export const revalidate = 3600; // Revalidate every hour
+// Enable ISR (Incremental Static Regeneration) and dynamic rendering
+export const revalidate = 3600;
+export const dynamic = "force-dynamic"; // Force dynamic rendering for database-dependent content
 
 // Generate metadata dynamically
 export async function generateMetadata({ params }: CoronaDashboardPageProps) {
@@ -97,7 +88,7 @@ export default async function CoronaDashboardPage({
 }: CoronaDashboardPageProps) {
 	const { countryCode } = await params;
 
-	// Validate country code exists
+	// Validate country code exists (only at runtime)
 	try {
 		const availableCountries = await getAvailableCountries();
 		if (
@@ -108,6 +99,7 @@ export default async function CoronaDashboardPage({
 		}
 	} catch (error) {
 		console.error("Error validating country code:", error);
+		// If validation fails, still render the page but the dashboard will handle the error
 	}
 
 	// Directly render the server component

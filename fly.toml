@@ -20,11 +20,6 @@ primary_region = "ord"
   cpu_kind = "shared"
   cpus = 1
 
-# Removed SQLite volume mount - now using PostgreSQL
-# [mounts]
-#   source = "covid_data"
-#   destination = "/data"
-
 [[services]]
   protocol = "tcp"
   internal_port = 3000

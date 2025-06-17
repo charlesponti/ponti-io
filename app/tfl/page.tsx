@@ -13,6 +13,9 @@ import { X as XIcon } from "lucide-react";
 import { useState } from "react";
 import type { Camera, Cameras } from "./types";
 
+// Force dynamic rendering for this page
+export const dynamic = "force-dynamic";
+
 const TFLMap = () => {
 	const map = useMap();
 	const google = useMapsLibrary("core");
@@ -93,8 +96,22 @@ const TFLMap = () => {
 export default function TFLCameras() {
 	const apiKey = GOOGLE_MAPS_API_KEY;
 
+	// Handle missing API key gracefully during build
 	if (!apiKey) {
-		throw new Error("Missing Google Maps API key");
+		return (
+			<div className="flex w-full h-full justify-center items-center mt-24">
+				<div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg shadow-md p-8 max-w-md mx-auto text-center">
+					<h2 className="text-2xl font-bold text-white mb-4">
+						Maps Configuration Required
+					</h2>
+					<p className="text-blue-200 mb-6">
+						Google Maps API key is required to display the TFL camera map.
+						Please configure the NEXT_PUBLIC_GOOGLE_MAPS_API_KEY environment
+						variable.
+					</p>
+				</div>
+			</div>
+		);
 	}
 
 	return (
