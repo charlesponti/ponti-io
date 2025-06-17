@@ -143,7 +143,6 @@ docs/
 .circleci/
 
 # Deployment
-fly.toml
 Dockerfile
 .dockerignore
 

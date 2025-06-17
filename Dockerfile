@@ -2,10 +2,9 @@
 FROM node:23.11-bookworm-slim AS base
 
 # Add labels for better metadata
-LABEL fly_launch_runtime="Next.js"
 LABEL maintainer="ponti-io"
 LABEL version="1.0"
-LABEL description="Next.js application with PostgreSQL"
+LABEL description="ponti-studios homepage"
 
 # Next.js app lives here
 WORKDIR /app
@@ -19,7 +18,7 @@ RUN groupadd --gid 1001 --system nodejs && \
     useradd --uid 1001 --system --gid nodejs --create-home --shell /bin/bash nextjs
 
 # Throw-away build stage to reduce size of final image
-FROM base as deps
+FROM base AS deps
 
 # Install packages needed to build node modules
 RUN apt-get update -qq && \
@@ -37,7 +36,7 @@ RUN npm ci --include=dev --legacy-peer-deps --ignore-scripts && \
     npm cache clean --force
 
 # Build stage
-FROM base as builder
+FROM base AS builder
 
 # Copy node_modules from deps stage
 COPY --from=deps /app/node_modules ./node_modules
@@ -71,7 +70,7 @@ ENV DATABASE_URL="postgresql://placeholder:placeholder@placeholder:5432/placehol
 RUN npm run build
 
 # Production stage
-FROM base as runner
+FROM base AS runner
 
 # Install runtime dependencies including PostgreSQL client
 RUN apt-get update -qq && \
