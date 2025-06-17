@@ -89,9 +89,16 @@ USER nextjs
 COPY --from=builder --chown=nextjs:nodejs /app/public ./public
 COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
 COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
+COPY --from=builder --chown=nextjs:nodejs /app/start.sh ./start.sh
+
+# Make start script executable
+RUN chmod +x ./start.sh
 
 # Unset the placeholder DATABASE_URL so the real one from runtime takes precedence
 ENV DATABASE_URL=""
+
+# Ensure Next.js binds to all interfaces
+ENV HOSTNAME="0.0.0.0"
 
 # Add health check
 HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
@@ -103,5 +110,5 @@ EXPOSE ${PORT:-3000}
 # Use dumb-init to handle signals properly
 ENTRYPOINT ["dumb-init", "--"]
 
-# Start the server
-CMD ["node", "server.js"]
+# Start the server and bind to all interfaces
+CMD ["./start.sh"]

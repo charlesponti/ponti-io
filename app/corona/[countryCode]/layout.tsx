@@ -47,7 +47,7 @@ export default async function CoronaLayout({
 	];
 
 	return (
-		<div className="pt-24 max-w-7xl mx-auto px-4">
+		<div className="pt-24 mx-auto px-4">
 			{/* Header */}
 			<div className="text-center mb-8">
 				<div className="flex justify-center items-center text-3xl font-bold text-white mb-2">

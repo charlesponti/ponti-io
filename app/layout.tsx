@@ -1,6 +1,6 @@
 import cn from "classnames";
 import type { Metadata } from "next";
-import { Figtree } from "next/font/google";
+import { Crimson_Pro, Inter } from "next/font/google";
 import Head from "next/head";
 import { NavigationProgress } from "../components/navigation-progress";
 import Providers from "../components/providers";
@@ -16,7 +16,17 @@ const defaultMeta = {
 	image: "https://ponti.io/favicon/large-og.jpg",
 };
 
-const figtree = Figtree({ subsets: ["latin"] });
+const inter = Inter({
+	subsets: ["latin"],
+	variable: "--font-inter",
+	display: "swap",
+});
+
+const crimsonPro = Crimson_Pro({
+	subsets: ["latin"],
+	variable: "--font-crimson",
+	display: "swap",
+});
 
 export const metadata: Metadata = {
 	title: "Ponti Studios",
@@ -33,7 +43,7 @@ export default function RootLayout({
 	};
 
 	return (
-		<html lang="en">
+		<html lang="en" className={`${inter.variable} ${crimsonPro.variable}`}>
 			<Head>
 				<title>{meta.title}</title>
 				<meta name="robots" content={meta.robots} />
@@ -73,15 +83,15 @@ export default function RootLayout({
 			</Head>
 			<body
 				className={cn(
-					figtree.className,
-					"antialiased bg-black text-white min-w-full",
+					inter.className,
+					"antialiased bg-charcoal-900 text-bone-100 min-w-full font-sans",
 				)}
 			>
 				<NavigationProgress />
 				<nav className="w-full navbar fixed flex justify-center top-0 z-50">
-					<div className="container mx-auto w-full flex flex-col md:flex-row justify-between items-start md:items-center px-4 md:px-8 py-4 backdrop-blur-lg bg-white/5 border border-white/10 rounded-3xl shadow-2xl">
+					<div className="container mx-auto w-full flex flex-col md:flex-row justify-between items-start md:items-center px-4 md:px-8 py-4 backdrop-blur-lg bg-charcoal-800/30 border border-sage-700/20 rounded-3xl shadow-2xl">
 						<a
-							className="btn-ghost font-semibold tracking-tighter text-white text-2xl md:text-lg transition-all hover:opacity-70"
+							className="btn-ghost font-semibold tracking-tighter text-bone-100 text-2xl md:text-lg transition-all hover:opacity-70 font-serif"
 							href="/"
 						>
 							<span role="img" className="mr-3">
@@ -89,12 +99,12 @@ export default function RootLayout({
 							</span>
 							<span>Ponti Studios</span>
 						</a>
-						<span className="text-xs font-medium text-gray-300 z-10">
+						<span className="text-xs font-medium text-sage-400 z-10">
 							Based in Los Angeles, CA, USA
 						</span>
 					</div>
 				</nav>
-				<main className="z-10 relative flex flex-col justify-between items-center min-w-full">
+				<main className="max-w-7xl mx-auto px-4 md:px-0 z-10 relative flex flex-col justify-between items-center">
 					<Providers>{children}</Providers>
 				</main>
 			</body>

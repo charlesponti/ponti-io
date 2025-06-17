@@ -4,39 +4,39 @@ import { type Easing, motion } from "framer-motion";
 // Service categories with their respective services
 const serviceCategories = [
 	{
-		title: "Brand Brilliance",
-		color: "from-rose-200 to-amber-200",
+		title: "Brand Refinement",
+		color: "from-bone-300 to-olive-200",
 		icon: "✨",
 		services: [
-			"Eye-catching identity design",
-			"Powerful brand positioning",
-			"Custom design systems",
-			"Attention-grabbing marketing",
-			"Social media that connects",
+			"Sophisticated identity design",
+			"Strategic brand positioning",
+			"Bespoke design systems",
+			"Premium marketing experiences",
+			"Curated social presence",
 		],
 	},
 	{
-		title: "Product Magic",
-		color: "from-emerald-200 to-stone-300",
-		icon: "🔮",
+		title: "Product Excellence",
+		color: "from-sage-300 to-bone-200",
+		icon: "🎯",
 		services: [
-			"Vision-driven product management",
-			"Stunning UI/UX design",
-			"Lightning-fast web apps",
-			"Mobile apps that wow",
-			"Game-changing MVPs",
+			"Visionary product strategy",
+			"Luxurious UI/UX design",
+			"Performance-driven applications",
+			"Elite mobile experiences",
+			"Distinguished MVPs",
 		],
 	},
 	{
-		title: "Strategic Firepower",
-		color: "from-slate-200 to-amber-300",
-		icon: "🚀",
+		title: "Strategic Leadership",
+		color: "from-olive-300 to-sage-200",
+		icon: "⚡",
 		services: [
-			"Next-level strategy",
-			"Expert consultation",
-			"Elite engineering teams",
-			"Visionary technical leadership",
-			"Community & event mastery",
+			"Executive-level strategy",
+			"Premium consultation services",
+			"World-class engineering teams",
+			"Innovative technical leadership",
+			"Exclusive community experiences",
 		],
 	},
 ];
@@ -47,27 +47,21 @@ export const Services = () => {
 			className="relative w-full py-16 lg:py-24 overflow-hidden"
 			{...fadeInUp}
 		>
-			<div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-				{/* Section header */}
-				<div className="space-y-4 mb-12 text-center md:text-left">
-					<h2 className="text-4xl md:text-5xl font-bold tracking-tight">
-						Transform Your Idea into Dominance
-					</h2>
-					<p className="text-gray-400 text-lg md:text-xl max-w-2xl">
-						Your vision deserves the best. We deliver.
-					</p>
-				</div>
+			{/* Section header */}
+			<div className="space-y-4 mb-12 text-center md:text-left">
+				<h2 className="text-4xl md:text-5xl font-bold tracking-tight font-serif text-bone-100">
+					Transform Vision into Excellence
+				</h2>
+				<p className="text-sage-300 text-lg md:text-xl max-w-2xl font-light">
+					Your aspirations deserve the finest craftsmanship.
+				</p>
+			</div>
 
-				{/* Services grid with modern hover interactions */}
-				<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-					{serviceCategories.map((category, index) => (
-						<ServiceCard
-							key={category.title}
-							category={category}
-							index={index}
-						/>
-					))}
-				</div>
+			{/* Services grid with modern hover interactions */}
+			<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+				{serviceCategories.map((category, index) => (
+					<ServiceCard key={category.title} category={category} index={index} />
+				))}
 			</div>
 		</motion.section>
 	);
@@ -122,7 +116,7 @@ const ServiceCard = ({ category, index }: ServiceCardProps) => {
 			variants={cardVariants}
 		>
 			{/* Card with interactive hover state */}
-			<div className="h-full bg-white/5 backdrop-filter backdrop-blur-sm hover:backdrop-blur-md border border-white/10 rounded-2xl p-6 overflow-hidden transition-all duration-500 group-hover:border-white/20 group-hover:bg-white/8 group-hover:shadow-2xl">
+			<div className="h-full bg-charcoal-800/20 backdrop-filter backdrop-blur-sm hover:backdrop-blur-md border border-sage-700/20 rounded-2xl p-6 overflow-hidden transition-all duration-500 group-hover:border-sage-600/30 group-hover:bg-charcoal-800/30 group-hover:shadow-2xl">
 				{/* Top gradient bar */}
 				<div
 					className={`h-1 w-16 bg-gradient-to-r ${color} rounded-full mb-8`}
@@ -133,7 +127,9 @@ const ServiceCard = ({ category, index }: ServiceCardProps) => {
 					<span className="text-3xl mr-4" role="img" aria-hidden="true">
 						{icon}
 					</span>
-					<h3 className="text-2xl font-bold text-white">{title}</h3>
+					<h3 className="text-2xl font-bold text-bone-100 font-serif">
+						{title}
+					</h3>
 				</div>
 
 				{/* Services list with staggered animation */}
@@ -141,7 +137,7 @@ const ServiceCard = ({ category, index }: ServiceCardProps) => {
 					{services.map((service, i) => (
 						<motion.li
 							key={service}
-							className="flex items-center text-gray-200 group-hover:text-white transition-colors duration-300"
+							className="flex items-center text-sage-300 group-hover:text-bone-200 transition-colors duration-300 font-light"
 							variants={serviceVariants}
 							custom={i}
 						>
@@ -155,7 +151,7 @@ const ServiceCard = ({ category, index }: ServiceCardProps) => {
 
 				{/* Bottom decorative element */}
 				<div
-					className={`absolute -bottom-6 -right-6 w-24 h-24 rounded-full bg-gradient-to-tl ${color} opacity-20 blur-xl group-hover:opacity-30 transition-opacity duration-500`}
+					className={`absolute -bottom-6 -right-6 w-24 h-24 rounded-full bg-gradient-to-tl ${color} opacity-10 blur-xl group-hover:opacity-20 transition-opacity duration-500`}
 				/>
 			</div>
 		</motion.div>

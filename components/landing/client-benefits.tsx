@@ -13,59 +13,59 @@ import {
 const ClientBenefits = () => {
 	const successStories = [
 		{
-			icon: <LineChart className="h-8 w-8 text-amber-400" />,
-			title: "Enterprise Platform Growth",
+			icon: <LineChart className="h-8 w-8 text-olive-400" />,
+			title: "Enterprise Platform Excellence",
 			description:
-				"Developed consumer Teams and enterprise Business plans with role-based access control and collaboration features, unlocking significant new revenue streams.",
+				"Architected premium consumer Teams and executive Business tiers featuring sophisticated role-based governance and collaboration architecture, unlocking substantial new revenue channels.",
 			quote:
-				"Ponti Studios' development work unlocked $15M+ in new ARR and drove 13% growth in our consumer user base through innovative collaboration features.",
+				"Ponti Studios' exceptional craftsmanship generated $15M+ in new ARR and propelled 13% growth in our consumer base through innovative collaboration features.",
 			client: "StreamYard",
-			borderColor: "border-amber-400/20 hover:border-amber-400/40",
-			bgColor: "bg-amber-400/10 group-hover:bg-amber-400/20",
+			borderColor: "border-olive-400/30 hover:border-olive-400/50",
+			bgColor: "bg-olive-400/10 group-hover:bg-olive-400/20",
 		},
 		{
-			icon: <Users className="h-8 w-8 text-stone-400" />,
-			title: "Creator Marketplace Platform",
+			icon: <Users className="h-8 w-8 text-sage-400" />,
+			title: "Creator Marketplace Distinction",
 			description:
-				"Designed a two-sided platform using vector-based recommendations and generative AI conversation starters to connect creators with their audience and drive engagement.",
+				"Designed an exclusive two-sided platform utilizing vector-based recommendations and generative AI conversation starters to elegantly connect creators with their distinguished audience.",
 			quote:
-				"Our platform now serves 20K+ monthly active users with a 40% increase in user engagement and 300% YoY growth in creator collaborations.",
+				"Our platform now serves over 20K monthly distinguished users with a 40% enhancement in engagement and 300% year-over-year growth in creator collaborations.",
 			client: "Collab",
-			borderColor: "border-stone-400/20 hover:border-stone-400/40",
-			bgColor: "bg-stone-400/10 group-hover:bg-stone-400/20",
+			borderColor: "border-sage-400/30 hover:border-sage-400/50",
+			bgColor: "bg-sage-400/10 group-hover:bg-sage-400/20",
 		},
 		{
-			icon: <BarChart3 className="h-8 w-8 text-emerald-400" />,
+			icon: <BarChart3 className="h-8 w-8 text-bone-400" />,
 			title: "Music Industry Innovation",
 			description:
-				"Built an end-to-end platform for independent musicians to optimize tours and finances with intelligent route planning, financial dashboards, and audience insights.",
+				"Crafted a comprehensive end-to-end platform for independent musicians to optimize touring and financial management with intelligent route planning, executive dashboards, and audience insights.",
 			quote:
-				"Revrock significantly reduced our tour costs and provided invaluable financial clarity through their comprehensive dashboards.",
+				"Revrock significantly optimized our touring expenses and provided invaluable financial clarity through their sophisticated analytical dashboards.",
 			client: "Independent Musician",
-			borderColor: "border-emerald-400/20 hover:border-emerald-400/40",
-			bgColor: "bg-emerald-400/10 group-hover:bg-emerald-400/20",
+			borderColor: "border-bone-400/30 hover:border-bone-400/50",
+			bgColor: "bg-bone-400/10 group-hover:bg-bone-400/20",
 		},
 		{
-			icon: <BadgeCheck className="h-8 w-8 text-rose-300" />,
+			icon: <BadgeCheck className="h-8 w-8 text-olive-300" />,
 			title: "Entertainment Industry Solution",
 			description:
-				"Led the development of an AI-powered application enabling Hollywood showrunners to efficiently triage writer submissions with automated data extraction and vector-based similarity search.",
+				"Led the development of an AI-powered application enabling Hollywood showrunners to efficiently curate writer submissions with automated data extraction and vector-based similarity algorithms.",
 			quote:
-				"Prolog transformed our candidate evaluation process, saving countless hours and helping us discover talented writers we might have otherwise missed.",
+				"Prolog transformed our candidate curation process, preserving countless hours and helping us discover exceptional writers we might have otherwise overlooked.",
 			client: "Hollywood Production Company",
-			borderColor: "border-rose-300/20 hover:border-rose-300/40",
-			bgColor: "bg-rose-300/10 group-hover:bg-rose-300/20",
+			borderColor: "border-olive-300/30 hover:border-olive-300/50",
+			bgColor: "bg-olive-300/10 group-hover:bg-olive-300/20",
 		},
 	];
 
 	return (
 		<motion.section className="py-24 max-w-7xl mx-auto px-4" {...fadeInUp}>
 			<div className="space-y-4 mb-12 text-center md:text-left">
-				<h2 className="text-4xl md:text-5xl font-bold tracking-tight bg-gradient-to-r from-stone-100 to-stone-400 text-transparent bg-clip-text">
-					Client Success Stories
+				<h2 className="text-4xl md:text-5xl font-bold tracking-tight bg-gradient-to-r from-bone-200 to-sage-300 text-transparent bg-clip-text font-serif">
+					Distinguished Partnerships
 				</h2>
-				<p className="text-gray-400 text-lg md:text-xl max-w-2xl">
-					Our clients love us. You will too.
+				<p className="text-sage-300 text-lg md:text-xl max-w-2xl font-light">
+					Our clients cherish the partnership. You will too.
 				</p>
 			</div>
 
@@ -74,7 +74,7 @@ const ClientBenefits = () => {
 					<Card
 						key={story.title}
 						className={cn(
-							"backdrop-blur-sm bg-white/5 border transition-all duration-300 hover:shadow-xl hover:transform hover:scale-[1.02] overflow-hidden group",
+							"backdrop-blur-sm bg-charcoal-800/20 border transition-all duration-300 hover:shadow-xl hover:transform hover:scale-[1.02] overflow-hidden group",
 							story.borderColor,
 						)}
 					>
@@ -87,20 +87,20 @@ const ClientBenefits = () => {
 							>
 								{story.icon}
 							</div>
-							<CardTitle className="text-2xl font-semibold tracking-tight text-white">
+							<CardTitle className="text-2xl font-semibold tracking-tight text-bone-100 font-serif">
 								{story.title}
 							</CardTitle>
 						</CardHeader>
 						<CardContent>
-							<p className="text-gray-300 leading-relaxed">
+							<p className="text-sage-300 leading-relaxed font-light">
 								{story.description}
 							</p>
 						</CardContent>
-						<CardFooter className="flex flex-col items-start border-t border-white/10 pt-4">
-							<blockquote className="text-lg text-gray-300 italic font-light mb-3 leading-relaxed">
+						<CardFooter className="flex flex-col items-start border-t border-sage-700/20 pt-4">
+							<blockquote className="text-lg text-sage-300 italic font-light mb-3 leading-relaxed font-serif">
 								"{story.quote}"
 							</blockquote>
-							<p className="self-end font-medium text-gray-400">
+							<p className="self-end font-medium text-sage-400">
 								— {story.client}
 							</p>
 						</CardFooter>

@@ -14,39 +14,39 @@ type BusinessStage = {
 
 const businessStages: BusinessStage[] = [
 	{
-		type: "Startup",
-		title: "Launch Faster",
-		subtitle: "Turn ideas into profitable products",
-		icon: <BabyIcon className="text-white w-6 h-6" />,
-		accentColor: "from-rose-400 to-pink-500",
+		type: "Emerging",
+		title: "Launch Elegantly",
+		subtitle: "Transform concepts into refined products",
+		icon: <BabyIcon className="text-bone-100 w-6 h-6" />,
+		accentColor: "from-bone-300 to-sage-200",
 		benefits: [
-			"MVP in 6-8 weeks",
-			"User validation built-in",
-			"Investor-ready demos",
+			"Premium MVP in 6-8 weeks",
+			"Strategic user validation",
+			"Investment-grade presentations",
 		],
 	},
 	{
-		type: "Scale-up",
-		title: "Scale Smarter",
-		subtitle: "Handle growth without breaking",
-		icon: <LineChartIcon className="text-white w-6 h-6" />,
-		accentColor: "from-blue-400 to-indigo-500",
+		type: "Growing",
+		title: "Scale Gracefully",
+		subtitle: "Manage expansion with sophistication",
+		icon: <LineChartIcon className="text-bone-100 w-6 h-6" />,
+		accentColor: "from-olive-300 to-bone-200",
 		benefits: [
-			"Systems that handle 10x growth",
-			"Performance that keeps users happy",
-			"Features that drive revenue",
+			"Architecture for exponential growth",
+			"Premium user experiences",
+			"Revenue-driving innovations",
 		],
 	},
 	{
-		type: "Enterprise",
-		title: "Stay Ahead",
-		subtitle: "Innovation that maintains your edge",
-		icon: <LandmarkIcon className="text-white w-6 h-6" />,
-		accentColor: "from-amber-400 to-orange-500",
+		type: "Established",
+		title: "Lead Confidently",
+		subtitle: "Innovation that maintains your distinction",
+		icon: <LandmarkIcon className="text-bone-100 w-6 h-6" />,
+		accentColor: "from-sage-300 to-olive-200",
 		benefits: [
 			"Enterprise-grade security",
-			"Seamless integrations",
-			"Innovation that differentiates",
+			"Seamless system integration",
+			"Market-defining innovation",
 		],
 	},
 ];
@@ -63,12 +63,12 @@ export function Stages() {
 			<div className="space-y-8">
 				{/* Section header */}
 				<div className="space-y-4">
-					<h2 className="text-4xl md:text-5xl font-bold tracking-tight">
-						Whatever Stage You're At
+					<h2 className="text-4xl md:text-5xl font-bold tracking-tight font-serif text-bone-100">
+						Excellence at Every Stage
 					</h2>
-					<p className="text-gray-400 text-lg md:text-xl">
-						We've helped hundreds of companies at every stage. Here's how we
-						accelerate your specific journey.
+					<p className="text-sage-300 text-lg md:text-xl font-light">
+						We've partnered with distinguished companies at every phase. Here's
+						how we elevate your particular journey.
 					</p>
 				</div>
 
@@ -84,14 +84,14 @@ export function Stages() {
 							className="group relative"
 						>
 							{/* Main card */}
-							<div className="relative h-full bg-white/5 border border-white/10 backdrop-blur-sm rounded-2xl p-4 hover:bg-white/8 transition-all duration-300 overflow-hidden">
+							<div className="relative h-full bg-charcoal-800/20 border border-sage-700/20 backdrop-blur-sm rounded-2xl p-4 hover:bg-charcoal-800/30 transition-all duration-300 overflow-hidden">
 								{/* Background gradient */}
 								<div
 									className={`absolute inset-0 bg-gradient-to-br ${stage.accentColor} opacity-5 group-hover:opacity-10 transition-opacity duration-300`}
 								/>
 
 								{/* Large background number */}
-								<div className="absolute -bottom-4 -right-4 text-8xl font-black text-white/5 group-hover:text-white/10 transition-colors duration-300">
+								<div className="absolute -bottom-4 -right-4 text-8xl font-black text-sage-800/10 group-hover:text-sage-700/15 transition-colors duration-300">
 									{index + 1}
 								</div>
 
@@ -106,14 +106,16 @@ export function Stages() {
 												>
 													{stage.icon}
 												</div>
-												<span className="text-sm font-medium text-gray-400 uppercase tracking-wider">
+												<span className="text-sm font-medium text-sage-400 uppercase tracking-wider font-sans">
 													{stage.type}
 												</span>
 											</div>
-											<h3 className="text-2xl font-bold text-white mb-1">
+											<h3 className="text-2xl font-bold text-bone-100 mb-1 font-serif">
 												{stage.title}
 											</h3>
-											<p className="text-sm text-gray-300">{stage.subtitle}</p>
+											<p className="text-sm text-sage-300 font-light">
+												{stage.subtitle}
+											</p>
 										</div>
 									</div>
 
@@ -134,7 +136,9 @@ export function Stages() {
 												<div
 													className={`w-1.5 h-1.5 rounded-full bg-gradient-to-r ${stage.accentColor} mt-2 flex-shrink-0`}
 												/>
-												<span className="text-gray-300">{benefit}</span>
+												<span className="text-sage-300 font-light">
+													{benefit}
+												</span>
 											</motion.div>
 										))}
 									</div>

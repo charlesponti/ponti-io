@@ -11,7 +11,6 @@
 		"db:populate": "tsx _data/populate.ts",
 		"db:populate-tfl": "tsx db/populate-tfl.ts",
 		"db:studio": "drizzle-kit studio",
-		"deploy": "fly deploy",
 		"dev": "next dev --turbo",
 		"format": "npx biome lint src --apply --no-errors-on-unmatched && npx biome format --write src",
 		"lint": "run-p run-lint run-stylelint",
