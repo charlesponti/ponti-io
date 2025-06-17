@@ -1,7 +1,14 @@
-import { integer, real, sqliteTable, text } from "drizzle-orm/sqlite-core";
+import {
+	boolean,
+	pgTable,
+	real,
+	serial,
+	text,
+	timestamp,
+} from "drizzle-orm/pg-core";
 
-export const covidData = sqliteTable("covid_data", {
-	id: integer("id").primaryKey({ autoIncrement: true }),
+export const covidData = pgTable("covid_data", {
+	id: serial("id").primaryKey(),
 	isoCode: text("iso_code"),
 	continent: text("continent"),
 	location: text("location"),
@@ -79,5 +86,21 @@ export const covidData = sqliteTable("covid_data", {
 	),
 });
 
+export const tflCameras = pgTable("tfl_cameras", {
+	id: serial("id").primaryKey(),
+	tflId: text("tfl_id").notNull().unique(),
+	commonName: text("common_name").notNull(),
+	available: boolean("available").default(true),
+	imageUrl: text("image_url"),
+	videoUrl: text("video_url"),
+	view: text("view"),
+	lat: real("lat").notNull(),
+	lng: real("lng").notNull(),
+	createdAt: timestamp("created_at").defaultNow(),
+	updatedAt: timestamp("updated_at").defaultNow(),
+});
+
 export type CovidDataSelect = typeof covidData.$inferSelect;
 export type CovidDataInsert = typeof covidData.$inferInsert;
+export type TflCameraSelect = typeof tflCameras.$inferSelect;
+export type TflCameraInsert = typeof tflCameras.$inferInsert;

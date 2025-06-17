@@ -5,7 +5,7 @@ FROM node:23.11-bookworm-slim AS base
 LABEL fly_launch_runtime="Next.js"
 LABEL maintainer="ponti-io"
 LABEL version="1.0"
-LABEL description="Next.js application with SQLite"
+LABEL description="Next.js application with PostgreSQL"
 
 # Next.js app lives here
 WORKDIR /app
@@ -54,9 +54,6 @@ RUN apt-get update -qq && \
         python-is-python3 && \
     rm -rf /var/lib/apt/lists/* /var/cache/apt/archives/*
 
-# Rebuild native modules for the container architecture
-RUN npm rebuild better-sqlite3
-
 # Accept build arguments for Next.js public environment variables
 ARG PORT=3000
 ARG NEXT_PUBLIC_GOOGLE_MAPS_API_KEY
@@ -71,18 +68,14 @@ RUN npm run build
 # Production stage
 FROM base as runner
 
-# Install only runtime dependencies
+# Install runtime dependencies including PostgreSQL client
 RUN apt-get update -qq && \
     apt-get install --no-install-recommends -y \
-        sqlite3 \
+        postgresql-client \
         ca-certificates \
+        curl \
         dumb-init && \
     rm -rf /var/lib/apt/lists/* /var/cache/apt/archives/*
-
-# Create data directory with proper permissions
-RUN mkdir -p /data && \
-    chown -R nextjs:nodejs /data && \
-    chmod 755 /data
 
 # Don't run production as root
 USER nextjs
@@ -91,13 +84,6 @@ USER nextjs
 COPY --from=builder --chown=nextjs:nodejs /app/public ./public
 COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
 COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
-
-# Install curl for health check
-USER root
-RUN apt-get update -qq && \
-    apt-get install --no-install-recommends -y curl && \
-    rm -rf /var/lib/apt/lists/* /var/cache/apt/archives/*
-USER nextjs
 
 # Add health check
 HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
