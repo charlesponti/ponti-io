@@ -1,8 +1,5 @@
-# syntax = docker/dockerfile:1
-
-# Adjust NODE_VERSION as desired - using latest LTS
-ARG NODE_VERSION=23.11-bookworm-slim
-FROM node:${NODE_VERSION}-slim as base
+# Base stage with common tools
+FROM node:23.11-bookworm-slim AS base
 
 # Add labels for better metadata
 LABEL fly_launch_runtime="Next.js"
