@@ -54,7 +54,7 @@ const TFLMap = () => {
 				</div>
 			)}
 			<ReactGoogleMaps
-				className="h-full rounded-xl"
+				className="h-[500px] rounded-xl"
 				zoom={selectedCamera ? 15 : 13}
 				center={
 					selectedCamera
