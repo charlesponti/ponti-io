@@ -4,28 +4,28 @@ import { motion } from "framer-motion";
 const steps = [
 	{
 		title: "Discovery",
-		desc: "We meticulously analyze your vision, distinguished clientele, and market position to architect a strategic blueprint for excellence.",
+		desc: "Learn the highest-impact opportunities based on true user demand.",
 		color: "from-bone-300 to-sage-200",
 		icon: "🔍",
 		number: "01",
 	},
 	{
 		title: "Strategy",
-		desc: "We craft a comprehensive roadmap and precise technical specifications that harmonize with your aspirations and user expectations.",
+		desc: "Get a roadmap to higher revenue and user loyalty.",
 		color: "from-sage-300 to-olive-200",
 		icon: "🧠",
 		number: "02",
 	},
 	{
-		title: "Creation",
-		desc: "Our master artisans design and develop your product using premium technologies and refined methodologies.",
+		title: "Development",
+		desc: "Get the features users will love. Fast.",
 		color: "from-olive-300 to-bone-200",
 		icon: "💎",
 		number: "03",
 	},
 	{
-		title: "Excellence",
-		desc: "We deliver your sophisticated solution with ongoing stewardship to ensure enduring success and continued distinction.",
+		title: "Launch",
+		desc: "Optimize with real data to maximize ROI and growth.",
 		color: "from-bone-200 to-sage-300",
 		icon: "✨",
 		number: "04",
@@ -37,11 +37,10 @@ export const StudioProcess = () => {
 		<motion.div className="w-full my-12 sm:my-16" {...fadeInUp}>
 			<div className="space-y-4 mb-12 text-center md:text-left">
 				<h2 className="text-4xl md:text-5xl font-bold tracking-tight bg-gradient-to-r from-bone-200 to-sage-300 text-transparent bg-clip-text font-serif">
-					Our Methodology
+					Our Process
 				</h2>
 				<p className="text-sage-300 text-lg md:text-xl max-w-2xl font-light">
-					Our refined approach ensures exceptional outcomes for every
-					distinguished partnership
+					Turn your vision into a profitable, user-loved product.
 				</p>
 			</div>
 

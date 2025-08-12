@@ -4,25 +4,25 @@ import { fadeInUp } from "../../utils/animations";
 
 const features = [
 	{
-		title: "Elite Artisans",
+		title: "Expert Team",
 		description:
-			"Access our distinguished collective of master craftspeople and visionary designers with unparalleled expertise in luxury product development.",
+			"Work with seasoned product strategists, designers, and engineers who have delivered successful products for companies like yours.",
 		icon: ShieldCheck,
 		color: "from-bone-300 to-sage-200",
 		number: "01",
 	},
 	{
-		title: "Refined Process",
+		title: "Proven Process",
 		description:
-			"Our meticulously curated methodology ensures exceptional delivery, transparent dialogue, and consistently extraordinary outcomes.",
+			"Our tested methodology ensures on-time delivery, clear communication, and consistently exceptional results that exceed expectations.",
 		icon: ChartNetwork,
 		color: "from-sage-300 to-olive-200",
 		number: "02",
 	},
 	{
-		title: "Assured Excellence",
+		title: "Guaranteed Results",
 		description:
-			"We deliver transcendent products with precision timing and budget discipline, with performance assurances integrated into every partnership.",
+			"We deliver exceptional products on time and within budget, with performance guarantees built into every partnership.",
 		icon: ChartLineIcon,
 		color: "from-olive-300 to-bone-200",
 		number: "03",
@@ -37,13 +37,12 @@ export const StudioAbout = () => {
 					Why Choose Ponti Studios
 				</h2>
 				<p className="text-sage-300 text-lg md:text-xl max-w-2xl font-light">
-					We are an international collective of distinguished artisans and
-					innovators, employing
+					We're a global team of product strategists, designers, and engineers
+					who specialize in
 					<span className="italic underline mx-1 underline-offset-4 text-bone-300 font-medium">
 						human-centered design
 					</span>
-					and advanced analytics to craft refined solutions for complex
-					challenges.
+					and data-driven development to solve complex business challenges.
 				</p>
 			</div>
 
@@ -76,8 +75,8 @@ export const StudioAbout = () => {
 								Our Distinction
 							</h3>
 							<p className="text-sage-300 text-sm leading-relaxed font-light">
-								Three fundamental principles that elevate our craft above
-								conventional approaches.
+								Three core principles that set us apart from conventional
+								agencies.
 							</p>
 						</div>
 

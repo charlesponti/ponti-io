@@ -4,39 +4,39 @@ import { type Easing, motion } from "framer-motion";
 // Service categories with their respective services
 const serviceCategories = [
 	{
-		title: "Brand Refinement",
+		title: "Brand Development",
 		color: "from-bone-300 to-olive-200",
 		icon: "✨",
 		services: [
-			"Sophisticated identity design",
-			"Strategic brand positioning",
-			"Bespoke design systems",
-			"Premium marketing experiences",
-			"Curated social presence",
+			"Strategic brand identity",
+			"Market positioning",
+			"Design systems",
+			"Marketing experiences",
+			"Social media presence",
 		],
 	},
 	{
-		title: "Product Excellence",
+		title: "Product Development",
 		color: "from-sage-300 to-bone-200",
 		icon: "🎯",
 		services: [
-			"Visionary product strategy",
-			"Luxurious UI/UX design",
-			"Performance-driven applications",
-			"Elite mobile experiences",
-			"Distinguished MVPs",
+			"Product strategy",
+			"UI/UX design",
+			"Web applications",
+			"Mobile experiences",
+			"MVP development",
 		],
 	},
 	{
-		title: "Strategic Leadership",
+		title: "Strategic Consulting",
 		color: "from-olive-300 to-sage-200",
 		icon: "⚡",
 		services: [
-			"Executive-level strategy",
-			"Premium consultation services",
-			"World-class engineering teams",
-			"Innovative technical leadership",
-			"Exclusive community experiences",
+			"Executive strategy",
+			"Technical consultation",
+			"Engineering teams",
+			"Technical leadership",
+			"Community building",
 		],
 	},
 ];
@@ -50,10 +50,11 @@ export const Services = () => {
 			{/* Section header */}
 			<div className="space-y-4 mb-12 text-center md:text-left">
 				<h2 className="text-4xl md:text-5xl font-bold tracking-tight font-serif text-bone-100">
-					Transform Vision into Excellence
+					From Vision to Reality
 				</h2>
 				<p className="text-sage-300 text-lg md:text-xl max-w-2xl font-light">
-					Your aspirations deserve the finest craftsmanship.
+					We turn ambitious ideas into products that users love and businesses
+					value.
 				</p>
 			</div>
 

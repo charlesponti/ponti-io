@@ -38,5 +38,3 @@ next-env.d.ts
 /playwright-report/
 /blob-report/
 /playwright/.cache/
-
-_data/covid.db

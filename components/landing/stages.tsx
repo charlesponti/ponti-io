@@ -15,38 +15,38 @@ type BusinessStage = {
 const businessStages: BusinessStage[] = [
 	{
 		type: "Emerging",
-		title: "Launch Elegantly",
-		subtitle: "Transform concepts into refined products",
+		title: "Launch Successfully",
+		subtitle: "Transform concepts into market-ready products",
 		icon: <BabyIcon className="text-bone-100 w-6 h-6" />,
 		accentColor: "from-bone-300 to-sage-200",
 		benefits: [
-			"Premium MVP in 6-8 weeks",
-			"Strategic user validation",
-			"Investment-grade presentations",
+			"MVP in 6-8 weeks",
+			"User validation",
+			"Investor-ready presentations",
 		],
 	},
 	{
 		type: "Growing",
-		title: "Scale Gracefully",
-		subtitle: "Manage expansion with sophistication",
+		title: "Scale Efficiently",
+		subtitle: "Manage growth with proven strategies",
 		icon: <LineChartIcon className="text-bone-100 w-6 h-6" />,
 		accentColor: "from-olive-300 to-bone-200",
 		benefits: [
-			"Architecture for exponential growth",
-			"Premium user experiences",
-			"Revenue-driving innovations",
+			"Scalable architecture",
+			"Enhanced user experiences",
+			"Revenue optimization",
 		],
 	},
 	{
 		type: "Established",
 		title: "Lead Confidently",
-		subtitle: "Innovation that maintains your distinction",
+		subtitle: "Innovation that maintains your advantage",
 		icon: <LandmarkIcon className="text-bone-100 w-6 h-6" />,
 		accentColor: "from-sage-300 to-olive-200",
 		benefits: [
-			"Enterprise-grade security",
-			"Seamless system integration",
-			"Market-defining innovation",
+			"Enterprise security",
+			"System integration",
+			"Market innovation",
 		],
 	},
 ];
@@ -67,8 +67,8 @@ export function Stages() {
 						Excellence at Every Stage
 					</h2>
 					<p className="text-sage-300 text-lg md:text-xl font-light">
-						We've partnered with distinguished companies at every phase. Here's
-						how we elevate your particular journey.
+						We've partnered with companies at every growth phase. Here's how we
+						can help at your stage.
 					</p>
 				</div>
 
