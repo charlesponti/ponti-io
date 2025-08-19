@@ -84,7 +84,7 @@ export default function RootLayout({
 			<body
 				className={cn(
 					inter.className,
-					"antialiased bg-charcoal-900 text-bone-100 min-w-full font-sans",
+					"antialiased bg-black text-bone-100 min-w-full font-sans",
 				)}
 			>
 				<NavigationProgress />

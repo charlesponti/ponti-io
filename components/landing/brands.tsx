@@ -47,21 +47,25 @@ const brands = [
 		logo: "/images/companies/glow.png",
 		alt: "Glow",
 	},
+	{
+		name: "You",
+		alt: "You",
+	},
 ];
 
 export default function Brands() {
 	return (
 		<motion.section
-			className="w-full py-12 lg:py-16"
+			className="mx-auto"
 			initial={{ opacity: 0, y: 20 }}
 			animate={{ opacity: 1, y: 0 }}
 			transition={{ duration: 0.8, delay: 0.3 }}
 		>
-			<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-				<p className="text-sage-400 text-sm md:text-base mb-8 font-light tracking-wide">
-					Trusted by distinguished organizations worldwide
+			<div className="max-w-5xl text-center">
+				<p className="text-sage-400 text-xs md:text-base mb-8 font-light tracking-wide">
+					Trusted by distinguished organizations
 				</p>
-				<div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8 items-center justify-items-center opacity-60 hover:opacity-80 transition-opacity duration-300">
+				<div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8 md:gap-16 items-center justify-center opacity-60 hover:opacity-80 transition-opacity duration-300">
 					{brands.map((brand, index) => (
 						<motion.div
 							key={brand.name}
@@ -70,13 +74,19 @@ export default function Brands() {
 							transition={{ duration: 0.5, delay: index * 0.1 }}
 							className="flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300 hover:scale-110"
 						>
-							<Image
-								src={brand.logo}
-								alt={brand.alt}
-								width={120}
-								height={60}
-								className="max-h-12 w-auto object-contain filter brightness-0 invert opacity-50 hover:opacity-70 transition-opacity duration-300"
-							/>
+							{brand.logo ? (
+								<Image
+									src={brand.logo}
+									alt={brand.alt}
+									width={80}
+									height={32}
+									className="max-h-8 w-auto object-contain filter brightness-0 invert opacity-50 hover:opacity-70 transition-opacity duration-300"
+								/>
+							) : (
+								<div className="max-h-8 w-auto object-contain filter brightness-0 invert opacity-50 hover:opacity-70 transition-opacity duration-300">
+									{brand.name}
+								</div>
+							)}
 						</motion.div>
 					))}
 				</div>
