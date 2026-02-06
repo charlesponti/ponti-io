@@ -306,13 +306,76 @@
   }
 }
 
-/* Slow rotation animation for ASCII art */
+/* Hero animation keyframes */
 @keyframes slow-rotate {
   from {
     transform: rotateZ(0deg);
   }
   to {
     transform: rotateZ(360deg);
+  }
+}
+
+@keyframes code-fall {
+  0% {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+}
+
+@keyframes wave-flow {
+  0%, 100% {
+    transform: translateX(-10px);
+    opacity: 0.1;
+  }
+  50% {
+    transform: translateX(10px);
+    opacity: 0.2;
+  }
+}
+
+@keyframes neural-pulse {
+  0%, 100% {
+    opacity: 0.06;
+  }
+  50% {
+    opacity: 0.1;
+  }
+}
+
+@keyframes neural-connection {
+  0%, 100% {
+    stroke-opacity: 0.1;
+  }
+  50% {
+    stroke-opacity: 0.2;
+  }
+}
+
+@keyframes stream-flow {
+  0% {
+    transform: translateY(-10px);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(110vh);
+    opacity: 0;
   }
 }
 
