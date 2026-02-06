@@ -1,7 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Hero from "../../components/landing/hero";
-import ClientTypes from "../../components/landing/client-types";
+import Services from "../../components/landing/client-types";
 import Contact from "../../components/landing/contact";
 
 const currentYear = new Date().getFullYear();
@@ -10,9 +10,9 @@ const currentYear = new Date().getFullYear();
 <BaseLayout locale="en" navLabels={{home: "Home", contact: "Contact"}}>
 	{/* Hero - Direct positioning */}
 	<Hero />
-	
-	{/* Client Types with Services */}
-	<ClientTypes />
+
+	{/* Services */}
+	<Services />
 	
 	{/* Contact - Terminal aesthetic with copy-to-clipboard */}
 	<Contact client:visible />
