@@ -1,21 +1,22 @@
 ---
+import JapaneseSeigaiha from "@/components/landing/japanese-seigaiha";
 import NeuralNetwork from "@/components/neural-network";
-import BinaryStream from "@/components/binary-stream";
 import "../styles/global.css";
 
-	type Props = {
-		title?: string;
-		description?: string;
-		locale?: string;
-		navLabels: { home: string; contact: string };
-	};
+type Props = {
+	title?: string;
+	description?: string;
+	locale?: string;
+	navLabels: { home: string; contact: string };
+};
 
 const {
 	title = "Ponti Studios",
 	description = "A studio that designs AI systems that disappear into the background.",
 	locale = "en",
 	navLabels,
-	} = Astro.props;
+} = Astro.props;
+
 ---
 
 <!doctype html>
@@ -32,14 +33,14 @@ const {
 			rel="stylesheet"
 		/>
 	</head>
-		<body class="antialiased min-w-full font-mono selection:bg-white selection:text-black" style="font-family: 'Space Mono', monospace;">
+	<body class="antialiased min-w-full font-mono selection:bg-white selection:text-black" style="font-family: 'Space Mono', monospace;">
 		{/* Background layers */}
 		<div class="fixed inset-0 -z-30" style="background-color: var(--color-sumi-bg);" aria-hidden="true"></div>
 
-		{/* Layer 19: Neural Network (z-19) */}
-		<BinaryStream client:visible />
+		{/* Layer 20: Seigaiha Waves (z-20) */}
+		<JapaneseSeigaiha client:visible />
 
-		{/* Layer 18: Binary Stream (z-18) */}
+		{/* Layer 19: Neural Network (z-19) */}
 		<NeuralNetwork client:visible />
 
 		{/* Layer 17: Base grid (z-17) */}
