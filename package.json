@@ -4,44 +4,37 @@
   "private": true,
   "scripts": {
     "build": "astro build",
+    "commit": "cz",
     "dev": "astro dev",
-    "check": "npx oxlint ./src && npx oxfmt ./src && npm run typecheck && npm run run-stylelint",
+    "format": "npx biome lint src components --apply --no-errors-on-unmatched && npx biome format --write src components",
+    "lint": "run-p run-lint run-stylelint",
+    "prepare": "lefthook install",
     "preview": "astro preview",
     "refresh-deps": "rm package-lock.json && rm -rf node_modules && npm install",
-    "run-stylelint": "stylelint --cache --fix --ignore-path .gitignore src/**/*.css"
+    "run-lint": "npx biome lint src components",
+    "run-stylelint": "stylelint --cache --fix --ignore-path .gitignore src/**/*.css",
+    "test": "vitest --run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit --incremental false",
+    "validate": "run-p lint test"
   },
   "dependencies": {
     "@astrojs/react": "^4.0.0",
-    "@radix-ui/react-dialog": "^1.1.14",
-    "@radix-ui/react-popover": "^1.1.14",
-    "@radix-ui/react-slot": "^1.1.2",
-    "@tailwindcss/forms": "^0.5.7",
     "@tailwindcss/vite": "^4.1.18",
     "@tanstack/react-query": "^5.13.4",
     "@tanstack/react-query-devtools": "^5.13.5",
-    "@testing-library/user-event": "^14.6.1",
-    "@vis.gl/react-google-maps": "^0.4.1",
     "astro": "^5.0.0",
-    "axios": "^1.6.2",
-    "class-variance-authority": "^0.7.1",
     "classnames": "^2.5.1",
     "clsx": "^2.1.1",
-    "cmdk": "^1.1.1",
-    "csv-parse": "^5.6.0",
-    "csv-parser": "^3.2.0",
-    "daisyui": "^5.5.18",
     "framer-motion": "^12.4.7",
     "lucide-react": "^0.414.0",
     "react": "^19.1.0",
-    "react-countup": "^6.5.0",
     "react-dom": "^19.1.0",
-    "react-icons": "^4.12.0",
-    "recharts": "^2.15.1",
-    "tailwindcss": "^4.1.18",
-    "tailwindcss-animate": "^1.0.7",
-    "zod": "^3.25.67"
+    "tailwindcss": "^4.1.18"
   },
   "devDependencies": {
+    "@cloudflare/workers-types": "^4.20260206.0",
+    "@playwright/test": "^1.58.2",
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.3.0",
     "@types/css-mediaquery": "^0.1.4",
@@ -78,11 +71,5 @@
     "vite-tsconfig-paths": "^5.1.4",
     "vitest": "^3.0.7",
     "whatwg-fetch": "^3.6.20"
-  },
-  "lint-staged": {
-    "**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
-      "biome lint --apply --no-errors-on-unmatched",
-      "biome format --write --no-errors-on-unmatched"
-    ]
   }
 }
