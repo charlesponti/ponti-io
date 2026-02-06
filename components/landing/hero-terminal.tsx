@@ -87,7 +87,7 @@ export default function HeroTerminal() {
 	return (
 		<div className="relative" ref={containerRef}>
 			{/* Terminal window */}
-			<div className="relative mx-auto max-w-[300px] md:max-w-[400px] border-t-2 border-l-2 border-r-2 border-white/20 rounded-t-lg bg-black/40 backdrop-blur-sm">
+			<div className="relative mx-auto max-w-[400px] md:max-w-[520px] border-t-2 border-l-2 border-r-2 border-white/20 rounded-t-lg bg-black/40 backdrop-blur-sm">
 				{/* Terminal header bar */}
 				<div className="flex items-center gap-2 px-3 py-2 border-b border-white/10">
 					<div className="flex gap-1">
@@ -100,11 +100,11 @@ export default function HeroTerminal() {
 				</div>
 
 				{/* Terminal content */}
-				<div className="px-4 py-6 text-left font-mono">
+				<div className="px-6 py-8 text-left font-mono">
 					{visibleLines.map((lineIndex) => {
 						const cmd = commands[lineIndex];
 						return (
-							<div key={`cmd-${lineIndex}`} className="mb-3">
+							<div key={`line-${lineIndex}`} className="mb-3">
 								<span className="text-[var(--color-sumi-muted)]">
 									{cmd.text}
 								</span>
