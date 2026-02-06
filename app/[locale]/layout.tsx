@@ -47,9 +47,11 @@ export default async function RootLayout({
 			<body
 				className={cn(
 					jetbrainsMono.variable,
-					"antialiased bg-black text-white min-w-full font-mono selection:bg-white selection:text-black",
+					"antialiased bg-transparent text-white min-w-full font-mono selection:bg-white selection:text-black",
 				)}
 			>
+				{/* Explicit Layering: Background (-20) -> Globe (0) -> Content (10+) */}
+				<div className="fixed inset-0 bg-black -z-20" aria-hidden="true" />
 				<NextIntlClientProvider messages={messages}>
 					<AsciiGlobe />
 					<NavigationProgress />

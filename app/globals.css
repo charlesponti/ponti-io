@@ -18,8 +18,6 @@
 
 /* Performance optimizations for page transitions */
 * {
-  /* GPU acceleration for smoother animations */
-  transform: translateZ(0);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

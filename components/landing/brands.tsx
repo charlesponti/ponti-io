@@ -58,7 +58,7 @@ const brands = [
 export default function Brands() {
 	return (
 		<motion.section
-			className="mx-auto"
+			className="mx-auto bg-black/20 backdrop-blur-sm rounded-lg p-8 md:p-12"
 			initial={{ opacity: 0, y: 20 }}
 			animate={{ opacity: 1, y: 0 }}
 			transition={{ duration: 0.8, delay: 0.3 }}

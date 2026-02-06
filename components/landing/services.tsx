@@ -24,7 +24,7 @@ export default async function Services() {
 				{SERVICE_KEYS.map((key) => (
 					<div
 						key={key}
-						className="group flex flex-col md:flex-row md:items-center justify-between gap-4 py-10 border-b border-zinc-800 last:border-0 hover:bg-zinc-900/40 transition-all px-6 cursor-default"
+						className="group flex flex-col md:flex-row md:items-center justify-between gap-4 py-10 border-b border-zinc-800 last:border-0 hover:bg-black/50 transition-all px-6 cursor-default bg-black/20 backdrop-blur-sm rounded"
 					>
 						{/* Capability Title */}
 						<h3 className="text-2xl md:text-4xl font-mono font-bold text-white group-hover:translate-x-2 transition-transform uppercase">

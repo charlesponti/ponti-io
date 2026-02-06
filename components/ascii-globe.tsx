@@ -97,7 +97,7 @@ export const AsciiGlobe = () => {
 	}, []);
 
 	return (
-		<div className="fixed inset-0 flex items-center justify-center -z-10 pointer-events-none overflow-hidden select-none">
+		<div className="fixed inset-0 flex items-center justify-center z-0 pointer-events-none overflow-hidden select-none">
 			<pre
 				ref={preRef}
 				className="font-mono text-[10px] leading-[9px] sm:text-[12px] sm:leading-[11px] md:text-[14px] md:leading-[12px] opacity-[0.35] text-white transition-opacity duration-1000"

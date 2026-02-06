@@ -19,7 +19,7 @@ export default async function About() {
 			</h2>
 
 			{/* Main Philosophy - Monochromatic Terminal Style */}
-			<div className="space-y-10 text-lg md:text-2xl font-mono text-zinc-100 leading-relaxed text-center uppercase tracking-tighter">
+			<div className="space-y-10 text-lg md:text-2xl font-mono text-zinc-100 leading-relaxed text-center uppercase tracking-tighter bg-black/30 backdrop-blur-sm rounded-lg p-8 md:p-12">
 				<p className="max-w-4xl mx-auto">{t("p1")}</p>
 				<p className="max-w-4xl mx-auto">{t("p2")}</p>
 				<p className="max-w-4xl mx-auto text-zinc-500">{t("p3")}</p>
