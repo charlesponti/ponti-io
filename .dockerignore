@@ -162,9 +162,6 @@ biome.json
 .eslintrc*
 .prettierrc*
 
-# Commit tools
-commitlint.config.js
-
 # Test configs
 vitest.config.mts
-playwright.config.ts 
+playwright.config.ts

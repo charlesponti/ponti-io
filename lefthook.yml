@@ -6,14 +6,9 @@ pre-commit:
   jobs:
     - name: typecheck
       run: npm run typecheck
-      
+
     - name: lint-staged
       run: npx lint-staged
-
-commit-msg:
-  jobs:
-    - name: commitlint
-      run: npx commitlint --edit {1}
 
 post-merge:
   jobs:

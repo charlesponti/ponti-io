@@ -1,8 +1,4 @@
-@import url("tailwindcss");
-
-@plugin "daisyui";
-@plugin "@tailwindcss/forms";
-@plugin "tailwindcss-animate";
+@import "tailwindcss";
 
 @theme {
   /* Fonts - Japanese Minimalism: Single monospace family only */
@@ -20,11 +16,11 @@
   --width-part-full: calc(100% - 1.5rem);
 
   /* Japanese Minimalism: Fluid Typography Scale (320px-1400px) */
-  --font-size-hero: clamp(3rem, 4vw + 1rem, 5rem);         /* 48-80px */
-  --font-size-section: clamp(2rem, 2vw + 1rem, 3rem);      /* 32-48px */
+  --font-size-hero: clamp(3rem, 4vw + 1rem, 5rem); /* 48-80px */
+  --font-size-section: clamp(2rem, 2vw + 1rem, 3rem); /* 32-48px */
   --font-size-body: clamp(1rem, 0.2vw + 0.9375rem, 1.125rem); /* 16-18px */
   --font-size-meta: clamp(0.75rem, 0.1vw + 0.7rem, 0.875rem); /* 12-14px */
-  --font-size-micro: 0.625rem;                              /* 10px */
+  --font-size-micro: 0.625rem; /* 10px */
 
   /* Legacy fluid typography (deprecated, kept for compatibility) */
   --font-size-fluid-1: clamp(24px, calc(24px + 2.03vw), 45px);
@@ -33,29 +29,29 @@
   --spacing-fluid-2: clamp(32px, calc(32px + 4.79vw), 75px);
 
   /* Line heights - Monospace needs more air */
-  --leading-tight: 1.1;    /* Headlines */
-  --leading-snug: 1.2;     /* Subheadings */
-  --leading-normal: 1.7;   /* Body text (monospace needs more) */
-  --leading-relaxed: 1.8;  /* Generous spacing */
+  --leading-tight: 1.1; /* Headlines */
+  --leading-snug: 1.2; /* Subheadings */
+  --leading-normal: 1.7; /* Body text (monospace needs more) */
+  --leading-relaxed: 1.8; /* Generous spacing */
   --line-height-fluid-1: clamp(20px, calc(20px + 2.03vw), 50px);
   --line-height-fluid-2: clamp(32px, calc(32px + 3.5vw), 75px);
   --line-height-fluid-3: clamp(42px, calc(42px + 4.79vw), 85px);
 
   /* Japanese Minimalism: Ma (間) - Generous whitespace */
-  --ma-xs: 2rem;    /* 32px */
-  --ma-sm: 4rem;    /* 64px */
-  --ma-md: 8rem;    /* 128px */
-  --ma-lg: 12rem;   /* 192px */
-  --ma-xl: 16rem;   /* 256px */
+  --ma-xs: 2rem; /* 32px */
+  --ma-sm: 4rem; /* 64px */
+  --ma-md: 8rem; /* 128px */
+  --ma-lg: 12rem; /* 192px */
+  --ma-xl: 16rem; /* 256px */
 
   /* Japanese Minimalism: Sumi Ink Palette (墨) */
 
   /* Pure black/white/grey - inspired by Japanese ink wash painting */
-  --color-sumi-bg: #0a0a0a;           /* Near-black background */
-  --color-sumi-text: #f5f5f5;         /* Off-white text (easier on eyes than pure white) */
-  --color-sumi-secondary: #a1a1aa;    /* Zinc-400 for secondary text */
-  --color-sumi-muted: #52525b;        /* Zinc-600 for muted text */
-  --color-sumi-subtle: #3f3f46;       /* Zinc-700 for subtle elements */
+  --color-sumi-bg: #0a0a0a; /* Near-black background */
+  --color-sumi-text: #f5f5f5; /* Off-white text (easier on eyes than pure white) */
+  --color-sumi-secondary: #a1a1aa; /* Zinc-400 for secondary text */
+  --color-sumi-muted: #52525b; /* Zinc-600 for muted text */
+  --color-sumi-subtle: #3f3f46; /* Zinc-700 for subtle elements */
   --color-sumi-border: rgb(255 255 255 / 5%); /* 5% white - ultra subtle */
 
   /* Legacy color palette (deprecated, kept for compatibility) */
@@ -448,11 +444,26 @@
   }
 
   /* Japanese Minimalism: Ma (間) - Generous whitespace utilities */
-  .ma-xs { padding-top: var(--ma-xs); padding-bottom: var(--ma-xs); }
-  .ma-sm { padding-top: var(--ma-sm); padding-bottom: var(--ma-sm); }
-  .ma-md { padding-top: var(--ma-md); padding-bottom: var(--ma-md); }
-  .ma-lg { padding-top: var(--ma-lg); padding-bottom: var(--ma-lg); }
-  .ma-xl { padding-top: var(--ma-xl); padding-bottom: var(--ma-xl); }
+  .ma-xs {
+    padding-top: var(--ma-xs);
+    padding-bottom: var(--ma-xs);
+  }
+  .ma-sm {
+    padding-top: var(--ma-sm);
+    padding-bottom: var(--ma-sm);
+  }
+  .ma-md {
+    padding-top: var(--ma-md);
+    padding-bottom: var(--ma-md);
+  }
+  .ma-lg {
+    padding-top: var(--ma-lg);
+    padding-bottom: var(--ma-lg);
+  }
+  .ma-xl {
+    padding-top: var(--ma-xl);
+    padding-bottom: var(--ma-xl);
+  }
 
   /* Dot-leader for services list */
   .dot-leader {
