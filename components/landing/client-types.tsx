@@ -44,10 +44,10 @@ export default function Services() {
 			<div className="w-full max-w-2xl mx-auto px-6 md:px-12">
 				{/* Section header */}
 				<div className="text-center mb-12">
-					<h2 className="text-[var(--font-size-section)] text-[var(--color-sumi-text)] uppercase tracking-[-0.01em] mb-4 font-bold">
+					<h2 className="text-(--font-size-section) text-[color:var(--color-sumi-text)] uppercase tracking-[-0.01em] mb-4 font-bold">
 						Services
 					</h2>
-					<p className="text-[var(--font-size-body)] text-[var(--color-sumi-secondary)] leading-[var(--leading-normal)]">
+					<p className="text-(--font-size-body) text-[color:var(--color-sumi-secondary)] leading-[var(--leading-normal)]">
 						We build AI. It works. It ships.
 					</p>
 				</div>
@@ -57,15 +57,15 @@ export default function Services() {
 					{services.map((service, index) => (
 						<div key={service.title}>
 							{/* Number */}
-							<span className="text-[var(--font-size-meta)] text-[var(--color-sumi-muted)]">
+							<span className="text-(--font-size-meta) text-[color:var(--color-sumi-muted)]">
 								{String(index + 1).padStart(2, "0")}.
 							</span>{" "}
 							{/* Title */}
-							<span className="text-[var(--font-size-body)] text-[var(--color-sumi-text)] font-bold">
+							<span className="text-(--font-size-body) text-[color:var(--color-sumi-text)] font-bold">
 								{service.title}
 							</span>
 							{/* Description on new line */}
-							<div className="mt-2 ml-6 text-[var(--font-size-meta)] text-[var(--color-sumi-secondary)] leading-[var(--leading-relaxed)]">
+							<div className="mt-2 ml-6 text-(--font-size-meta) text-[color:var(--color-sumi-secondary)] leading-[var(--leading-relaxed)]">
 								{service.description}
 							</div>
 						</div>

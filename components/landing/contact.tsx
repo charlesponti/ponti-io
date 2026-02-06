@@ -30,7 +30,7 @@ export default function Contact() {
 		<section className="py-12 md:py-16">
 			<div className="w-full max-w-2xl mx-auto px-6 md:px-12 text-center">
 				{/* Terminal prompt */}
-				<div className="text-[var(--font-size-meta)] text-[var(--color-sumi-muted)] mb-6">
+				<div className="text-(--font-size-meta) text-[color:var(--color-sumi-muted)] mb-6">
 					$ contact
 				</div>
 
@@ -39,14 +39,14 @@ export default function Contact() {
 					<button
 						type="button"
 						onClick={handleCopy}
-						className="text-[var(--font-size-section)] text-[var(--color-sumi-text)] hover:text-[var(--color-sumi-secondary)] transition-colors duration-300 font-mono tracking-[-0.01em]"
+						className="text-(--font-size-section) text-[color:var(--color-sumi-text)] hover:text-[color:var(--color-sumi-secondary)] transition-colors duration-300 font-mono tracking-[-0.01em]"
 						title={copied ? "Copied!" : "Click to copy email"}
 					>
 						{email}
 					</button>
 
 					{copied && (
-						<span className="text-[var(--font-size-meta)] text-[var(--color-sumi-muted)] animate-fade-in">
+						<span className="text-(--font-size-meta) text-[color:var(--color-sumi-muted)] animate-fade-in">
 							copied
 						</span>
 					)}
@@ -55,7 +55,7 @@ export default function Contact() {
 				{/* Alternative contact link */}
 				<a
 					href={`mailto:${email}`}
-					className="block mt-6 text-[var(--font-size-meta)] text-[var(--color-sumi-muted)] hover:text-[var(--color-sumi-text)] transition-colors duration-300"
+					className="block mt-6 text-(--font-size-meta) text-[color:var(--color-sumi-muted)] hover:text-[color:var(--color-sumi-text)] transition-colors duration-300"
 				>
 					or send email directly →
 				</a>
