@@ -19,15 +19,15 @@ const SERVICES = [
 
 export default function Services({ messages }: Props) {
 	return (
-		<section className="ma-lg">
-			<div className="w-full max-w-6xl mx-auto px-6 md:px-12 lg:px-16">
+		<section className="py-12 md:py-16">
+			<div className="w-full max-w-2xl mx-auto px-6 md:px-12 text-center">
 				{/* Section label */}
-				<div className="text-[var(--font-size-meta)] text-[var(--color-sumi-muted)] uppercase tracking-[0.35em] mb-8">
+				<div className="text-[var(--font-size-meta)] text-[var(--color-sumi-muted)] uppercase tracking-[0.35em] mb-6">
 					{messages.title}
 				</div>
 
 				{/* Services list with dot-leader */}
-				<div className="space-y-4 max-w-2xl">
+				<div className="space-y-6 max-w-2xl mx-auto">
 					{SERVICES.map((service) => (
 						<div
 							key={service.name}

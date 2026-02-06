@@ -27,15 +27,15 @@ export default function Contact() {
 	};
 
 	return (
-		<section className="ma-lg">
-			<div className="w-full max-w-6xl mx-auto px-6 md:px-12 lg:px-16">
+		<section className="py-12 md:py-16">
+			<div className="w-full max-w-2xl mx-auto px-6 md:px-12 text-center">
 				{/* Terminal prompt */}
 				<div className="text-[var(--font-size-meta)] text-[var(--color-sumi-muted)] mb-6">
 					$ contact
 				</div>
 
 				{/* Email with copy interaction */}
-				<div className="flex items-center gap-4">
+				<div className="flex items-center justify-center gap-6 md:gap-8 flex-wrap">
 					<button
 						type="button"
 						onClick={handleCopy}
@@ -55,7 +55,7 @@ export default function Contact() {
 				{/* Alternative contact link */}
 				<a
 					href={`mailto:${email}`}
-					className="block mt-4 text-[var(--font-size-meta)] text-[var(--color-sumi-muted)] hover:text-[var(--color-sumi-text)] transition-colors duration-300"
+					className="block mt-6 text-[var(--font-size-meta)] text-[var(--color-sumi-muted)] hover:text-[var(--color-sumi-text)] transition-colors duration-300"
 				>
 					or send email directly →
 				</a>

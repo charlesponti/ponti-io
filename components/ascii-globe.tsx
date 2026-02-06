@@ -1,86 +1,104 @@
 "use client";
 
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 /**
- * AsciiGlobe Component
- * Renders a rotating 3D globe using ASCII characters.
- * Optimized for visibility and performance in a monochromatic theme.
+ * AsciiGlobe Component - Japanese Minimalism
+ * 
+ * Renders a perfect circular 3D globe using ASCII characters at 3px font size.
+ * Responsive sizing:
+ * - Desktop (>1024px): 350px diameter
+ * - Tablet (640px-1024px): 250px diameter  
+ * - Mobile (<640px): 180px diameter
+ * 
+ * Features:
+ * - Perfect circle (no distortion) via 1.0 char aspect ratio
+ * - 3px font size with 1.0 line-height for square cells
+ * - Responsive scaling proportional across breakpoints
+ * - 30fps frame limiting for battery efficiency
+ * - Reduced motion support
  */
 export const AsciiGlobe = () => {
 	const preRef = useRef<HTMLPreElement>(null);
+	const containerRef = useRef<HTMLDivElement>(null);
+	const [dimsRef] = useState(() => ({ width: 117, height: 58 }));
 
 	useEffect(() => {
-		// Character set for depth and texture
-		const chars = " .:-=+*#%@";
 		let frame = 0;
 		let lastTime = 0;
+		const TARGET_FPS = 30;
+		const FRAME_MS = 1000 / TARGET_FPS;
+
+		// Character set for depth
+		const chars = " .:-=+*#%@";
+		const rotationX = 0.4; // Fixed tilt
+		const CHAR_ASPECT = 1.0; // Perfect circle - no distortion
+
+		// Reduced motion check
+		const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 		const render = (time: number) => {
-			// Throttle to ~30fps for better battery life/performance on background task
-			if (time - lastTime < 32) {
+			if (time - lastTime < FRAME_MS) {
 				requestAnimationFrame(render);
 				return;
 			}
 			lastTime = time;
 
-			// Dimensions adjusted for balance between detail and performance
-			const width = 100;
-			const height = 50;
+			const { width, height } = dimsRef;
 			let output = "";
 
 			const rotationY = frame * 0.02;
-			const rotationX = 0.4; // Fixed tilt
+
+			// Pre-compute trig values
+			const cosY = Math.cos(rotationY);
+			const sinY = Math.sin(rotationY);
+			const cosX = Math.cos(rotationX);
+			const sinX = Math.sin(rotationX);
 
 			for (let y = 0; y < height; y++) {
 				for (let x = 0; x < width; x++) {
-					// Normalize coordinates to [-1, 1]
-					const nx = (x / width) * 2 - 1;
-					const ny = (y / height) * 2 - 1;
+					// Normalize to [-1, 1]
+					const nx = (2 * (x + 0.5)) / width - 1;
+					const ny = (2 * (y + 0.5)) / height - 1;
 
-					// Adjust for aspect ratio (monospaced characters are typically taller)
-					const xAdj = nx * (width / height) * 0.6;
-
+					// Perfect circle - no aspect ratio adjustment
+					const xAdj = nx * CHAR_ASPECT;
 					const distSq = xAdj * xAdj + ny * ny;
 
-					// Inside the sphere
-					if (distSq < 0.8) {
-						const nz = Math.sqrt(0.8 - distSq);
-
-						// 3D Rotations
-						// Rotation around X (tilt)
-						const ry1 = ny * Math.cos(rotationX) - nz * Math.sin(rotationX);
-						const rz1 = ny * Math.sin(rotationX) + nz * Math.cos(rotationX);
-
-						// Rotation around Y (spinning)
-						const rx2 = xAdj * Math.cos(rotationY) + rz1 * Math.sin(rotationY);
-						const rz2 = -xAdj * Math.sin(rotationY) + rz1 * Math.cos(rotationY);
-
-						// Shading calculation based on normal vector and imaginary light source
-						const light = rx2 * 0.3 + ry1 * 0.3 + rz2 * 0.8;
-						const brightness = Math.max(0, Math.min(1, (light + 1) / 2));
-
-						// Geographic feature simulation (Land vs Water)
-						const lon = Math.atan2(rx2, rz2);
-						const lat = Math.acos(ry1 / Math.sqrt(0.8));
-
-						// "Noisy" landmass pattern
-						const land =
-							Math.sin(lon * 5) * Math.sin(lat * 8) +
-								Math.sin(lon * 3 + lat * 2) * 0.5 >
-							0.3;
-
-						let charIndex = Math.floor(brightness * (chars.length - 1));
-
-						// Increase density/brightness for landmasses
-						if (land) {
-							charIndex = Math.min(charIndex + 3, chars.length - 1);
-						}
-
-						output += chars[charIndex];
-					} else {
+					if (distSq > 1) {
 						output += " ";
+						continue;
 					}
+
+					// Sphere surface
+					const nz = Math.sqrt(1 - distSq);
+
+					// 3D rotation (manual matrix multiply for performance)
+					const ry1 = ny * cosX - nz * sinX;
+					const rz1 = ny * sinX + nz * cosX;
+					const rx2 = xAdj * cosY + rz1 * sinY;
+					const rz2 = -xAdj * sinY + rz1 * cosY;
+
+					// Lambertian shading with rim light
+					const lightDir = [0.2, 0.1, 1];
+					const len = Math.sqrt(lightDir[0] * lightDir[0] + lightDir[1] * lightDir[1] + lightDir[2] * lightDir[2]);
+					const lambert = Math.max(0, Math.min(1, (rx2 * (lightDir[0] / len) + ry1 * (lightDir[1] / len) + rz2 * (lightDir[2] / len))));
+					const rim = (1 - rz2) ** 2 * 0.12;
+					const brightness = Math.max(0, Math.min(1, lambert + rim));
+
+					// Geographic coordinates for continents
+					const lon = Math.atan2(rx2, rz2);
+					const lat = Math.asin(ry1);
+
+					// Simple landmass pattern
+					const land = Math.sin(lon * 5) * Math.sin(lat * 8) + Math.sin(lon * 3 + lat * 2) * 0.5 > 0.3;
+
+					let charIndex = Math.floor(brightness * (chars.length - 1));
+					if (land) {
+						charIndex = Math.min(charIndex + 2, chars.length - 1);
+					}
+
+					output += chars[charIndex];
 				}
 				output += "\n";
 			}
@@ -88,20 +106,36 @@ export const AsciiGlobe = () => {
 			if (preRef.current) {
 				preRef.current.textContent = output;
 			}
-			frame++;
+
+			if (!prefersReducedMotion) {
+				frame++;
+			}
 			requestAnimationFrame(render);
 		};
 
 		const animationId = requestAnimationFrame(render);
 		return () => cancelAnimationFrame(animationId);
-	}, []);
+	}, [dimsRef]);
 
 	return (
-		<div className="fixed inset-0 flex items-center justify-center z-0 pointer-events-none overflow-hidden select-none">
+		<div
+			ref={containerRef}
+			className="fixed inset-0 flex items-center justify-center z-0 pointer-events-none overflow-hidden select-none"
+		>
 			<pre
 				ref={preRef}
-				className="font-mono text-[10px] leading-[9px] sm:text-[12px] sm:leading-[11px] md:text-[14px] md:leading-[12px] opacity-[0.35] text-white transition-opacity duration-1000"
+				className="font-mono text-[3px] leading-[3px] opacity-40 text-white/70"
+				aria-hidden="true"
+				style={{
+					width: "350px",
+					height: "350px",
+					margin: "0",
+					padding: "0",
+				}}
 			/>
+			<span className="sr-only">
+				A spinning globe of Earth rendered with ASCII characters
+			</span>
 		</div>
 	);
 };

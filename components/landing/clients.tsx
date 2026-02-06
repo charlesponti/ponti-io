@@ -18,15 +18,15 @@ export default function Clients() {
 	const { clients } = clientsData as { clients: Client[] };
 
 	return (
-		<section className="ma-lg">
-			<div className="w-full max-w-6xl mx-auto px-6 md:px-12 lg:px-16">
+		<section className="py-12 md:py-16">
+			<div className="w-full max-w-2xl mx-auto px-6 md:px-12 text-center">
 				{/* Section label */}
-				<div className="text-[var(--font-size-meta)] text-[var(--color-sumi-muted)] uppercase tracking-[0.35em] mb-8">
+				<div className="text-[var(--font-size-meta)] text-[var(--color-sumi-muted)] uppercase tracking-[0.35em] mb-6">
 					Selected Clients
 				</div>
 
 				{/* Clients typography list */}
-				<div className="flex flex-wrap gap-x-8 gap-y-2 max-w-3xl">
+				<div className="flex flex-wrap justify-center gap-x-6 md:gap-x-8 gap-y-3 md:gap-y-4">
 					{clients.map((client) => (
 						<a
 							key={client.name}
