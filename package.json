@@ -78,7 +78,7 @@
     "vite-tsconfig-paths": "^5.1.4",
     "vitest": "^3.0.7",
     "whatwg-fetch": "^3.6.20"
-  }
+  },
   "lint-staged": {
     "**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
       "biome lint --apply --no-errors-on-unmatched",
