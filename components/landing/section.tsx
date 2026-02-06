@@ -22,10 +22,8 @@ export function Section({
 				"w-full flex flex-col items-center justify-center py-16 md:py-24 px-6 md:px-0",
 				className,
 			)}
-			initial={{ opacity: 0, y: 20 }}
-			whileInView={{ opacity: 1, y: 0 }}
-			viewport={{ once: true, margin: "-100px" }}
-			transition={{ duration: 0.8, ease: "easeOut" }}
+			initial={{ opacity: 1, y: 0 }}
+			animate={{ opacity: 1, y: 0 }}
 			{...props}
 		>
 			<div

@@ -1,0 +1,495 @@
+@import url("tailwindcss");
+
+@plugin "daisyui";
+@plugin "@tailwindcss/forms";
+@plugin "tailwindcss-animate";
+
+@theme {
+  /* Fonts - Japanese Minimalism: Single monospace family only */
+  --font-sans:
+    "Space Mono", var(--font-mono, ui-monospace), sfmono-regular, menlo, monaco, consolas,
+    "Liberation Mono", "Courier New", monospace;
+  --font-serif:
+    "Space Mono", var(--font-mono, ui-monospace), sfmono-regular, menlo, monaco, consolas,
+    "Liberation Mono", "Courier New", monospace;
+  --font-mono:
+    "Space Mono", var(--font-mono, ui-monospace), sfmono-regular, menlo, monaco, consolas,
+    "Liberation Mono", "Courier New", monospace;
+
+  /* Custom Widths */
+  --width-part-full: calc(100% - 1.5rem);
+
+  /* Japanese Minimalism: Fluid Typography Scale (320px-1400px) */
+  --font-size-hero: clamp(3rem, 4vw + 1rem, 5rem);         /* 48-80px */
+  --font-size-section: clamp(2rem, 2vw + 1rem, 3rem);      /* 32-48px */
+  --font-size-body: clamp(1rem, 0.2vw + 0.9375rem, 1.125rem); /* 16-18px */
+  --font-size-meta: clamp(0.75rem, 0.1vw + 0.7rem, 0.875rem); /* 12-14px */
+  --font-size-micro: 0.625rem;                              /* 10px */
+
+  /* Legacy fluid typography (deprecated, kept for compatibility) */
+  --font-size-fluid-1: clamp(24px, calc(24px + 2.03vw), 45px);
+  --font-size-fluid-2: clamp(32px, calc(32px + 3.5vw), 75px);
+  --font-size-fluid-3: clamp(42px, calc(42px + 4.79vw), 85px);
+  --spacing-fluid-2: clamp(32px, calc(32px + 4.79vw), 75px);
+
+  /* Line heights - Monospace needs more air */
+  --leading-tight: 1.1;    /* Headlines */
+  --leading-snug: 1.2;     /* Subheadings */
+  --leading-normal: 1.7;   /* Body text (monospace needs more) */
+  --leading-relaxed: 1.8;  /* Generous spacing */
+  --line-height-fluid-1: clamp(20px, calc(20px + 2.03vw), 50px);
+  --line-height-fluid-2: clamp(32px, calc(32px + 3.5vw), 75px);
+  --line-height-fluid-3: clamp(42px, calc(42px + 4.79vw), 85px);
+
+  /* Japanese Minimalism: Ma (間) - Generous whitespace */
+  --ma-xs: 2rem;    /* 32px */
+  --ma-sm: 4rem;    /* 64px */
+  --ma-md: 8rem;    /* 128px */
+  --ma-lg: 12rem;   /* 192px */
+  --ma-xl: 16rem;   /* 256px */
+
+  /* Japanese Minimalism: Sumi Ink Palette (墨) */
+
+  /* Pure black/white/grey - inspired by Japanese ink wash painting */
+  --color-sumi-bg: #0a0a0a;           /* Near-black background */
+  --color-sumi-text: #f5f5f5;         /* Off-white text (easier on eyes than pure white) */
+  --color-sumi-secondary: #a1a1aa;    /* Zinc-400 for secondary text */
+  --color-sumi-muted: #52525b;        /* Zinc-600 for muted text */
+  --color-sumi-subtle: #3f3f46;       /* Zinc-700 for subtle elements */
+  --color-sumi-border: rgb(255 255 255 / 5%); /* 5% white - ultra subtle */
+
+  /* Legacy color palette (deprecated, kept for compatibility) */
+  --color-bone-50: #fafafa;
+  --color-bone-100: #f4f4f5;
+  --color-bone-200: #e4e4e7;
+  --color-bone-300: #d4d4d8;
+  --color-bone-400: #a1a1aa;
+  --color-bone-500: #71717a;
+  --color-bone-600: #52525b;
+  --color-bone-700: #3f3f46;
+  --color-bone-800: #27272a;
+  --color-bone-900: #18181b;
+  --color-olive-50: #fafafa;
+  --color-olive-100: #f4f4f5;
+  --color-olive-200: #e4e4e7;
+  --color-olive-300: #d4d4d8;
+  --color-olive-400: #a1a1aa;
+  --color-olive-500: #71717a;
+  --color-olive-600: #52525b;
+  --color-olive-700: #3f3f46;
+  --color-olive-800: #27272a;
+  --color-olive-900: #18181b;
+  --color-sage-50: #fafafa;
+  --color-sage-100: #f4f4f5;
+  --color-sage-200: #e4e4e7;
+  --color-sage-300: #d4d4d8;
+  --color-sage-400: #a1a1aa;
+  --color-sage-500: #71717a;
+  --color-sage-600: #52525b;
+  --color-sage-700: #3f3f46;
+  --color-sage-800: #27272a;
+  --color-sage-900: #18181b;
+  --color-charcoal-50: #fafafa;
+  --color-charcoal-100: #f4f4f5;
+  --color-charcoal-200: #e4e4e7;
+  --color-charcoal-300: #d4d4d8;
+  --color-charcoal-400: #a1a1aa;
+  --color-charcoal-500: #71717a;
+  --color-charcoal-600: #52525b;
+  --color-charcoal-700: #3f3f46;
+  --color-charcoal-800: #27272a;
+  --color-charcoal-900: #18181b;
+
+  /* Primary color palette with RGB variables for alpha support */
+  --color-primary-50: rgb(var(--tw-color-primary-50));
+  --color-primary-100: rgb(var(--tw-color-primary-100));
+  --color-primary-200: rgb(var(--tw-color-primary-200));
+  --color-primary-300: rgb(var(--tw-color-primary-300));
+  --color-primary-400: rgb(var(--tw-color-primary-400));
+  --color-primary-500: rgb(var(--tw-color-primary-500));
+  --color-primary-600: rgb(var(--tw-color-primary-600));
+  --color-primary-700: rgb(var(--tw-color-primary-700));
+  --color-primary-800: rgb(var(--tw-color-primary-800));
+  --color-primary-900: rgb(var(--tw-color-primary-900));
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-dark: #222;
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+  --color-chart-1: hsl(var(--chart-1));
+  --color-chart-2: hsl(var(--chart-2));
+  --color-chart-3: hsl(var(--chart-3));
+  --color-chart-4: hsl(var(--chart-4));
+  --color-chart-5: hsl(var(--chart-5));
+
+  /* Background Images */
+  --background-image-gradient-radial: radial-gradient(var(--tw-gradient-stops));
+  --background-image-gradient-conic: conic-gradient(
+    from 180deg at 50% 50%,
+    var(--tw-gradient-stops)
+  );
+
+  /* Custom Keyframes & Animations */
+  @keyframes custom-pulse {
+    0%,
+    100% {
+      opacity: 0.99;
+      filter: drop-shadow(0 0 1px rgb(252 211 77)) drop-shadow(0 0 15px rgb(245 158 11))
+        drop-shadow(0 0 1px rgb(252 211 77));
+    }
+
+    50% {
+      opacity: 0.4;
+      filter: none;
+    }
+  }
+
+  @keyframes custom-flicker {
+    0%,
+    19.999%,
+    22%,
+    62.999%,
+    64%,
+    64.999%,
+    70%,
+    100% {
+      opacity: 0.99;
+      filter: drop-shadow(0 0 1px rgb(252 211 77)) drop-shadow(0 0 15px rgb(245 158 11))
+        drop-shadow(0 0 1px rgb(252 211 77));
+    }
+
+    20%,
+    21.999%,
+    63%,
+    63.999%,
+    65%,
+    69.999% {
+      opacity: 0.4;
+      filter: none;
+    }
+  }
+
+  @keyframes custom-shimmer {
+    0% {
+      background-position: -700px 0;
+    }
+
+    100% {
+      background-position: 700px 0;
+    }
+  }
+
+  --animate-pulse: custom-pulse 1.5s ease-in-out infinite;
+  --animate-flicker: custom-flicker 3s linear infinite;
+  --animate-shimmer: custom-shimmer 1.3s linear infinite;
+
+  /* Border Radius */
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
+}
+
+/* Enable class-based dark mode */
+@variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    --foreground-rgb: 0, 0, 0;
+    --background-start-rgb: 214, 219, 220;
+    --background-end-rgb: 255, 255, 255;
+
+    /* Default dark theme (from original :root) */
+    --background: 0 0% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 9%;
+    --secondary: 0 0% 14.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+    --accent: 0 0% 14.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 0% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 0 0% 83.1%;
+    --chart-1: 0 0% 90%;
+    --chart-2: 0 0% 70%;
+    --chart-3: 0 0% 50%;
+    --chart-4: 0 0% 30%;
+    --chart-5: 0 0% 12%;
+    --radius: 0rem;
+
+    /* RGB values for primary shades */
+    --tw-color-primary-50: 250 250 250;
+    --tw-color-primary-100: 244 244 245;
+    --tw-color-primary-200: 228 228 231;
+    --tw-color-primary-300: 212 212 216;
+    --tw-color-primary-400: 161 161 170;
+    --tw-color-primary-500: 113 113 122;
+    --tw-color-primary-600: 82 82 91;
+    --tw-color-primary-700: 63 63 70;
+    --tw-color-primary-800: 39 39 42;
+    --tw-color-primary-900: 24 24 27;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --foreground-rgb: 255, 255, 255;
+      --background-start-rgb: 0, 0, 0;
+      --background-end-rgb: 0, 0, 0;
+    }
+  }
+
+  .light {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 3.9%;
+    --primary: 0 0% 9%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 0 0% 96.1%;
+    --secondary-foreground: 0 0% 9%;
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 0 0% 45.1%;
+    --accent: 0 0% 96.1%;
+    --accent-foreground: 0 0% 9%;
+    --destructive: 0 0% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 89.8%;
+    --input: 0 0% 89.8%;
+    --ring: 0 0% 3.9%;
+    --chart-1: 0 0% 12%;
+    --chart-2: 0 0% 30%;
+    --chart-3: 0 0% 50%;
+    --chart-4: 0 0% 70%;
+    --chart-5: 0 0% 90%;
+  }
+
+  * {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  html,
+  body {
+    min-height: 100dvh;
+  }
+
+  body {
+    font-family:
+      "Space Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+      "Courier New", monospace;
+    background-color: var(--color-sumi-bg);
+    color: var(--color-sumi-text);
+    line-height: var(--leading-normal);
+  }
+
+  /* Japanese Minimalism: Selection colors */
+  ::selection {
+    background-color: var(--color-sumi-text);
+    color: var(--color-sumi-bg);
+  }
+
+  .h0 {
+    font-size: var(--font-size-section);
+    font-weight: 700;
+  }
+
+  h1,
+  .h1 {
+    font-size: var(--font-size-section);
+    font-weight: 700;
+  }
+
+  h2,
+  .h2 {
+    font-size: clamp(1.25rem, 1.5vw + 1rem, 2rem);
+    font-weight: 700;
+  }
+
+  h3,
+  .h3 {
+    font-size: clamp(1.125rem, 1.2vw + 0.95rem, 1.75rem);
+    font-weight: 700;
+  }
+
+  h4,
+  .h4 {
+    font-weight: 700;
+    font-size: var(--font-size-body);
+  }
+
+  body,
+  .p {
+    font-size: var(--font-size-body);
+  }
+
+  .card {
+    background-color: #222225;
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1);
+    padding: 1rem;
+  }
+
+  .bg-dark a.custom-link {
+    border-color: rgb(229 231 235);
+  }
+
+  .bg-dark a.custom-link:hover {
+    border-color: rgb(229 231 235 / 0);
+  }
+
+  .min-h-main {
+    min-height: calc(100vh - 56px);
+  }
+}
+
+@layer utilities {
+  .corona-page-wrapper {
+    transition: opacity 300ms ease-in-out;
+  }
+
+  /* stylelint-disable selector-class-pattern */
+  .group:hover .group-hover\:scale-105 {
+    transform: scale(1.05) translateZ(0);
+  }
+  /* stylelint-enable selector-class-pattern */
+
+  .bg-grid {
+    background-image:
+      linear-gradient(rgb(255 255 255 / 4%) 1px, transparent 1px),
+      linear-gradient(90deg, rgb(255 255 255 / 4%) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  .bg-noise {
+    background-image: url("data:image/svg+xml,%3Csvg width='120' height='120' viewBox='0 0 120 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");
+  }
+
+  .vignette {
+    box-shadow: inset 0 0 200px rgb(0 0 0 / 85%);
+  }
+
+  .ascii-frame {
+    border: 1px solid rgb(255 255 255 / 18%);
+    background: rgb(0 0 0 / 65%);
+    box-shadow: 0 0 0 1px rgb(255 255 255 / 3%);
+  }
+
+  .ascii-rule {
+    border-top: 1px dashed rgb(255 255 255 / 15%);
+  }
+
+  .terminal-pill {
+    border: 1px solid rgb(255 255 255 / 20%);
+    background: rgb(0 0 0 / 60%);
+  }
+
+  .animated-underline {
+    background-image:
+      linear-gradient(#3330, #3330),
+      linear-gradient(to right, var(--color-primary-400), var(--color-primary-500));
+    background-size:
+      100% 2px,
+      0 2px;
+    background-position:
+      100% 100%,
+      0 100%;
+    background-repeat: no-repeat;
+    transition: 0.3s ease;
+    transition-property: background-size, color, background-color, border-color;
+  }
+
+  .animated-underline:hover,
+  .animated-underline:focus-visible {
+    background-size:
+      0 2px,
+      100% 2px;
+  }
+
+  .animation-delay-2000 {
+    animation-delay: 2s;
+  }
+
+  .animation-delay-4000 {
+    animation-delay: 4s;
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  /* Japanese Minimalism: Ma (間) - Generous whitespace utilities */
+  .ma-xs { padding-top: var(--ma-xs); padding-bottom: var(--ma-xs); }
+  .ma-sm { padding-top: var(--ma-sm); padding-bottom: var(--ma-sm); }
+  .ma-md { padding-top: var(--ma-md); padding-bottom: var(--ma-md); }
+  .ma-lg { padding-top: var(--ma-lg); padding-bottom: var(--ma-lg); }
+  .ma-xl { padding-top: var(--ma-xl); padding-bottom: var(--ma-xl); }
+
+  /* Dot-leader for services list */
+  .dot-leader {
+    display: flex;
+    align-items: baseline;
+  }
+
+  .dot-leader::before {
+    content: "";
+    flex: 1;
+    border-bottom: 1px dotted var(--color-sumi-muted);
+    margin: 0 0.5rem;
+    opacity: 0.3;
+  }
+
+  /* Screen reader only */
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

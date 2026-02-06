@@ -1,38 +1,43 @@
 import { Section } from "@/components/landing/section";
-import Link from "next/link";
-import { getTranslations } from "next-intl/server";
+import type { Messages } from "@/src/lib/messages";
 
 /**
- * About Component (Server Component)
- *
- * Provides background information about the studio's philosophy and mission.
- * Uses getTranslations from next-intl/server for server-side localization.
+ * About Component (React Island)
  */
-export default async function About() {
-	const t = await getTranslations("About");
+type Props = { messages: Messages["About"] };
 
+export default function About({ messages }: Props) {
 	return (
 		<Section>
-			{/* Section Header */}
-			<h2 className="text-sm font-bold tracking-[0.2em] uppercase text-zinc-500 mb-12 text-center font-mono">
-				{t("title")}
-			</h2>
-
-			{/* Main Philosophy - Monochromatic Terminal Style */}
-			<div className="space-y-10 text-lg md:text-2xl font-mono text-zinc-100 leading-relaxed text-center uppercase tracking-tighter bg-black/30 backdrop-blur-sm rounded-lg p-8 md:p-12">
-				<p className="max-w-4xl mx-auto">{t("p1")}</p>
-				<p className="max-w-4xl mx-auto">{t("p2")}</p>
-				<p className="max-w-4xl mx-auto text-zinc-500">{t("p3")}</p>
-			</div>
-
-			{/* Primary Action */}
-			<div className="pt-16 flex justify-center">
-				<Link
-					href="mailto:hello@ponti.io"
-					className="text-base font-mono font-bold uppercase tracking-[0.2em] border-b border-white pb-1 hover:bg-white hover:text-black transition-all px-4 py-2"
-				>
-					{t("cta")}
-				</Link>
+			<div className="ascii-frame w-full p-6 md:p-10">
+				<div className="text-[11px] md:text-xs text-zinc-400 uppercase tracking-[0.35em] mb-6">
+					{messages.title}
+				</div>
+				<div className="grid gap-6 md:grid-cols-[1.2fr_0.8fr]">
+					<div className="space-y-5 text-sm md:text-base text-zinc-300 uppercase tracking-[0.14em] leading-relaxed">
+						<p>{messages.p1}</p>
+						<p>{messages.p2}</p>
+						<p className="text-zinc-500">{messages.p3}</p>
+					</div>
+					<div className="ascii-frame p-4 md:p-6">
+						<div className="text-xs text-zinc-500 uppercase tracking-[0.3em] mb-4">
+							/engage
+						</div>
+						<ul className="text-xs md:text-sm text-zinc-300 uppercase tracking-[0.18em] space-y-3">
+							<li>response time: &lt; 48h</li>
+							<li>deploy surface: web + internal</li>
+							<li>alignment: founder-led</li>
+						</ul>
+						<div className="ascii-rule mt-6 pt-4">
+							<a
+								href="mailto:hello@ponti.io"
+								className="text-xs uppercase tracking-[0.35em] text-white hover:text-zinc-300 transition-colors"
+							>
+								{messages.cta}
+							</a>
+						</div>
+					</div>
+				</div>
 			</div>
 		</Section>
 	);

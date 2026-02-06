@@ -1,36 +1,41 @@
-import { Section } from "@/components/landing/section";
-import { ArrowDown } from "lucide-react";
-import { getTranslations } from "next-intl/server";
+import type { Messages } from "@/src/lib/messages";
 
 /**
- * Hero Component (Server Component)
+ * Hero Component - Japanese Minimalist Design
  *
- * Displays the primary value proposition and call to action.
- * Uses getTranslations from next-intl/server for server-side localization.
+ * Philosophy:
+ * - Ma (間): Generous whitespace
+ * - Kanso (簡素): No decorative borders
+ * - Asymmetric balance: Offset 15% from center
  */
-export default async function Hero() {
-	const t = await getTranslations("Hero");
+type Props = { messages: Messages["Hero"] };
 
+export default function Hero({ messages }: Props) {
 	return (
-		<Section className="min-h-[90vh] relative">
-			<div className="flex flex-col items-center text-center gap-12 pt-20 bg-black/30 backdrop-blur-sm rounded-lg p-8 md:p-12">
-				{/* Title - Monochromatic & Bold */}
-				<h1 className="text-5xl md:text-8xl tracking-tighter leading-[0.9] text-white font-mono font-bold uppercase whitespace-pre-line">
-					{t("title")}
-				</h1>
+		<section className="min-h-[90vh] flex items-center ma-lg">
+			<div className="w-full max-w-6xl mx-auto px-6 md:px-12 lg:px-16">
+				{/* Asymmetric offset - Japanese design principle */}
+				<div className="md:ml-[15%] lg:ml-[20%] max-w-3xl">
+					{/* Main headline with dramatic scale */}
+					<h1 className="text-[var(--font-size-hero)] font-bold uppercase leading-[var(--leading-tight)] tracking-[-0.02em] mb-8">
+						{messages.title}
+					</h1>
 
-				{/* Description - AI Studio focus */}
-				<div className="max-w-2xl mx-auto space-y-6">
-					<p className="text-lg md:text-xl font-mono text-zinc-500 leading-relaxed uppercase tracking-tight">
-						{t("description")}
+					{/* Positioning statement - one sentence */}
+					<p className="text-[var(--font-size-body)] text-[var(--color-sumi-secondary)] uppercase tracking-[0.1em] leading-[var(--leading-normal)] max-w-[60ch]">
+						We design AI systems that disappear.
 					</p>
+
+					{/* Terminal status - minimal */}
+					<div className="mt-12 text-[var(--font-size-meta)] text-[var(--color-sumi-muted)]">
+						<pre className="font-mono leading-[var(--leading-snug)]">
+							{`$ status
+> accepting projects: Q2 2026
+> response: < 24h`}
+						</pre>
+					</div>
 				</div>
 			</div>
-
-			{/* Bounce Indicator */}
-			<div className="absolute bottom-12 left-1/2 -translate-x-1/2 animate-bounce opacity-30">
-				<ArrowDown className="w-5 h-5 text-white" />
-			</div>
-		</Section>
+		</section>
 	);
 }
