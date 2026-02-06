@@ -14,57 +14,57 @@ const clientTypes: ClientTypeConfig[] = [
 	{
 		type: "startups",
 		title: "Startups",
-		description: "Move fast. We help you build AI products that get your product-market fit.",
+		description: "Get to market fast with AI that users love.",
 		services: [
 			{
-				title: "LLM Development",
-				description: "Custom LLM applications. Prompt engineering. RAG systems that work.",
+				title: "AI Products",
+				description: "Build from scratch. LLMs, RAG, agents. Ship in weeks.",
 			},
 			{
-				title: "AI Product Design",
-				description: "UX/UI for AI. Make AI products your customers actually want to use.",
+				title: "Product Design",
+				description: "Make your AI feel smooth. UX that doesn't suck.",
 			},
 			{
-				title: "Product Strategy",
-				description: "AI architecture. Scaling strategy. Building for the future.",
+				title: "Strategy",
+				description: "Plan your AI roadmap. Scale without breaking.",
 			},
 		],
 	},
 	{
 		type: "smb",
 		title: "Growing Companies",
-		description: "Scale smart. Integrate AI into your existing products without the mess.",
+		description: "Add AI to what you've built. Keep momentum.",
 		services: [
 			{
 				title: "AI Integration",
-				description: "Bolt AI into your current systems. APIs. Workflows. Done right.",
+				description: "Plug AI into your existing systems. No chaos.",
 			},
 			{
-				title: "Design Systems",
-				description: "Reusable AI components. Consistency across your products.",
+				title: "Components",
+				description: "Reusable AI modules. Build faster. Stay consistent.",
 			},
 			{
-				title: "AI Product Design",
-				description: "Level up your product with AI features users love.",
+				title: "Product Design",
+				description: "Level up with AI features. Your users will notice.",
 			},
 		],
 	},
 	{
 		type: "enterprise",
 		title: "Enterprise",
-		description: "Think big. We handle complex AI systems that power your business.",
+		description: "Complex AI at scale. Done right.",
 		services: [
 			{
-				title: "AI Integration",
-				description: "Enterprise-scale AI. Data pipelines. Security. Infrastructure.",
+				title: "AI Systems",
+				description: "Enterprise-grade AI infrastructure. Security. Scale.",
 			},
 			{
-				title: "Product Strategy",
-				description: "AI roadmap. Org alignment. Building AI that drives business value.",
+				title: "Strategy",
+				description: "AI that drives revenue. Org alignment. Execution.",
 			},
 			{
-				title: "Design Systems",
-				description: "AI governance. Consistency. Enterprise standards.",
+				title: "Governance",
+				description: "Build AI your org can trust. Standards. Consistency.",
 			},
 		],
 	},
