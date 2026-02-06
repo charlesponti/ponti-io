@@ -306,6 +306,20 @@
   }
 }
 
+/* Slow rotation animation for ASCII art */
+@keyframes slow-rotate {
+  from {
+    transform: rotateZ(0deg);
+  }
+  to {
+    transform: rotateZ(360deg);
+  }
+}
+
+.animate-slow-rotate {
+  animation: slow-rotate 18s linear infinite;
+}
+
 /* Reduced Motion Support */
 @media (prefers-reduced-motion: reduce) {
   *,
