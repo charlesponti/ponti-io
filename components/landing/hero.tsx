@@ -1,36 +1,34 @@
-import type { Messages } from "@/src/lib/messages";
-
 /**
- * Hero Component - Japanese Minimalist Design
+ * Hero Component - AI Dev & Design Studio
  *
- * Philosophy:
- * - Ma (間): Generous whitespace
- * - Kanso (簡素): No decorative borders
- * - Asymmetric balance: Offset 15% from center
+ * Positioning:
+ * - Direct, no fluff
+ * - Technical + friendly
+ * - Gangsta attitude
  */
-type Props = { messages: Messages["Hero"] };
 
-export default function Hero({ messages }: Props) {
+export default function Hero() {
 	return (
 		<section className="py-12 md:py-16 flex items-center justify-center min-h-screen">
 			<div className="w-full max-w-2xl mx-auto px-6 md:px-12 text-center">
-				{/* Main headline with dramatic scale */}
+				{/* Main positioning - bold and direct */}
 				<h1 className="text-[var(--font-size-hero)] font-bold uppercase leading-[var(--leading-tight)] tracking-[-0.02em] mb-8">
-					{messages.title}
+					AI Systems Built For Real Business Problems
 				</h1>
 
-				{/* Positioning statement - one sentence */}
-				<p className="text-[var(--font-size-body)] text-[var(--color-sumi-secondary)] uppercase tracking-[0.1em] leading-[var(--leading-normal)] max-w-[60ch] mx-auto mb-10">
-					We design AI systems that disappear.
+				{/* Subheading - what we do */}
+				<p className="text-[var(--font-size-body)] text-[var(--color-sumi-secondary)] tracking-[0.02em] leading-[var(--leading-normal)] max-w-[70ch] mx-auto mb-10">
+					We design and build AI products for startups, growing companies, and enterprises. No hype. Just shipping systems that move the needle.
 				</p>
 
-				{/* Terminal status - minimal */}
-				<div className="text-[var(--font-size-meta)] text-[var(--color-sumi-muted)]">
-					<pre className="font-mono leading-[var(--leading-snug)]">
-{`$ status
-> accepting projects: Q2 2026
-> response: < 24h`}
-					</pre>
+				{/* CTA */}
+				<div className="text-[var(--font-size-meta)] text-[var(--color-sumi-text)]">
+					<a 
+						href="#client-types"
+						className="inline-block px-6 py-3 border border-[var(--color-sumi-secondary)] hover:border-[var(--color-sumi-text)] transition-colors duration-300 tracking-[0.1em] uppercase text-sm"
+					>
+						Start Building
+					</a>
 				</div>
 			</div>
 		</section>
