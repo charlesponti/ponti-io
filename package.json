@@ -3,14 +3,18 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "build": "astro build",
+    "build": "astro check && astro build",
     "dev": "astro dev",
     "lint": "npx oxlint ./src && npx oxfmt ./src && npm run typecheck && npm run run-stylelint",
+    "start": "node ./dist/server/entry.mjs",
     "preview": "astro preview",
+    "astro": "astro",
     "refresh-deps": "rm package-lock.json && rm -rf node_modules && npm install",
     "run-stylelint": "stylelint --cache --fix --ignore-path .gitignore src/**/*.css"
   },
   "dependencies": {
+    "@astrojs/check": "^0.9.6",
+    "@astrojs/node": "^9.5.2",
     "@astrojs/react": "^4.0.0",
     "@tailwindcss/vite": "^4.1.18",
     "@tanstack/react-query": "^5.13.4",
@@ -47,7 +51,7 @@
     "stylelint-config-recommended": "^14.0.0",
     "stylelint-config-standard": "^36.0.0",
     "tailwind-merge": "^2.6.0",
-    "typescript": "^5.2.2",
+    "typescript": "^5.9.3",
     "vite": "^7.3.1",
     "vite-tsconfig-paths": "^5.1.4",
     "vitest": "^3.0.7"

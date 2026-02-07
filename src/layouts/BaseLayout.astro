@@ -1,18 +1,18 @@
 ---
 import "../styles/global.css";
+import { getLocaleFromUrl, useI18n } from "../lib/i18n";
 
 type Props = {
 	title?: string;
 	description?: string;
-	locale?: string;
-	navLabels: { home: string; contact: string };
 };
 
+const locale = getLocaleFromUrl(Astro.url);
+const { messages } = useI18n();
+
 const {
-	title = "Ponti Studios",
+	title = messages.Navigation.home,
 	description = "A studio that designs AI systems that disappear into the background.",
-	locale = "en",
-	navLabels,
 } = Astro.props;
 
 ---
@@ -35,20 +35,19 @@ const {
 
 
 		{/* Minimal navigation - Kanso (簡素) */}
-		<nav class="w-full fixed top-0 z-50 px-6 py-5 bg-black">
+		<nav class="w-full fixed top-0 z-50 px-6 py-5 backdrop-blur-md">
 			<div class="mx-auto max-w-6xl flex items-center justify-between">
 				{/* Studio name only - no decorative borders */}
-					<div class="text-(--font-size-meta) uppercase tracking-[0.35em]">
-						Ponti Studios
-					</div>
+					<a href={locale === "en" ? "/" : "/ja/"}
+						class="text-(--font-size-meta) uppercase tracking-[0.35em] hover:opacity-80 transition-opacity">
+						{messages.Navigation.home}
+					</a>
 				<a
 					href="mailto:cj@ponti.io"
 					class="text-(--font-size-meta) uppercase tracking-[0.35em] transition-colors duration-300"
-					>{navLabels.contact}</a>
+					>{messages.Navigation.contact}</a>
 			</div>
-		</nav>
-
-	<main class="w-full z-10 relative flex flex-col">
+		</nav>	<main class="w-full z-10 relative flex flex-col">
 		<slot />
 	</main>
 	</body>

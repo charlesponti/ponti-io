@@ -1,35 +1,49 @@
-const services = [
-  {
-    title: "AI Products",
-    description: "Build from scratch. LLMs, RAG, agents. Ship in weeks.",
-  },
-  {
-    title: "Product Design",
-    description: "Make your AI feel smooth. UX that doesn't suck.",
-  },
-  {
-    title: "AI Integration",
-    description: "Plug AI into your existing systems. No chaos.",
-  },
-  {
-    title: "Components",
-    description: "Reusable AI modules. Build faster. Stay consistent.",
-  },
-  {
-    title: "Governance",
-    description: "Build AI your org can trust. Standards. Consistency.",
-  },
-];
+import type { Messages } from "../../lib/messages";
 
-export default function Services() {
+interface ServicesProps {
+  messages?: Messages;
+}
+
+export default function Services({ messages }: ServicesProps) {
+  const defaultServices = [
+    {
+      title: "AI Products",
+      description: "Build from scratch. LLMs, RAG, agents. Ship in weeks.",
+    },
+    {
+      title: "Product Design",
+      description: "Make your AI feel smooth. UX that doesn't suck.",
+    },
+    {
+      title: "AI Integration",
+      description: "Plug AI into your existing systems. No chaos.",
+    },
+    {
+      title: "Components",
+      description: "Reusable AI modules. Build faster. Stay consistent.",
+    },
+    {
+      title: "Governance",
+      description: "Build AI your org can trust. Standards. Consistency.",
+    },
+  ];
+
+  const servicesData = messages?.Services || {
+    sectionLabel: "[01_SERVICES]",
+    sectionTitle: "We build AI. It works. It ships.",
+    items: defaultServices,
+  };
+
+  const services = servicesData.items;
+
   return (
     <section id="services" className="py-32 md:py-48 max-w-screen-md w-full mx-auto px-6 md:px-12">
       <div className="mb-24">
         <h2 className="text-[10px] uppercase tracking-[0.4em] mb-6 font-bold opacity-50">
-          [01_SERVICES]
+          {servicesData.sectionLabel}
         </h2>
         <p className="text-2xl md:text-3xl font-light italic opacity-90">
-          We build AI. It works. It ships.
+          {servicesData.sectionTitle}
         </p>
       </div>
 
