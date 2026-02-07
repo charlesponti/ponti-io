@@ -43,7 +43,13 @@
   --color-sumi-secondary: #a1a1aa; /* Zinc-400 for secondary text */
   --color-sumi-muted: #52525b; /* Zinc-600 for muted text */
   --color-sumi-subtle: #3f3f46; /* Zinc-700 for subtle elements */
-   --color-sumi-border: rgb(255 255 255 / 5%); /* 5% white - ultra subtle */
+  --color-sumi-border: rgb(255 255 255 / 5%); /* 5% white - ultra subtle */
+
+  /* Map design system color tokens to Sumi palette so components can use existing Tailwind variables */
+  --color-foreground: var(--color-sumi-text);
+  --color-muted: var(--color-sumi-muted);
+  --color-secondary: var(--color-sumi-secondary);
+  --color-border: var(--color-sumi-border);
 
   --color-dark: #222;
   --color-background: hsl(var(--background));
@@ -76,7 +82,7 @@
     var(--tw-gradient-stops)
   );
 
-   /* Border Radius */
+  /* Border Radius */
   --radius-lg: var(--radius);
   --radius-md: calc(var(--radius) - 2px);
   --radius-sm: calc(var(--radius) - 4px);
@@ -218,7 +224,7 @@
   .card {
     background-color: #222225;
     border-radius: 0.5rem;
-    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1);
+    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 10%);
     padding: 1rem;
   }
 
@@ -227,7 +233,7 @@
   }
 
   .bg-dark a.custom-link:hover {
-    border-color: rgb(229 231 235 / 0);
+    border-color: rgb(229 231 235 / 0%);
   }
 
   .min-h-main {
@@ -270,23 +276,49 @@
     }
   }
 
+  /* Design system semantic text utilities (Tailwind v4: define in CSS, no JS config required) */
+  .text-foreground {
+    color: var(--color-foreground);
+  }
+  .hover\:text-foreground:hover {
+    color: var(--color-foreground);
+  }
+
+  .text-muted {
+    color: var(--color-muted);
+  }
+  .hover\:text-muted:hover {
+    color: var(--color-muted);
+  }
+
+  .text-secondary {
+    color: var(--color-secondary);
+  }
+  .hover\:text-secondary:hover {
+    color: var(--color-secondary);
+  }
+
   /* Japanese Minimalism: Ma (間) - Generous whitespace utilities */
   .ma-xs {
     padding-top: var(--ma-xs);
     padding-bottom: var(--ma-xs);
   }
+
   .ma-sm {
     padding-top: var(--ma-sm);
     padding-bottom: var(--ma-sm);
   }
+
   .ma-md {
     padding-top: var(--ma-md);
     padding-bottom: var(--ma-md);
   }
+
   .ma-lg {
     padding-top: var(--ma-lg);
     padding-bottom: var(--ma-lg);
   }
+
   .ma-xl {
     padding-top: var(--ma-xl);
     padding-bottom: var(--ma-xl);
@@ -311,6 +343,7 @@
   from {
     transform: rotateZ(0deg);
   }
+
   to {
     transform: rotateZ(360deg);
   }

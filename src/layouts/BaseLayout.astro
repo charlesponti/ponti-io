@@ -32,38 +32,19 @@ const {
 		/>
 	</head>
 	<body class="antialiased min-w-full font-mono selection:bg-white selection:text-black" style="font-family: 'Space Mono', monospace;">
-		{/* Background layers */}
-		<div class="fixed inset-0 -z-30" style="background-color: var(--color-sumi-bg);" aria-hidden="true"></div>
 
-		{/* Layer 20: Seigaiha Waves (z-20) */}
-		<JapaneseSeigaiha client:visible />
-
-		{/* Layer 19: Neural Network (z-19) */}
-		<NeuralNetwork client:visible />
-
-		{/* Layer 17: Base grid (z-17) */}
-		<div class="fixed inset-0 bg-grid opacity-20 -z-17" aria-hidden="true"></div>
-
-		{/* Layer 16: Base noise (z-16) */}
-		<div class="fixed inset-0 bg-noise opacity-40 -z-16" aria-hidden="true"></div>
-
-		{/* Layer 15: Vignette (z-15) */}
-		<div class="fixed inset-0 vignette -z-15" aria-hidden="true"></div>
 
 		{/* Minimal navigation - Kanso (簡素) */}
 		<nav class="w-full fixed top-0 z-50 px-6 py-5">
 			<div class="mx-auto max-w-6xl flex items-center justify-between">
 				{/* Studio name only - no decorative borders */}
-				<div class="text-[var(--font-size-meta)] uppercase tracking-[0.35em] text-[var(--color-sumi-muted)]">
-					Ponti Studios
-				</div>
-			<a
-				href="mailto:cj@ponti.io"
-				class="text-[var(--font-size-meta)] uppercase tracking-[0.35em] text-[var(--color-sumi-secondary)] hover:text-[var(--color-sumi-text)] transition-colors duration-300"
-			>
-				{navLabels.contact}
-			</a>
-			</div>
+					<div class="text-[var(--font-size-meta)] uppercase tracking-[0.35em]">
+						Ponti Studios
+					</div>
+				<a
+					href="mailto:cj@ponti.io"
+					class="text-[var(--font-size-meta)] uppercase tracking-[0.35em] transition-colors duration-300"
+					>{navLabels.contact}</a>
 		</nav>
 
 	<main class="w-full z-10 relative flex flex-col">
