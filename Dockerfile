@@ -17,21 +17,21 @@ RUN npm run build
 
 # Runtime stage
 FROM node:lts-alpine
-
 WORKDIR /app
 
-# Copy only necessary files from builder
+# Set environment variables inside Docker
+ENV HOST=0.0.0.0
+ENV PORT=8080
+ENV NODE_ENV=production
+
 COPY package*.json ./
 RUN npm ci --only=production
-
-# Copy built application from builder
 COPY --from=builder /app/dist ./dist
 
-# Health check
+# Update healthcheck to 127.0.0.1
 HEALTHCHECK --interval=30s --timeout=5s --start-period=60s --retries=3 \
-  CMD node -e "require('http').get('http://localhost:8080', (r) => {if (r.statusCode !== 200) throw new Error(r.statusCode)})" || exit 1
+  CMD node -e "require('http').get('http://127.0.0.1:8080', (r) => {if (r.statusCode !== 200) throw new Error(r.statusCode)})" || exit 1
 
-# Serve the app on port 8080
 EXPOSE 8080
 
 CMD ["node", "./dist/server/entry.mjs"]
