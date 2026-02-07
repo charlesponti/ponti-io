@@ -4,19 +4,11 @@
   "private": true,
   "scripts": {
     "build": "astro build",
-    "commit": "cz",
     "dev": "astro dev",
-    "format": "npx biome lint src components --apply --no-errors-on-unmatched && npx biome format --write src components",
-    "lint": "run-p run-lint run-stylelint",
-    "prepare": "lefthook install",
+    "lint": "npx oxlint ./src && npx oxfmt ./src && npm run typecheck && npm run run-stylelint",
     "preview": "astro preview",
     "refresh-deps": "rm package-lock.json && rm -rf node_modules && npm install",
-    "run-lint": "npx biome lint src components",
-    "run-stylelint": "stylelint --cache --fix --ignore-path .gitignore src/**/*.css",
-    "test": "vitest --run",
-    "test:watch": "vitest",
-    "typecheck": "tsc --noEmit --incremental false",
-    "validate": "run-p lint test"
+    "run-stylelint": "stylelint --cache --fix --ignore-path .gitignore src/**/*.css"
   },
   "dependencies": {
     "@astrojs/react": "^4.0.0",
