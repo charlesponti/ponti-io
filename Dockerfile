@@ -1,8 +1,6 @@
-# Use the Node alpine official image
-# https://hub.docker.com/_/node
-FROM node:lts-alpine
+# Build stage
+FROM node:lts-alpine AS builder
 
-# Create and change to the app directory.
 WORKDIR /app
 
 # Copy the files to the container image
@@ -17,6 +15,22 @@ COPY . ./
 # Build the app.
 RUN npm run build
 
+# Runtime stage
+FROM node:lts-alpine
+
+WORKDIR /app
+
+# Copy only necessary files from builder
+COPY package*.json ./
+RUN npm ci --only=production
+
+# Copy built application from builder
+COPY --from=builder /app/dist ./dist
+
+# Health check
+HEALTHCHECK --interval=30s --timeout=3s --start-period=40s --retries=3 \
+  CMD node -e "require('http').get('http://localhost:3000', (r) => {if (r.statusCode !== 200) throw new Error(r.statusCode)})"
+
 # Serve the app
-EXPOSE 8080
+EXPOSE 3000
 CMD ["npm", "run", "start"]
