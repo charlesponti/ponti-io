@@ -1,0 +1,55 @@
+---
+import "../styles/global.css";
+
+type Props = {
+	title?: string;
+	description?: string;
+	locale?: string;
+	navLabels: { home: string; contact: string };
+};
+
+const {
+	title = "Ponti Studios",
+	description = "A studio that designs AI systems that disappear into the background.",
+	locale = "en",
+	navLabels,
+} = Astro.props;
+
+---
+
+<!doctype html>
+<html lang={locale} class="font-mono dark" data-theme="dark">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>{title}</title>
+		<meta name="description" content={description} />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap"
+			rel="stylesheet"
+		/>
+	</head>
+	<body class="antialiased min-w-full font-mono selection:bg-white selection:text-black" style="font-family: 'Space Mono', monospace;">
+
+
+		{/* Minimal navigation - Kanso (簡素) */}
+		<nav class="w-full fixed top-0 z-50 px-6 py-5 bg-black">
+			<div class="mx-auto max-w-6xl flex items-center justify-between">
+				{/* Studio name only - no decorative borders */}
+					<div class="text-(--font-size-meta) uppercase tracking-[0.35em]">
+						Ponti Studios
+					</div>
+				<a
+					href="mailto:cj@ponti.io"
+					class="text-(--font-size-meta) uppercase tracking-[0.35em] transition-colors duration-300"
+					>{navLabels.contact}</a>
+			</div>
+		</nav>
+
+	<main class="w-full z-10 relative flex flex-col">
+		<slot />
+	</main>
+	</body>
+</html>

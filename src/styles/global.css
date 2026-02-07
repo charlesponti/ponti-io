@@ -1,0 +1,383 @@
+@import "tailwindcss";
+
+@theme {
+  /* Fonts - Japanese Minimalism: Single monospace family only */
+  --font-sans:
+    "Space Mono", var(--font-mono, ui-monospace), sfmono-regular, menlo, monaco, consolas,
+    "Liberation Mono", "Courier New", monospace;
+  --font-serif:
+    "Space Mono", var(--font-mono, ui-monospace), sfmono-regular, menlo, monaco, consolas,
+    "Liberation Mono", "Courier New", monospace;
+  --font-mono:
+    "Space Mono", var(--font-mono, ui-monospace), sfmono-regular, menlo, monaco, consolas,
+    "Liberation Mono", "Courier New", monospace;
+
+  /* Custom Widths */
+  --width-part-full: calc(100% - 1.5rem);
+
+  /* Japanese Minimalism: Fluid Typography Scale (320px-1400px) */
+  --font-size-hero: clamp(3rem, 4vw + 1rem, 5rem); /* 48-80px */
+  --font-size-section: clamp(2rem, 2vw + 1rem, 3rem); /* 32-48px */
+  --font-size-body: clamp(1rem, 0.2vw + 0.9375rem, 1.125rem); /* 16-18px */
+  --font-size-meta: clamp(0.75rem, 0.1vw + 0.7rem, 0.875rem); /* 12-14px */
+  --font-size-micro: 0.625rem; /* 10px */
+
+  /* Line heights - Monospace needs more air */
+  --leading-tight: 1.1; /* Headlines */
+  --leading-snug: 1.2; /* Subheadings */
+  --leading-normal: 1.7; /* Body text (monospace needs more) */
+  --leading-relaxed: 1.8; /* Generous spacing */
+
+  /* Japanese Minimalism: Ma (間) - Generous whitespace */
+  --ma-xs: 2rem; /* 32px */
+  --ma-sm: 4rem; /* 64px */
+  --ma-md: 8rem; /* 128px */
+  --ma-lg: 12rem; /* 192px */
+  --ma-xl: 16rem; /* 256px */
+
+  /* Japanese Minimalism: Sumi Ink Palette (墨) */
+
+  /* Pure black/white/grey - inspired by Japanese ink wash painting */
+  --color-sumi-bg: #0a0a0a; /* Near-black background */
+  --color-sumi-text: #f5f5f5; /* Off-white text (easier on eyes than pure white) */
+  --color-sumi-secondary: #a1a1aa; /* Zinc-400 for secondary text */
+  --color-sumi-muted: #52525b; /* Zinc-600 for muted text */
+  --color-sumi-subtle: #3f3f46; /* Zinc-700 for subtle elements */
+  --color-sumi-border: rgb(255 255 255 / 5%); /* 5% white - ultra subtle */
+
+  /* Map design system color tokens to Sumi palette so components can use existing Tailwind variables */
+  --color-foreground: var(--color-sumi-text);
+  --color-muted: var(--color-sumi-muted);
+  --color-secondary: var(--color-sumi-secondary);
+  --color-border: var(--color-sumi-border);
+
+  --color-dark: #222;
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+  --color-chart-1: hsl(var(--chart-1));
+  --color-chart-2: hsl(var(--chart-2));
+  --color-chart-3: hsl(var(--chart-3));
+  --color-chart-4: hsl(var(--chart-4));
+  --color-chart-5: hsl(var(--chart-5));
+
+  /* Background Images */
+  --background-image-gradient-radial: radial-gradient(var(--tw-gradient-stops));
+  --background-image-gradient-conic: conic-gradient(
+    from 180deg at 50% 50%,
+    var(--tw-gradient-stops)
+  );
+
+  /* Border Radius */
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
+}
+
+/* Enable class-based dark mode */
+@variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    --foreground-rgb: 0, 0, 0;
+    --background-start-rgb: 214, 219, 220;
+    --background-end-rgb: 255, 255, 255;
+
+    /* Default dark theme (from original :root) */
+    --background: 0 0% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 9%;
+    --secondary: 0 0% 14.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+    --accent: 0 0% 14.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 0% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 0 0% 83.1%;
+    --chart-1: 0 0% 90%;
+    --chart-2: 0 0% 70%;
+    --chart-3: 0 0% 50%;
+    --chart-4: 0 0% 30%;
+    --chart-5: 0 0% 12%;
+    --radius: 0rem;
+
+    /* RGB values for primary shades */
+    --tw-color-primary-50: 250 250 250;
+    --tw-color-primary-100: 244 244 245;
+    --tw-color-primary-200: 228 228 231;
+    --tw-color-primary-300: 212 212 216;
+    --tw-color-primary-400: 161 161 170;
+    --tw-color-primary-500: 113 113 122;
+    --tw-color-primary-600: 82 82 91;
+    --tw-color-primary-700: 63 63 70;
+    --tw-color-primary-800: 39 39 42;
+    --tw-color-primary-900: 24 24 27;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --foreground-rgb: 255, 255, 255;
+      --background-start-rgb: 0, 0, 0;
+      --background-end-rgb: 0, 0, 0;
+    }
+  }
+
+  .light {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 3.9%;
+    --primary: 0 0% 9%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 0 0% 96.1%;
+    --secondary-foreground: 0 0% 9%;
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 0 0% 45.1%;
+    --accent: 0 0% 96.1%;
+    --accent-foreground: 0 0% 9%;
+    --destructive: 0 0% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 89.8%;
+    --input: 0 0% 89.8%;
+    --ring: 0 0% 3.9%;
+    --chart-1: 0 0% 12%;
+    --chart-2: 0 0% 30%;
+    --chart-3: 0 0% 50%;
+    --chart-4: 0 0% 70%;
+    --chart-5: 0 0% 90%;
+  }
+
+  * {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  html,
+  body {
+    min-height: 100dvh;
+  }
+
+  body {
+    font-family:
+      "Space Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+      "Courier New", monospace;
+    background-color: var(--color-sumi-bg);
+    color: var(--color-sumi-text);
+    line-height: var(--leading-normal);
+  }
+
+  /* Japanese Minimalism: Selection colors */
+  ::selection {
+    background-color: var(--color-sumi-text);
+    color: var(--color-sumi-bg);
+  }
+
+  h1 {
+    font-size: var(--font-size-section);
+    font-weight: 700;
+  }
+
+  h2 {
+    font-size: clamp(1.25rem, 1.5vw + 1rem, 2rem);
+    font-weight: 700;
+  }
+
+  h3 {
+    font-size: clamp(1.125rem, 1.2vw + 0.95rem, 1.75rem);
+    font-weight: 700;
+  }
+
+  h4 {
+    font-weight: 700;
+    font-size: var(--font-size-body);
+  }
+
+  body {
+    font-size: var(--font-size-body);
+  }
+
+  .card {
+    background-color: #222225;
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 10%);
+    padding: 1rem;
+  }
+
+  .bg-dark a.custom-link {
+    border-color: rgb(229 231 235);
+  }
+
+  .bg-dark a.custom-link:hover {
+    border-color: rgb(229 231 235 / 0%);
+  }
+
+  .min-h-main {
+    min-height: calc(100vh - 56px);
+  }
+}
+
+@layer utilities {
+  .bg-grid {
+    background-image:
+      linear-gradient(rgb(255 255 255 / 4%) 1px, transparent 1px),
+      linear-gradient(90deg, rgb(255 255 255 / 4%) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  .bg-noise {
+    background-image: url("data:image/svg+xml,%3Csvg width='120' height='120' viewBox='0 0 120 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");
+  }
+
+  .vignette {
+    box-shadow: inset 0 0 200px rgb(0 0 0 / 85%);
+  }
+
+  .ascii-frame {
+    border: 1px solid rgb(255 255 255 / 18%);
+    background: rgb(0 0 0 / 65%);
+    box-shadow: 0 0 0 1px rgb(255 255 255 / 3%);
+  }
+
+  .ascii-rule {
+    border-top: 1px dashed rgb(255 255 255 / 15%);
+  }
+
+  /* Structural line used for section dividers */
+  .structural-line {
+    border-top: 1px solid rgb(255 255 255 / 10%);
+  }
+
+  /* Absolute-zero interaction zone for VOID aesthetic */
+  .void-shell * {
+    transition: none !important;
+    animation-duration: 0s !important;
+    cursor: crosshair;
+  }
+
+  /* Service spacing mirrors reference layout */
+  .service-item {
+    padding-bottom: 4rem;
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  /* Design system semantic text utilities (Tailwind v4: define in CSS, no JS config required) */
+  .text-foreground {
+    color: var(--color-foreground);
+  }
+  .hover\:text-foreground:hover {
+    color: var(--color-foreground);
+  }
+
+  .text-muted {
+    color: var(--color-muted);
+  }
+  .hover\:text-muted:hover {
+    color: var(--color-muted);
+  }
+
+  .text-secondary {
+    color: var(--color-secondary);
+  }
+  .hover\:text-secondary:hover {
+    color: var(--color-secondary);
+  }
+
+  /* Japanese Minimalism: Ma (間) - Generous whitespace utilities */
+  .ma-xs {
+    padding-top: var(--ma-xs);
+    padding-bottom: var(--ma-xs);
+  }
+
+  .ma-sm {
+    padding-top: var(--ma-sm);
+    padding-bottom: var(--ma-sm);
+  }
+
+  .ma-md {
+    padding-top: var(--ma-md);
+    padding-bottom: var(--ma-md);
+  }
+
+  .ma-lg {
+    padding-top: var(--ma-lg);
+    padding-bottom: var(--ma-lg);
+  }
+
+  .ma-xl {
+    padding-top: var(--ma-xl);
+    padding-bottom: var(--ma-xl);
+  }
+
+  /* Screen reader only */
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+}
+
+/* Hero animation keyframes */
+@keyframes slow-rotate {
+  from {
+    transform: rotateZ(0deg);
+  }
+
+  to {
+    transform: rotateZ(360deg);
+  }
+}
+
+.animate-slow-rotate {
+  animation: slow-rotate 18s linear infinite;
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
