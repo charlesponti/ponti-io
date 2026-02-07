@@ -29,7 +29,8 @@ export default function Clients({ messages }: ClientsProps) {
             {messages?.Clients?.title || "Selected Clients"}
           </h2>
           <p className="text-[var(--font-size-body)] text-[var(--color-sumi-secondary)] max-w-2xl leading-[var(--leading-relaxed)]">
-            {messages?.Clients?.description || "We've worked with ambitious teams reducing complexity to deliver intelligence that matters."}
+            {messages?.Clients?.description ||
+              "We've worked with ambitious teams reducing complexity to deliver intelligence that matters."}
           </p>
         </div>
 

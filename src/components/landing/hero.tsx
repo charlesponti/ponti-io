@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
-import CountingMetric from "./CountingMetric";
 import type { Messages } from "../../lib/messages";
+import CountingMetric from "./CountingMetric";
 
 interface HeroProps {
   messages?: Messages;
@@ -29,7 +29,7 @@ export default function Hero({ messages }: HeroProps) {
     reduction: "REDUCTION: 99.8%",
     distractionIndex: "DISTRACTION_INDEX: 0.00",
     systemStatus: "SYSTEM_STATUS:",
-    active: "ACTIVE"
+    active: "ACTIVE",
   };
 
   useEffect(() => {
@@ -111,9 +111,7 @@ export default function Hero({ messages }: HeroProps) {
 
         <div className="flex flex-col md:flex-row gap-12 items-start">
           <div className="w-full md:w-2/3 space-y-10">
-            <p className="text-lg leading-relaxed text-white/70 max-w-xl">
-              {heroData.subtitle}
-            </p>
+            <p className="text-lg leading-relaxed text-white/70 max-w-xl">{heroData.subtitle}</p>
           </div>
 
           <aside className="w-full md:w-1/3 structural-line pt-8 opacity-50 text-[10px] leading-tight tracking-[0.08em] uppercase">

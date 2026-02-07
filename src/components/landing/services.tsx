@@ -49,11 +49,18 @@ export default function Services({ messages }: ServicesProps) {
 
       <div className="flex flex-col">
         {services.map((service, index) => (
-          <div key={service.title} className="service-item flex items-start gap-6 md:gap-8 structural-line first:border-t-0">
+          <div
+            key={service.title}
+            className="service-item flex items-start gap-6 md:gap-8 structural-line first:border-t-0"
+          >
             <span className="text-xs opacity-30 mt-1">{String(index + 1).padStart(2, "0")}.</span>
             <div>
-              <h3 className="text-xl font-bold uppercase mb-3 tracking-[0.04em]">{service.title}</h3>
-              <p className="text-white/60 text-sm max-w-md leading-relaxed">{service.description}</p>
+              <h3 className="text-xl font-bold uppercase mb-3 tracking-[0.04em]">
+                {service.title}
+              </h3>
+              <p className="text-white/60 text-sm max-w-md leading-relaxed">
+                {service.description}
+              </p>
             </div>
           </div>
         ))}
