@@ -1,0 +1,36 @@
+/* Shibui: Absolute zero UI animation */
+* {
+  transition: none !important;
+  animation: none !important;
+  cursor: crosshair;
+}
+
+body {
+  background-color: #000000;
+  color: #ffffff;
+  font-family: "ui-monospace", "SFMono-Regular", "Menlo", "Monaco", "Consolas", monospace;
+  overflow-x: hidden;
+}
+
+/* Wabi-sabi: Subtle structural indicators */
+.structural-line {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.product-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+::selection {
+  background: #ffffff;
+  color: #000000;
+}
+
+#ascii-loading {
+  white-space: pre;
+  font-size: 6px;
+  line-height: 1;
+  opacity: 0.15;
+  pointer-events: none;
+}

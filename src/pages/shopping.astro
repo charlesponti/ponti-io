@@ -1,46 +1,11 @@
 ---
+import AsciiTexture from "../components/AsciiTexture.jsx";
 import BaseLayout from "../layouts/BaseLayout.astro";
+import '../styles/shopping.css';
 ---
 
 <BaseLayout title="Void - Marketplace">
-  <style is:global>
-    /* Shibui: Absolute zero UI animation */
-    * {
-      transition: none !important;
-      animation: none !important;
-      cursor: crosshair;
-    }
-
-    body {
-      background-color: #000000;
-      color: #ffffff;
-      font-family: "ui-monospace", "SFMono-Regular", "Menlo", "Monaco", "Consolas", monospace;
-      overflow-x: hidden;
-    }
-
-    /* Wabi-sabi: Subtle structural indicators */
-    .structural-line {
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    .product-card {
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px solid rgba(255, 255, 255, 0.05);
-    }
-
-    ::selection {
-      background: #ffffff;
-      color: #000000;
-    }
-
-    #ascii-loading {
-      white-space: pre;
-      font-size: 6px;
-      line-height: 1;
-      opacity: 0.15;
-      pointer-events: none;
-    }
-  </style>
+  
 
   <main class="min-h-screen flex flex-col p-6 md:p-12 lg:p-20">
     <header class="flex justify-between items-start w-full opacity-50 text-xs tracking-tighter z-10">
@@ -63,7 +28,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       <div class="flex flex-col">
         <div class="product-card aspect-square w-full mb-8 flex items-center justify-center relative overflow-hidden">
           <div class="text-[8px] opacity-20">[01_HARDWARE_INTERFACE]</div>
-          <div id="ascii-loading" class="absolute inset-0 flex items-center justify-center"></div>
+          <AsciiTexture client:load />
         </div>
         <div class="flex justify-between items-start mb-4">
           <h2 class="font-bold text-lg uppercase tracking-tighter">Monolith Keyboard</h2>
@@ -122,26 +87,6 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       <span>VOID_PROTOCOL_01</span>
     </footer>
 
-    <script>
-      const asciiContainer = document.getElementById("ascii-loading");
-      if (asciiContainer) {
-        let frame = 0;
-        function animateTexture() {
-          let lines = "";
-          for (let i = 0; i < 15; i++) {
-            let line = "";
-            for (let j = 0; j < 40; j++) {
-              line += Math.random() > 0.98 ? "+" : Math.random() > 0.99 ? "·" : " ";
-            }
-            lines += line + "\n";
-          }
-          asciiContainer.textContent = lines;
-          frame++;
-          if (frame % 10 === 0) requestAnimationFrame(animateTexture);
-          else setTimeout(() => requestAnimationFrame(animateTexture), 100);
-        }
-        animateTexture();
-      }
-    </script>
+    
   </main>
 </BaseLayout>
