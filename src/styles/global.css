@@ -267,6 +267,23 @@
     border-top: 1px dashed rgb(255 255 255 / 15%);
   }
 
+  /* Structural line used for section dividers */
+  .structural-line {
+    border-top: 1px solid rgb(255 255 255 / 10%);
+  }
+
+  /* Absolute-zero interaction zone for VOID aesthetic */
+  .void-shell * {
+    transition: none !important;
+    animation-duration: 0s !important;
+    cursor: crosshair;
+  }
+
+  /* Service spacing mirrors reference layout */
+  .service-item {
+    padding-bottom: 4rem;
+  }
+
   .scrollbar-hide {
     -ms-overflow-style: none;
     scrollbar-width: none;

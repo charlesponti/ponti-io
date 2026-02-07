@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Void - Marketplace</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      /* Shibui: Absolute zero UI animation */
+      * {
+        transition: none !important;
+        animation: none !important;
+        cursor: crosshair;
+      }
+
+      body {
+        background-color: #000000;
+        color: #ffffff;
+        font-family: "ui-monospace", "SFMono-Regular", "Menlo", "Monaco", "Consolas", monospace;
+        overflow-x: hidden;
+      }
+
+      /* Wabi-sabi: Subtle structural indicators */
+      .structural-line {
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .product-card {
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+      }
+
+      ::selection {
+        background: #ffffff;
+        color: #000000;
+      }
+
+      #ascii-loading {
+        white-space: pre;
+        font-size: 6px;
+        line-height: 1;
+        opacity: 0.15;
+        pointer-events: none;
+      }
+    </style>
+  </head>
+  <body class="min-h-screen flex flex-col p-6 md:p-12 lg:p-20">
+    <!-- Kanso: Essential Navigation -->
+    <header
+      class="flex justify-between items-start w-full opacity-50 text-xs tracking-tighter z-10"
+    >
+      <div>VOID_STORE_V.1</div>
+      <nav class="flex gap-8">
+        <a href="#">[CATALOG]</a>
+        <a href="#">[CART:0]</a>
+      </nav>
+    </header>
+
+    <main class="flex-grow flex flex-col">
+      <!-- Hero / Ma (Negative Space) -->
+      <section class="py-24 md:py-32">
+        <h1 class="text-4xl md:text-5xl font-bold tracking-tighter mb-8 italic">
+          OBJECTS_OF_UTILITY
+        </h1>
+        <p class="max-w-md text-white/50 text-sm leading-relaxed mb-24">
+          CURATED HARDWARE FOR THE ASCETIC TECH WORKER. NO TRAPPINGS. NO ORNAMENTATION. ONLY
+          FUNCTION.
+        </p>
+      </section>
+
+      <!-- Product Grid: Fukinsei (Asymmetry) -->
+      <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16 md:gap-24">
+        <!-- Product 01 -->
+        <div class="flex flex-col">
+          <div
+            class="product-card aspect-square w-full mb-8 flex items-center justify-center relative overflow-hidden"
+          >
+            <!-- Placeholder for Product Asset (Wabi-sabi: Abstract representation) -->
+            <div class="text-[8px] opacity-20">[01_HARDWARE_INTERFACE]</div>
+            <div id="ascii-loading" class="absolute inset-0 flex items-center justify-center"></div>
+          </div>
+          <div class="flex justify-between items-start mb-4">
+            <h2 class="font-bold text-lg uppercase tracking-tighter">Monolith Keyboard</h2>
+            <span class="opacity-50">$420.00</span>
+          </div>
+          <p class="text-xs text-white/40 mb-8 leading-relaxed">
+            Solid milled aluminum. Blank PBT keycaps. No backlight. No noise.
+          </p>
+          <button
+            class="w-full py-4 border border-white/20 text-xs font-bold hover:bg-white hover:text-black"
+          >
+            ADD_TO_CART
+          </button>
+        </div>
+
+        <!-- Product 02 -->
+        <div class="flex flex-col md:mt-32">
+          <!-- Asymmetrical offset -->
+          <div class="product-card aspect-square w-full mb-8 flex items-center justify-center">
+            <div class="text-[8px] opacity-20">[02_OPTICAL_SENSOR]</div>
+          </div>
+          <div class="flex justify-between items-start mb-4">
+            <h2 class="font-bold text-lg uppercase tracking-tighter">Null Mouse</h2>
+            <span class="opacity-50">$180.00</span>
+          </div>
+          <p class="text-xs text-white/40 mb-8 leading-relaxed">
+            Zero-drag ceramic feet. 8k polling. Raw plastic finish. No drivers required.
+          </p>
+          <button
+            class="w-full py-4 border border-white/20 text-xs font-bold hover:bg-white hover:text-black"
+          >
+            ADD_TO_CART
+          </button>
+        </div>
+
+        <!-- Product 03 -->
+        <div class="flex flex-col">
+          <div class="product-card aspect-square w-full mb-8 flex items-center justify-center">
+            <div class="text-[8px] opacity-20">[03_SOUND_ISOLATION]</div>
+          </div>
+          <div class="flex justify-between items-start mb-4">
+            <h2 class="font-bold text-lg uppercase tracking-tighter">Void Hear-01</h2>
+            <span class="opacity-50">$550.00</span>
+          </div>
+          <p class="text-xs text-white/40 mb-8 leading-relaxed">
+            Passive isolation. Open back. Wired only. Truth in audio reproduction.
+          </p>
+          <button
+            class="w-full py-4 border border-white/20 text-xs font-bold hover:bg-white hover:text-black"
+          >
+            ADD_TO_CART
+          </button>
+        </div>
+      </section>
+
+      <!-- Ma: Extreme footer separation -->
+      <section class="mt-64 py-24 structural-line">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-24">
+          <div>
+            <h3 class="text-xs font-bold mb-8 opacity-40 uppercase tracking-widest">[POLICY]</h3>
+            <p class="text-xs text-white/50 leading-loose">
+              WE DO NOT ACCEPT RETURNS BASED ON AESTHETIC DISAGREEMENT.<br />
+              WE DO NOT SEND TRACKING UPDATES VIA EMAIL.<br />
+              THE PACKAGE WILL ARRIVE WHEN THE LOGISTICS PERMIT.<br />
+              PATIENCE IS PART OF THE PURCHASE.
+            </p>
+          </div>
+          <div class="text-right">
+            <h3 class="text-xs font-bold mb-8 opacity-40 uppercase tracking-widest">
+              [PHILOSOPHY]
+            </h3>
+            <p class="text-xs text-white/50 leading-loose italic">
+              "THE MORE YOU HAVE, THE LESS YOU ARE."
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer
+      class="mt-48 flex flex-wrap gap-x-12 gap-y-4 opacity-30 text-[10px] tracking-widest uppercase pb-12"
+    >
+      <span>EST. 2026</span>
+      <span>PROCESSED_IN_LA</span>
+      <span>VOID_PROTOCOL_01</span>
+    </footer>
+
+    <script>
+      // Simple ASCII pattern for the product cards to add "Wabi-sabi" texture
+      const asciiContainer = document.getElementById("ascii-loading");
+      if (asciiContainer) {
+        let frame = 0;
+        function animateTexture() {
+          let lines = "";
+          for (let i = 0; i < 15; i++) {
+            let line = "";
+            for (let j = 0; j < 40; j++) {
+              line += Math.random() > 0.98 ? "+" : Math.random() > 0.99 ? "·" : " ";
+            }
+            lines += line + "\n";
+          }
+          asciiContainer.textContent = lines;
+          frame++;
+          if (frame % 10 === 0) requestAnimationFrame(animateTexture);
+          else setTimeout(() => requestAnimationFrame(animateTexture), 100);
+        }
+        animateTexture();
+      }
+    </script>
+  </body>
+</html>
