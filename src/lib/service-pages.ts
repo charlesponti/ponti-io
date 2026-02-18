@@ -9,12 +9,19 @@ export const SERVICE_KEYS = [
 
 export type ServiceKey = (typeof SERVICE_KEYS)[number];
 
+export interface ExampleItem {
+  label: string;
+  title: string;
+  description: string;
+}
+
 export interface ServiceContent {
   heroTitle: string;
   heroSubtitle: string;
   capabilityTitle: string;
   capabilityBody: string;
   capabilityHighlights: string[];
+  examples: ExampleItem[];
   ctaLabel: string;
   ctaSubtext: string;
 }

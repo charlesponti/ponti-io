@@ -38,6 +38,21 @@ export default function ServicePage({ content, slug }: ServicePageProps) {
           </ul>
         </div>
 
+        <div className="border border-[var(--border)] p-6 md:p-10 space-y-5">
+          <p className="text-[10px] uppercase tracking-[0.4em] text-[var(--muted-foreground)]">EXAMPLES</p>
+          <div className="grid gap-6 md:grid-cols-3">
+            {content.examples.map((example) => (
+              <div key={example.title} className="text-sm text-[var(--secondary-foreground)] leading-relaxed">
+                <p className="text-[10px] uppercase tracking-[0.4em] text-[var(--muted-foreground)]">
+                  {example.label}
+                </p>
+                <p className="font-semibold uppercase tracking-[0.08em] mt-2">{example.title}</p>
+                <p className="mt-2 text-[var(--secondary-foreground)]">{example.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
         <div className="relative">
           <div className="opacity-20 text-[4px] tracking-[0.3em] leading-tight whitespace-pre bg-[var(--muted)] p-4 rounded">
             {PATTERN}
