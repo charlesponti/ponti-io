@@ -1,0 +1,26 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import ServicePage from "../../components/service/ServicePage";
+import { useI18n } from "../../lib/i18n";
+import { normalizeServiceKey, SERVICE_KEYS } from "../../lib/service-pages";
+
+const { params } = Astro;
+const requestedKey = normalizeServiceKey(params.service as string | undefined);
+const serviceBlocks = useI18n().messages?.ServicePages;
+const fallback = serviceBlocks?.[SERVICE_KEYS[0]];
+const serviceContent = serviceBlocks?.[requestedKey] ?? fallback;
+
+if (!serviceContent) {
+  throw new Error("Service content missing");
+}
+
+export const prerender = true;
+
+export async function getStaticPaths() {
+  return SERVICE_KEYS.map((key) => ({ params: { service: key } }));
+}
+---
+
+<BaseLayout>
+  <ServicePage content={serviceContent} slug={requestedKey} />
+</BaseLayout>

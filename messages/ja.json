@@ -177,5 +177,85 @@
       }
     ],
     "footer": "類似の成果が必要ですか？1回の通話でユースケースを整理します。"
+  },
+  "ServicePages": {
+    "intelligence": {
+      "heroTitle": "INTELLIGENCE",
+      "heroSubtitle": "ダッシュボードが見落とすシグナルを検出します。",
+      "capabilityTitle": "能力: シグナル発見",
+      "capabilityBody": "インジェスト、強化、通知を設計し、盲点になる前にチームが行動できるようにします。",
+      "capabilityHighlights": [
+        "運用テレメトリとドキュメントコーパスを解析するカスタムエージェント。",
+        "12時間ごとに信頼度付きで検証済みのシグナルを提供。",
+        "チームのスタイルに合わせた人間可読のサマリー。"
+      ],
+      "ctaLabel": "シグナルレビューを請求",
+      "ctaSubtext": "2営業日以内に30分のインテリジェンスプレビューを設定します。"
+    },
+    "automation": {
+      "heroTitle": "AUTOMATION",
+      "heroSubtitle": "代わりに決まった自動化ループを稼働させます。",
+      "capabilityTitle": "能力: 手動作業排除",
+      "capabilityBody": "チェックポイント、追跡性、ログを備えたワークフローを設計して実行します。",
+      "capabilityHighlights": [
+        "お客様の制御する週間サイクルで運用されるプレイブック。",
+        "1つの真実の記録に記録された取り戻したオペ時間。",
+        "必要なときに人間が介入できるエスカレーションフック。"
+      ],
+      "ctaLabel": "自動化スコープ立ち上げ",
+      "ctaSubtext": "24時間以内に最初の自動化ループをマッピングするブリーフを共有します。"
+    },
+    "productDesign": {
+      "heroTitle": "PRODUCT DESIGN",
+      "heroSubtitle": "正確で不気味なほど整ったインターフェース。",
+      "capabilityTitle": "能力: 体験の明瞭さ",
+      "capabilityBody": "AIが何をしているか、なぜそれをしているかを人間に理解させる経路を洗練します。",
+      "capabilityHighlights": [
+        "焦点を生むモノスペースのレイアウトと余白。",
+        "プロンプト状態、失敗モード、ユーザーガイダンスをUIに統合。",
+        "スケッチから出荷可能なプロトタイプまで数日で進化。"
+      ],
+      "ctaLabel": "デザインシグナルを請求",
+      "ctaSubtext": "提案するフローを示す3画面の資料を返信します。"
+    },
+    "connectors": {
+      "heroTitle": "CONNECTORS",
+      "heroSubtitle": "モデルをスタックと同期させるカスタム配線。",
+      "capabilityTitle": "能力: スタック統合",
+      "capabilityBody": "API、データストア、コンプライアンスフレームワーク向けに監視性と予測可能なレイテンシを備えたアダプタを構築します。",
+      "capabilityHighlights": [
+        "リトライとサーキットブレーカーでレイテンシ予算を守る。",
+        "コネクタを通るすべての信号に観測性フック。",
+        "ガバナンスと監査対応を保証するポリシー・アズ・コード。"
+      ],
+      "ctaLabel": "コネクタ設計図を請求",
+      "ctaSubtext": "2営業日以内に配線図を共有します。"
+    },
+    "components": {
+      "heroTitle": "COMPONENTS",
+      "heroSubtitle": "高速出荷を支える再利用可能モジュール。",
+      "capabilityTitle": "能力: 再利用可能ロジック",
+      "capabilityBody": "エージェントとワークフローを再利用して、毎回ゼロから作り直さずに済むようにします。",
+      "capabilityHighlights": [
+        "ガードレール付きのベクトル検索コンポーネント。",
+        "貴社のデータと検証を組み込んだエージェントテンプレート。",
+        "新プロダクトに落とし込めるワークフロー構成。"
+      ],
+      "ctaLabel": "自動化ロジックを再利用",
+      "ctaSubtext": "モジュールセットをデモし、再利用の推奨を共有します。"
+    },
+    "governance": {
+      "heroTitle": "GOVERNANCE",
+      "heroSubtitle": "すべての実行に対する制御と監査。",
+      "capabilityTitle": "能力: ガードレール",
+      "capabilityBody": "ランタイムガードレール、監視、監査によりAIフリートの信頼性を維持します。",
+      "capabilityHighlights": [
+        "展開を自動チェックするポリシー・アズ・コード定義。",
+        "ドリフトとレイテンシアラートを含む監視ダッシュボード。",
+        "ノイズを抑えたエスカレーションで経営層が把握。"
+      ],
+      "ctaLabel": "統制された監査を確保",
+      "ctaSubtext": "48時間以内に監視と監査プランを説明します。"
+    }
   }
 }

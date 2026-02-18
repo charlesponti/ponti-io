@@ -177,5 +177,85 @@
       }
     ],
     "footer": "Need a similar win? We'll map your use case in one call."
+  },
+  "ServicePages": {
+    "intelligence": {
+      "heroTitle": "INTELLIGENCE",
+      "heroSubtitle": "Scan the void for the signals your dashboards never surface.",
+      "capabilityTitle": "Capability: Signal discovery",
+      "capabilityBody": "We architect ingest, enrichment, and alerting so your team acts before blind spots become problems.",
+      "capabilityHighlights": [
+        "Custom agents parsing operational telemetry and document corpora.",
+        "Validated signals surfaced every 12 hours with confidence scores.",
+        "Human-readable summaries delivered in the style your team prefers."
+      ],
+      "ctaLabel": "REQUEST SIGNAL REVIEW",
+      "ctaSubtext": "We schedule a 30-minute intelligence preview within two business days."
+    },
+    "automation": {
+      "heroTitle": "AUTOMATION",
+      "heroSubtitle": "Replace drudgery with deterministic automation loops.",
+      "capabilityTitle": "Capability: Manual work elimination",
+      "capabilityBody": "We design automation paths that execute workflows with checkpoints, traceability, and forensic logs.",
+      "capabilityHighlights": [
+        "Playbooks that run on a weekly cadence you control.",
+        "Ops time reclaimed and logged to a single source of truth.",
+        "Escalation hooks that keep humans in authority when needed."
+      ],
+      "ctaLabel": "LAUNCH AUTOMATION SCOPING",
+      "ctaSubtext": "Expect a briefing within 24 hours to map the first automation loop."
+    },
+    "productDesign": {
+      "heroTitle": "PRODUCT DESIGN",
+      "heroSubtitle": "Interfaces that feel precise, not mysterious.",
+      "capabilityTitle": "Capability: Experience clarity",
+      "capabilityBody": "We refine every interaction path so humans understand what the AI is doing and why.",
+      "capabilityHighlights": [
+        "Monospace layouts, sharp typography, and generous Ma for focus.",
+        "Clear prompt states, failure modes, and user guidance baked into the UI.",
+        "Rapid prototypes that move from schematic to ship-ready in days."
+      ],
+      "ctaLabel": "REQUEST DESIGN SIGNAL",
+      "ctaSubtext": "We reply with a three-screen deck that shows the proposed flow."
+    },
+    "connectors": {
+      "heroTitle": "CONNECTORS",
+      "heroSubtitle": "Custom wiring that keeps every model synced with your stack.",
+      "capabilityTitle": "Capability: Stack integration",
+      "capabilityBody": "We build adapters for APIs, data stores, and compliance frameworks with predictable latency and monitoring.",
+      "capabilityHighlights": [
+        "Latency budgets enforced with retries and circuit breakers.",
+        "Observability hooks for every signal crossing the connector.",
+        "Policy-as-code that ensures governance and audit readiness."
+      ],
+      "ctaLabel": "REQUEST CONNECTOR BLUEPRINT",
+      "ctaSubtext": "We share a wiring diagram within two business days."
+    },
+    "components": {
+      "heroTitle": "COMPONENTS",
+      "heroSubtitle": "Ready-to-use modular automation that ships faster.",
+      "capabilityTitle": "Capability: Reusable logic",
+      "capabilityBody": "We curate reusable agents and workflows so each launch reuses trusted logic instead of starting over.",
+      "capabilityHighlights": [
+        "Vector-search-backed retrieval components with guardrails.",
+        "Agent templates wired to your data and validation checks.",
+        "Workflow compositions that can be dropped into new products."
+      ],
+      "ctaLabel": "REUSE AUTOMATION LOGIC",
+      "ctaSubtext": "We demo the module set and share reuse recommendations."
+    },
+    "governance": {
+      "heroTitle": "GOVERNANCE",
+      "heroSubtitle": "Control, oversight, and compliance over every run.",
+      "capabilityTitle": "Capability: Guardrails",
+      "capabilityBody": "Runtime guardrails, monitoring, and auditing keep your AI fleet trustworthy.",
+      "capabilityHighlights": [
+        "Policy-as-code definitions that auto-check deployments.",
+        "Monitoring dashboards with signal drift and latency alerts.",
+        "Escalation paths that keep executives informed without noise."
+      ],
+      "ctaLabel": "SECURE A GOVERNED AUDIT",
+      "ctaSubtext": "We outline the monitoring and audit plan in 48 hours."
+    }
   }
 }
