@@ -4,211 +4,178 @@
     "home": "PONTI STUDIOS"
   },
   "Hero": {
-    "title": "Intelligence that works.",
-    "subtitle": "WE REDUCE UNTIL ONLY THE ESSENCE REMAINS. ONLY DATA. ONLY TRUTH. NO DECEPTION.",
+    "title": "AI that actually lands.",
+    "subtitle": "Guided builds, measurable outcomes, zero hype.",
     "metricsLabel": "[METRICS]",
-    "dataPoints": "DATA POINTS",
-    "latency": "LATENCY: 0.04ms",
-    "reduction": "REDUCTION: 99.8%",
-    "distractionIndex": "DISTRACTION_INDEX: 0.00",
+    "dataPoints": "PROOF LINES",
+    "latency": "Insight cycle: 12h",
+    "reduction": "Ops time saved: 18h/wk",
+    "distractionIndex": "Accuracy: 98%",
     "systemStatus": "SYSTEM_STATUS:",
-    "active": "ACTIVE"
+    "active": "Operational"
   },
   "Services": {
     "sectionLabel": "[01_SERVICES]",
-    "sectionTitle": "We build AI. It works. It ships.",
+    "sectionTitle": "Guided AI to unlock your next business move.",
     "items": [
       {
-        "title": "AI Products",
-        "description": "Build from scratch. LLMs, RAG, agents. Ship in weeks."
+        "title": "Intelligence",
+        "description": "Surface hidden signals so you can act before blind spots become problems."
+      },
+      {
+        "title": "Automation",
+        "description": "Free your team from repetitive ops so they focus on high-leverage work."
       },
       {
         "title": "Product Design",
-        "description": "Make your AI feel smooth. UX that doesn't suck."
+        "description": "Craft interfaces that guide humans through AI interactions with confidence."
       },
       {
-        "title": "AI Integration",
-        "description": "Plug AI into your existing systems. No chaos."
+        "title": "Connectors",
+        "description": "Build custom wiring so every model stays synced with your stack, data, and guardrails."
       },
       {
         "title": "Components",
-        "description": "Reusable AI modules. Build faster. Stay consistent."
+        "description": "Deploy ready-to-use automation modules so each launch reuses trusted logic."
       },
       {
         "title": "Governance",
-        "description": "Build AI your org can trust. Standards. Consistency."
+        "description": "Lock in runtime guardrails and audits so compliance never slips."
       }
     ]
   },
   "Contact": {
-    "buttonLabel": "INITIALIZE_CONTACT"
+    "buttonLabel": "LAUNCH A GUIDED AI BRIEFING",
+    "subtext": "We reply within 24 hours with a 30-minute discovery call."
   },
   "Clients": {
-    "title": "Selected Clients",
-    "description": "We've worked with ambitious teams reducing complexity to deliver intelligence that matters.",
-    "items": [
+    "title": "Proof in production",
+    "description": "Case highlights show time saved, compliance wins, and faster ops for teams that needed AI to simply work.",
+    "subtitle": "Signals, automation, and governance wins across operations, healthcare, and data platforms.",
+    "groups": [
       {
-        "name": "Lumina Industries",
-        "description": "Enterprise platform engineering and search architecture",
-        "highlights": [
-          "Semantic search ranking system improving content discovery relevance",
-          "Student performance dashboard increasing course completion rates",
-          "Frontend modernization reducing bundle size and time-to-interactive"
+        "label": "Operational automation",
+        "description": "Reducing cycles across operations, marketplaces, and touring experiences.",
+        "projects": [
+          {
+            "name": "Lumina Industries",
+            "description": "Enterprise platform engineering and search architecture",
+            "highlights": [
+              "Semantic search ranking and dashboards improved discovery relevance and completion.",
+              "Frontend modernization cut bundle size and time-to-interactive."
+            ]
+          },
+          {
+            "name": "StreamYard + Collab",
+            "description": "Creator collaboration marketplace with AI matching and analytics",
+            "highlights": [
+              "$15M+ ARR unlocked through consumer and enterprise launches for StreamYard Teams.",
+              "AI recommendations drove 300% YoY creator collaboration growth with Collab."
+            ]
+          },
+          {
+            "name": "Revrock",
+            "description": "End-to-end tour optimization for indie musicians",
+            "highlights": [
+              "Tour routing optimization reduced travel cost and logistics overhead.",
+              "Financial dashboards delivered real-time profitability tracking."
+            ]
+          },
+          {
+            "name": "Prolog",
+            "description": "AI-powered writer submission triage platform",
+            "highlights": [
+              "LLM email parser cut manual data entry time by 90%.",
+              "Vector similarity search surfaced qualified candidates instantly."
+            ]
+          },
+          {
+            "name": "Glow Digital",
+            "description": "Social advertising platform with automation",
+            "highlights": [
+              "Automation systems saved advertisers hours of manual optimization weekly.",
+              "API strategy reduced third-party costs by 90% without data loss."
+            ]
+          },
+          {
+            "name": "Rocco",
+            "description": "Travel planning with social features",
+            "highlights": [
+              "Trip planning UX made itinerary creation effortless.",
+              "Social discovery feed connected travelers with shared interests."
+            ]
+          }
         ]
       },
       {
-        "name": "StreamYard",
-        "description": "Creator collaboration marketplace with AI matching",
-        "highlights": [
-          "$15M+ ARR unlocked through consumer & enterprise feature launches",
-          "300% YoY creator collaboration growth via AI-powered recommendations",
-          "Scaled platform to serve 20K+ monthly active creators"
+        "label": "Care & customer intelligence",
+        "description": "Personalized experiences, community, and care automation.",
+        "projects": [
+          {
+            "name": "Whistle",
+            "description": "Privacy-first video conferencing for movement education",
+            "highlights": [
+              "Privacy-focused platform enabled sensitive instruction safely.",
+              "Adaptive quality system kept teaching reliable during emergencies."
+            ]
+          },
+          {
+            "name": "Humana",
+            "description": "Senior healthcare platform and mobile engineering",
+            "highlights": [
+              "Mobile research boosted senior member engagement and adoption.",
+              "Personalized healthcare matching connected members with the right providers."
+            ]
+          },
+          {
+            "name": "Manual.co",
+            "description": "Menopause symptom checker interface",
+            "highlights": [
+              "NLP symptom analysis delivered personalized care recommendations.",
+              "Medical data integration ensured clinical accuracy."
+            ]
+          },
+          {
+            "name": "Help Refugees",
+            "description": "Volunteer resource management interface",
+            "highlights": [
+              "React application streamlined volunteer coordination.",
+              "Data integrity systems kept sensitive information secure."
+            ]
+          }
         ]
       },
       {
-        "name": "Revrock",
-        "description": "End-to-end tour optimization platform for indie musicians",
-        "highlights": [
-          "Tour route optimization reducing travel costs and logistics overhead",
-          "Financial dashboards enabling real-time tour profitability tracking",
-          "Spotify integration enabling data-driven venue and market selection"
-        ]
-      },
-      {
-        "name": "Prolog",
-        "description": "AI-powered writer submission triage platform",
-        "highlights": [
-          "LLM email parser cutting manual data entry time by 90%",
-          "Vector similarity search enabling instant qualified candidate discovery",
-          "Streamlined review workflow reducing evaluation time significantly"
-        ]
-      },
-      {
-        "name": "Whistle",
-        "description": "Privacy-focused video conferencing for movement education",
-        "highlights": [
-          "Privacy-first platform enabling sensitive movement instruction safely",
-          "Adaptive quality system ensuring reliable teaching during emergencies",
-          "Enabled NYC ballet school operations continuity during COVID-19"
-        ]
-      },
-      {
-        "name": "Kensho",
-        "description": "Data engineering platform transformation leadership",
-        "highlights": [
-          "Cloud migration reducing monthly infrastructure costs and complexity",
-          "Led 15-person team establishing scalable data architecture",
-          "Dramatically faster ETL processing supporting massive-scale operations"
-        ]
-      },
-      {
-        "name": "Humana",
-        "description": "Senior healthcare platform and mobile engineering",
-        "highlights": [
-          "Mobile experience driving senior healthcare member engagement",
-          "User research practices improving feature adoption and satisfaction",
-          "Personalized healthcare matching connecting members with right providers"
-        ]
-      },
-      {
-        "name": "Mimecast",
-        "description": "Enterprise email security policy management",
-        "highlights": [
-          "Global security management platform for enterprise deployments",
-          "White-label theming enabling partner customization at scale",
-          "Internationalization system supporting global deployment"
-        ]
-      },
-      {
-        "name": "Glow Digital",
-        "description": "Social advertising platform with automation",
-        "highlights": [
-          "API strategy reducing third-party costs by 90% without data loss",
-          "Automation system saving advertisers hours of manual optimization weekly",
-          "Campaign optimization platform increasing ad performance and ROI"
-        ]
-      },
-      {
-        "name": "Thomson Reuters",
-        "description": "Enterprise deployment and monitoring platform",
-        "highlights": [
-          "Global platform enabling secure enterprise application deployment",
-          "Fine-grained access control ensuring regulatory compliance",
-          "Dashboards improving high-stakes decision-making and trading outcomes"
-        ]
-      },
-      {
-        "name": "Collab",
-        "description": "Analytics platform for user engagement tracking",
-        "highlights": [
-          "Engagement analytics informing product decisions with real data",
-          "Performance benchmarking enabling cohort-based insights",
-          "Feedback systems closing user insight loop for teams"
-        ]
-      },
-      {
-        "name": "Help Refugees",
-        "description": "Volunteer resource management interface",
-        "highlights": [
-          "React application managing volunteer coordination efficiently",
-          "Data integrity systems protecting sensitive refugee information",
-          "Learning from iteration improving future project execution"
-        ]
-      },
-      {
-        "name": "Komi",
-        "description": "Community platform for entrepreneurship",
-        "highlights": [
-          "Event architecture connecting entrepreneurs for collaboration",
-          "Mentorship network enabling guidance and knowledge sharing",
-          "Designed for sustainable community growth and engagement"
-        ]
-      },
-      {
-        "name": "Manual.co",
-        "description": "Menopause symptom checker interface",
-        "highlights": [
-          "NLP symptom analysis providing personalized care recommendations",
-          "Medical data integration ensuring clinical accuracy",
-          "Clear guidance helping patients understand care paths"
-        ]
-      },
-      {
-        "name": "Mary Sabo",
-        "description": "Practitioner business tools",
-        "highlights": [
-          "Scheduling system reducing calendar management friction",
-          "Payment processing enabling seamless financial transactions",
-          "Client management tools improving practitioner-client relationships"
-        ]
-      },
-      {
-        "name": "Peterson Academy",
-        "description": "Frontend modernization to Svelte 5",
-        "highlights": [
-          "32% improvement in time-to-interactive for students",
-          "Eliminated hydration mismatches improving deployment reliability",
-          "Modern architecture improving developer maintainability"
-        ]
-      },
-      {
-        "name": "Rocco",
-        "description": "Travel planning with social features",
-        "highlights": [
-          "Trip planning interface making itinerary creation effortless",
-          "Social discovery feed connecting travelers with shared interests",
-          "Mobile proposal enabling travel management on-the-go"
-        ]
-      },
-      {
-        "name": "V School",
-        "description": "Full-stack coding bootcamp curriculum",
-        "highlights": [
-          "Hands-on curriculum preparing developers for production work",
-          "Project-based learning modules accelerating skill development",
-          "Dev Shop capstones building real portfolio through real projects"
+        "label": "Platform reliability & scale",
+        "description": "Architecture, compliance, and delivery that keep pace.",
+        "projects": [
+          {
+            "name": "Kensho",
+            "description": "Data engineering platform transformation leadership",
+            "highlights": [
+              "Cloud migration cut infrastructure costs and complexity.",
+              "New architecture sped up ETL for massive-scale operations."
+            ]
+          },
+          {
+            "name": "Mimecast",
+            "description": "Enterprise email security policy management",
+            "highlights": [
+              "Global security platform enabled enterprise deployments.",
+              "Internationalization supported partners worldwide."
+            ]
+          },
+          {
+            "name": "Thomson Reuters",
+            "description": "Enterprise deployment and monitoring platform",
+            "highlights": [
+              "Secure deployment platform ensured regulatory compliance.",
+              "Dashboards improved high-stakes decision-making and trading outcomes."
+            ]
+          }
         ]
       }
-    ]
+    ],
+    "footer": "Need a similar win? We'll map your use case in one call."
   }
 }
