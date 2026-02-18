@@ -26,8 +26,7 @@ interface ClientGroup {
 
 export default function Clients({ messages }: ClientsProps) {
   const clientData = messages?.Clients;
-  const clientGroups: ClientGroup[] | undefined = clientData?.groups;
-  const fallbackClients: ClientProject[] = clientData?.items || [];
+  const clientGroups: ClientGroup[] = clientData?.groups || [];
 
   return (
     <section className="void-shell py-[var(--ma-lg)] px-6 md:px-12 lg:px-20">
@@ -49,33 +48,25 @@ export default function Clients({ messages }: ClientsProps) {
         </div>
 
         {/* Clients Grid */}
-        {clientGroups ? (
-          <div className="space-y-[var(--ma-lg)]">
-            {clientGroups.map((group) => (
-              <div key={group.label} className="space-y-6">
-                <div className="flex items-center justify-between border-b border-white/20 pb-2">
-                  <p className="text-[var(--font-size-meta)] uppercase tracking-[0.3em] opacity-60">
-                    {group.label}
-                  </p>
-                  {group.description && (
-                    <p className="text-[10px] uppercase opacity-60">{group.description}</p>
-                  )}
-                </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[var(--ma-sm)]">
-                  {group.projects.map((client) => (
-                    <ClientCard key={client.name} client={client} />
-                  ))}
-                </div>
+        <div className="space-y-[var(--ma-lg)]">
+          {clientGroups.map((group) => (
+            <div key={group.label} className="space-y-6">
+              <div className="flex items-center justify-between border-b border-white/20 pb-2">
+                <p className="text-[var(--font-size-meta)] uppercase tracking-[0.3em] opacity-60">
+                  {group.label}
+                </p>
+                {group.description && (
+                  <p className="text-[10px] uppercase opacity-60">{group.description}</p>
+                )}
               </div>
-            ))}
-          </div>
-        ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[var(--ma-sm)]">
-            {fallbackClients.map((client) => (
-              <ClientCard key={client.name} client={client} />
-            ))}
-          </div>
-        )}
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[var(--ma-sm)]">
+                {group.projects.map((client) => (
+                  <ClientCard key={client.name} client={client} />
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
 
         {clientData?.footer && (
           <div className="mt-[var(--ma-lg)] text-[10px] uppercase tracking-[0.4em] opacity-70">
