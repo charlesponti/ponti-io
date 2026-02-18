@@ -25,7 +25,7 @@ export default function Services({ messages }: ServicesProps) {
     {
       title: "Product Design",
       description: "Craft interfaces that guide humans through AI interactions with confidence.",
-      slug: "productDesign",
+      slug: "productdesign",
     },
     {
       title: "Connectors",

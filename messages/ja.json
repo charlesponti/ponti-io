@@ -31,7 +31,7 @@
       {
         "title": "Product Design",
         "description": "AIとの対話に確信を与えるインターフェースを設計します。",
-        "slug": "productDesign"
+        "slug": "productdesign"
       },
       {
         "title": "Connectors",
@@ -211,7 +211,7 @@
       "ctaLabel": "自動化スコープ立ち上げ",
       "ctaSubtext": "24時間以内に最初の自動化ループをマッピングするブリーフを共有します。"
     },
-    "productDesign": {
+    "productdesign": {
       "heroTitle": "PRODUCT DESIGN",
       "heroSubtitle": "正確で不気味なほど整ったインターフェース。",
       "capabilityTitle": "能力: 体験の明瞭さ",

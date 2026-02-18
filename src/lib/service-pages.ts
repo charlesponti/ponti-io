@@ -1,7 +1,7 @@
 export const SERVICE_KEYS = [
   "intelligence",
   "automation",
-  "productDesign",
+  "productdesign",
   "connectors",
   "components",
   "governance",
