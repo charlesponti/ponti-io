@@ -20,27 +20,33 @@
     "items": [
       {
         "title": "Intelligence",
-        "description": "見えないシグナルを表出して、盲点になる前に行動を可能にします。"
+        "description": "見えないシグナルを表出して、盲点になる前に行動を可能にします。",
+        "slug": "intelligence"
       },
       {
         "title": "Automation",
-        "description": "繰り返し作業を解放し、重要な業務に集中できるようにします。"
+        "description": "繰り返し作業を解放し、重要な業務に集中できるようにします。",
+        "slug": "automation"
       },
       {
         "title": "Product Design",
-        "description": "AIとの対話に確信を与えるインターフェースを設計します。"
+        "description": "AIとの対話に確信を与えるインターフェースを設計します。",
+        "slug": "productDesign"
       },
       {
         "title": "Connectors",
-        "description": "モデルをスタック、データ、ガイドレールと同期させるカスタム接続を構築します。"
+        "description": "モデルをスタック、データ、ガイドレールと同期させるカスタム接続を構築します。",
+        "slug": "connectors"
       },
       {
         "title": "Components",
-        "description": "実績あるロジックを再利用して、再構築なしで自動化モジュールを展開します。"
+        "description": "実績あるロジックを再利用して、再構築なしで自動化モジュールを展開します。",
+        "slug": "components"
       },
       {
         "title": "Governance",
-        "description": "ガバナンスと監査をロックしてコンプライアンスを維持します。"
+        "description": "ガバナンスと監査をロックしてコンプライアンスを維持します。",
+        "slug": "governance"
       }
     ]
   },

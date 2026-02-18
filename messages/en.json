@@ -20,27 +20,33 @@
     "items": [
       {
         "title": "Intelligence",
-        "description": "Surface hidden signals so you can act before blind spots become problems."
+        "description": "Surface hidden signals so you can act before blind spots become problems.",
+        "slug": "intelligence"
       },
       {
         "title": "Automation",
-        "description": "Free your team from repetitive ops so they focus on high-leverage work."
+        "description": "Free your team from repetitive ops so they focus on high-leverage work.",
+        "slug": "automation"
       },
       {
         "title": "Product Design",
-        "description": "Craft interfaces that guide humans through AI interactions with confidence."
+        "description": "Craft interfaces that guide humans through AI interactions with confidence.",
+        "slug": "productDesign"
       },
       {
         "title": "Connectors",
-        "description": "Build custom wiring so every model stays synced with your stack, data, and guardrails."
+        "description": "Build custom wiring so every model stays synced with your stack, data, and guardrails.",
+        "slug": "connectors"
       },
       {
         "title": "Components",
-        "description": "Deploy ready-to-use automation modules so each launch reuses trusted logic."
+        "description": "Deploy ready-to-use automation modules so each launch reuses trusted logic.",
+        "slug": "components"
       },
       {
         "title": "Governance",
-        "description": "Lock in runtime guardrails and audits so compliance never slips."
+        "description": "Lock in runtime guardrails and audits so compliance never slips.",
+        "slug": "governance"
       }
     ]
   },

@@ -4,27 +4,43 @@ interface ServicesProps {
   messages?: Messages;
 }
 
+interface ServiceItem {
+  title: string;
+  description: string;
+  slug?: string;
+}
+
 export default function Services({ messages }: ServicesProps) {
-  const defaultServices = [
+  const defaultServices: ServiceItem[] = [
     {
-      title: "AI Products",
-      description: "Build from scratch. LLMs, RAG, agents. Ship in weeks.",
+      title: "Intelligence",
+      description: "Surface hidden signals so you can act before blind spots become problems.",
+      slug: "intelligence",
+    },
+    {
+      title: "Automation",
+      description: "Free your team from repetitive ops so they focus on high-leverage work.",
+      slug: "automation",
     },
     {
       title: "Product Design",
-      description: "Make your AI feel smooth. UX that doesn't suck.",
+      description: "Craft interfaces that guide humans through AI interactions with confidence.",
+      slug: "productDesign",
     },
     {
-      title: "AI Integration",
-      description: "Plug AI into your existing systems. No chaos.",
+      title: "Connectors",
+      description: "Build custom wiring so every model stays synced with your stack, data, and guardrails.",
+      slug: "connectors",
     },
     {
       title: "Components",
-      description: "Reusable AI modules. Build faster. Stay consistent.",
+      description: "Deploy ready-to-use automation modules so each launch reuses trusted logic.",
+      slug: "components",
     },
     {
       title: "Governance",
-      description: "Build AI your org can trust. Standards. Consistency.",
+      description: "Lock in runtime guardrails and audits so compliance never slips.",
+      slug: "governance",
     },
   ];
 
@@ -61,6 +77,14 @@ export default function Services({ messages }: ServicesProps) {
               <p className="text-white/60 text-sm max-w-md leading-relaxed">
                 {service.description}
               </p>
+              {service.slug && (
+                <a
+                  href={`/services/${service.slug}`}
+                  className="text-[10px] uppercase tracking-[0.4em] mt-4 inline-flex text-[var(--muted-foreground)]"
+                >
+                  EXPLORE {service.title} →
+                </a>
+              )}
             </div>
           </div>
         ))}
