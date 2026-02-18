@@ -13,11 +13,13 @@ export interface ExampleItem {
   label: string;
   title: string;
   description: string;
+  icon: string;
 }
 
 export interface ServiceContent {
   heroTitle: string;
   heroSubtitle: string;
+  asciiSeed: string;
   capabilityTitle: string;
   capabilityBody: string;
   capabilityHighlights: string[];

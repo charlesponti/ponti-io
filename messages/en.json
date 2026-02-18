@@ -1,6 +1,6 @@
 {
   "Navigation": {
-    "contact": "GET IN TOUCH",
+    "contact": "LAUNCH BRIEFING",
     "home": "PONTI STUDIOS"
   },
   "Hero": {
@@ -199,38 +199,25 @@
         {
           "label": "Small business",
           "title": "Neighborhood plumber",
-          "description": "We set up a local index that spots supply shortages and shares dispatch-ready checklists before emergency calls."
+          "description": "We setup a Local Index that spots supply shortages and surfaces dispatch-ready checklists before emergency calls.",
+          "icon": "Wrench"
         },
         {
           "label": "Medium business",
           "title": "Boutique manufacturer",
-          "description": "Weekly intelligence reports highlight supplier lead-time drift so the operations lead can recalibrate runs before outages."
+          "description": "Weekly intelligence reports highlight supplier lead-time drift, letting the operations lead recalibrate runs ahead of outages.",
+          "icon": "Factory"
         },
         {
           "label": "Large business",
           "title": "Regional logistics provider",
-          "description": "Signal orchestration watches 300+ live fleets and flags backlog patterns to keep executives ahead of delivery issues."
-        }
-      ],
-      "examples": [
-        {
-          "label": "Small business",
-          "title": "Neighborhood plumber",
-          "description": "We setup a Local Index that spots supply shortages and surfaces dispatch-ready checklists before emergency calls."
-        },
-        {
-          "label": "Medium business",
-          "title": "Boutique manufacturer",
-          "description": "Weekly intelligence reports highlight supplier lead-time drift, letting the operations lead recalibrate runs ahead of outages."
-        },
-        {
-          "label": "Large business",
-          "title": "Regional logistics provider",
-          "description": "Signal orchestration watches 300+ live fleets and flags backlog patterns to keep executives ahead of delivery issues."
+          "description": "Signal orchestration watches 300+ live fleets and flags backlog patterns to keep executives ahead of delivery issues.",
+          "icon": "Truck"
         }
       ],
       "ctaLabel": "REQUEST SIGNAL REVIEW",
-      "ctaSubtext": "We schedule a 30-minute intelligence preview within two business days."
+      "ctaSubtext": "We schedule a 30-minute intelligence preview within two business days.",
+      "asciiSeed": "signal-intelligence-v1"
     },
     "automation": {
       "heroTitle": "AUTOMATION",
@@ -246,38 +233,25 @@
         {
           "label": "Small business",
           "title": "Coffee shop",
-          "description": "Automated inventory ordering keeps bins stocked based on real-time pour rates and staff schedules."
+          "description": "Automated inventory ordering keeps bins stocked based on real-time pour rates and staff schedules.",
+          "icon": "Coffee"
         },
         {
           "label": "Medium business",
           "title": "Healthcare staffing firm",
-          "description": "AI-managed onboarding removes manual paperwork, only pinging staff when documents miss deadlines."
+          "description": "AI-managed onboarding removes manual paperwork, scheduling follow-ups only when documents miss deadlines.",
+          "icon": "Building2"
         },
         {
           "label": "Large business",
           "title": "National insurer",
-          "description": "Claims orchestration automates triage, compliance checks, and escalations with full audit trails."
-        }
-      ],
-      "examples": [
-        {
-          "label": "Small business",
-          "title": "Coffee shop",
-          "description": "Automated inventory ordering keeps bins stocked based on real-time pour rates and staff schedules."
-        },
-        {
-          "label": "Medium business",
-          "title": "Healthcare staffing firm",
-          "description": "AI-managed onboarding removes manual paperwork, scheduling follow-ups only when documents miss deadlines."
-        },
-        {
-          "label": "Large business",
-          "title": "National insurer",
-          "description": "Claims orchestration automates triage, compliance checks, and escalations with full audit trails."
+          "description": "Claims orchestration automates triage, compliance checks, and escalations with full audit trails.",
+          "icon": "Briefcase"
         }
       ],
       "ctaLabel": "LAUNCH AUTOMATION SCOPING",
-      "ctaSubtext": "Expect a briefing within 24 hours to map the first automation loop."
+      "ctaSubtext": "Expect a briefing within 24 hours to map the first automation loop.",
+      "asciiSeed": "signal-automation-v1"
     },
     "productdesign": {
       "heroTitle": "PRODUCT DESIGN",
@@ -293,38 +267,25 @@
         {
           "label": "Small business",
           "title": "Real estate office",
-          "description": "Interfaces explain where each AI suggestion comes from so agents trust the referral engine."
+          "description": "Interfaces explain where each AI suggestion comes from so agents can trust the referral engine.",
+          "icon": "Home"
         },
         {
           "label": "Medium business",
           "title": "Regional craft retailer",
-          "description": "Multimodal controls guide store managers through restock scenarios with tactile signal feedback."
+          "description": "Multimodal controls guide store managers through restock scenarios with tactile signal feedback.",
+          "icon": "Store"
         },
         {
           "label": "Large business",
           "title": "Enterprise software firm",
-          "description": "Internal tooling surfaces guardrail states, drift warnings, and edit history in a single space."
-        }
-      ],
-      "examples": [
-        {
-          "label": "Small business",
-          "title": "Real estate office",
-          "description": "Interfaces explain where each AI suggestion comes from so agents can trust the referral engine."
-        },
-        {
-          "label": "Medium business",
-          "title": "Regional craft retailer",
-          "description": "Multimodal controls guide store managers through restock scenarios with tactile signal feedback."
-        },
-        {
-          "label": "Large business",
-          "title": "Enterprise software firm",
-          "description": "Internal tooling surfaces guardrail states, drift warnings, and edit history in a single space."
+          "description": "Internal tooling surfaces guardrail states, drift warnings, and edit history in a single space.",
+          "icon": "HardDrive"
         }
       ],
       "ctaLabel": "REQUEST DESIGN SIGNAL",
-      "ctaSubtext": "We reply with a three-screen deck that shows the proposed flow."
+      "ctaSubtext": "We reply with a three-screen deck that shows the proposed flow.",
+      "asciiSeed": "signal-productdesign-v1"
     },
     "connectors": {
       "heroTitle": "CONNECTORS",
@@ -340,38 +301,25 @@
         {
           "label": "Small business",
           "title": "Local bakery",
-          "description": "Connectors sync their POS and supplier sheets so recipes stay aligned with inventory."
+          "description": "Connectors sync their POS and supplier sheets so recipes remain in sync with inventory.",
+          "icon": "Store"
         },
         {
           "label": "Medium business",
           "title": "Regional telecom",
-          "description": "Data pipes feed billing, CRM, and network events into a single lake for AI validation."
+          "description": "Data pipes feed billing, CRM, and network events into a single data lake for AI validation.",
+          "icon": "Building2"
         },
         {
           "label": "Large business",
           "title": "Financial services group",
-          "description": "Governed connectors push transactions through compliance layers while maintaining deterministic latency."
-        }
-      ],
-      "examples": [
-        {
-          "label": "Small business",
-          "title": "Local bakery",
-          "description": "Connectors sync their POS and supplier sheets so recipes remain in sync with inventory."
-        },
-        {
-          "label": "Medium business",
-          "title": "Regional telecom",
-          "description": "Data pipes feed billing, CRM, and network events into a single data lake for AI validation."
-        },
-        {
-          "label": "Large business",
-          "title": "Financial services group",
-          "description": "Governed connectors push transactions through compliance layers and deliver deterministic latency."
+          "description": "Governed connectors push transactions through compliance layers and deliver deterministic latency.",
+          "icon": "Landmark"
         }
       ],
       "ctaLabel": "REQUEST CONNECTOR BLUEPRINT",
-      "ctaSubtext": "We share a wiring diagram within two business days."
+      "ctaSubtext": "We share a wiring diagram within two business days.",
+      "asciiSeed": "signal-connectors-v1"
     },
     "components": {
       "heroTitle": "COMPONENTS",
@@ -387,38 +335,25 @@
         {
           "label": "Small business",
           "title": "Plumbing crew",
-          "description": "Reusable completion templates handle dispatch updates, follow-ups, and delivery receipts."
+          "description": "Reusable completion templates handle dispatch updates, follow-ups, and delivery receipts.",
+          "icon": "Wrench"
         },
         {
           "label": "Medium business",
           "title": "Medical device maker",
-          "description": "Automation modules run QA checklists and route exceptions to engineering leads."
+          "description": "Automation modules run QA checklists and route exceptions to engineering leads.",
+          "icon": "Factory"
         },
         {
           "label": "Large business",
           "title": "Logistics SaaS",
-          "description": "Component library powers every new product release with the same secure retrieval mesh."
-        }
-      ],
-      "examples": [
-        {
-          "label": "Small business",
-          "title": "Plumbing crew",
-          "description": "Reusable completion templates handle dispatch updates, follow-ups, and delivery receipts."
-        },
-        {
-          "label": "Medium business",
-          "title": "Medical device maker",
-          "description": "Automation modules run QA checklists and route exceptions to engineering leads."
-        },
-        {
-          "label": "Large business",
-          "title": "Logistics SaaS",
-          "description": "Component library powers every new product release with the same secure retrieval mesh."
+          "description": "Component library powers every new product release with the same secure retrieval mesh.",
+          "icon": "HardDrive"
         }
       ],
       "ctaLabel": "REUSE AUTOMATION LOGIC",
-      "ctaSubtext": "We demo the module set and share reuse recommendations."
+      "ctaSubtext": "We demo the module set and share reuse recommendations.",
+      "asciiSeed": "signal-components-v1"
     },
     "governance": {
       "heroTitle": "GOVERNANCE",
@@ -434,38 +369,25 @@
         {
           "label": "Small business",
           "title": "Single office practice",
-          "description": "Runtime guardrails ensure staff remain compliant when answering clinical questions."
+          "description": "Runtime guardrails ensure staff remain compliant when answering clinical questions.",
+          "icon": "Hospital"
         },
         {
           "label": "Medium business",
           "title": "Regional bank",
-          "description": "Audits automatically gather telemetry, approvals, and policy evidence for regulators."
+          "description": "Audits automatically gather telemetry, approvals, and policy evidence for regulators.",
+          "icon": "Landmark"
         },
         {
           "label": "Large business",
           "title": "Healthcare network",
-          "description": "Governance dashboards map every AI interaction back to approved policy."
-        }
-      ],
-      "examples": [
-        {
-          "label": "Small business",
-          "title": "Single office practice",
-          "description": "Runtime guardrails ensure staff remain compliant when answering clinical questions."
-        },
-        {
-          "label": "Medium business",
-          "title": "Regional bank",
-          "description": "Audits automatically gather telemetry, approvals, and policy evidence for regulators."
-        },
-        {
-          "label": "Large business",
-          "title": "Healthcare network",
-          "description": "Governance dashboards map every AI interaction back to approved policy."
+          "description": "Governance dashboards map every AI interaction back to approved policy.",
+          "icon": "ShieldCheck"
         }
       ],
       "ctaLabel": "SECURE A GOVERNED AUDIT",
-      "ctaSubtext": "We outline the monitoring and audit plan in 48 hours."
+      "ctaSubtext": "We outline the monitoring and audit plan in 48 hours.",
+      "asciiSeed": "signal-governance-v1"
     }
   }
 }

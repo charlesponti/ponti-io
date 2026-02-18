@@ -1,6 +1,6 @@
 {
   "Navigation": {
-    "contact": "お問い合わせ",
+    "contact": "ブリーフィング開始",
     "home": "ポンティ スタジオ"
   },
   "Hero": {
@@ -199,21 +199,25 @@
         {
           "label": "小規模事業",
           "title": "地域の配管業者",
-          "description": "ローカルインデックスが資材不足を見つけ、緊急対応前にチェックリストを提示します。"
+          "description": "ローカルインデックスが資材不足を見つけ、緊急対応前にチェックリストを提示します。",
+          "icon": "Wrench"
         },
         {
           "label": "中規模事業",
           "title": "工芸品メーカー",
-          "description": "週間のインテリジェンスレポートが供給リードタイムのドリフトを示し、稼働計画を調整します。"
+          "description": "週間のインテリジェンスレポートが供給リードタイムのドリフトを示し、稼働計画を調整します。",
+          "icon": "Factory"
         },
         {
           "label": "大規模企業",
           "title": "物流プロバイダー",
-          "description": "300台以上の車両を監視し、滞留パターンを事前に旗振りします。"
+          "description": "300台以上の車両を監視し、滞留パターンを事前に旗振りします。",
+          "icon": "Truck"
         }
       ],
       "ctaLabel": "シグナルレビューを請求",
-      "ctaSubtext": "2営業日以内に30分のインテリジェンスプレビューを設定します。"
+      "ctaSubtext": "2営業日以内に30分のインテリジェンスプレビューを設定します。",
+      "asciiSeed": "signal-intelligence-v1"
     },
     "automation": {
       "heroTitle": "AUTOMATION",
@@ -229,21 +233,25 @@
         {
           "label": "小規模事業",
           "title": "コーヒーショップ",
-          "description": "在庫レベルとシフト構成から自動発注を実行します。"
+          "description": "在庫レベルとシフト構成から自動発注を実行します。",
+          "icon": "Coffee"
         },
         {
           "label": "中規模事業",
           "title": "医療人材紹介会社",
-          "description": "書類とスケジュールを管理し、期限を逸したときだけ通知します。"
+          "description": "書類とスケジュールを管理し、期限を逸したときだけ通知します。",
+          "icon": "Building2"
         },
         {
           "label": "大規模企業",
           "title": "全国保険会社",
-          "description": "請求のトリアージ、コンプライアンス、エスカレーションを自動化します。"
+          "description": "請求のトリアージ、コンプライアンス、エスカレーションを自動化します。",
+          "icon": "Briefcase"
         }
       ],
       "ctaLabel": "自動化スコープ立ち上げ",
-      "ctaSubtext": "24時間以内に最初の自動化ループをマッピングするブリーフを共有します。"
+      "ctaSubtext": "24時間以内に最初の自動化ループをマッピングするブリーフを共有します。",
+      "asciiSeed": "signal-automation-v1"
     },
     "productdesign": {
       "heroTitle": "PRODUCT DESIGN",
@@ -259,21 +267,25 @@
         {
           "label": "小規模事業",
           "title": "不動産オフィス",
-          "description": "AI提案の根拠を示し、担当者が推薦を信頼できます。"
+          "description": "AI提案の根拠を示し、担当者が推薦を信頼できます。",
+          "icon": "Home"
         },
         {
           "label": "中規模事業",
           "title": "クラフト小売",
-          "description": "多彩なコントロールが再入荷シナリオを導きます。"
+          "description": "多彩なコントロールが再入荷シナリオを導きます。",
+          "icon": "Store"
         },
         {
           "label": "大規模企業",
           "title": "エンタープライズSaaS",
-          "description": "内部ツールにガードレールやドリフト警告を一元表示します。"
+          "description": "内部ツールにガードレールやドリフト警告を一元表示します。",
+          "icon": "HardDrive"
         }
       ],
       "ctaLabel": "デザインシグナルを請求",
-      "ctaSubtext": "提案するフローを示す3画面の資料を返信します。"
+      "ctaSubtext": "提案するフローを示す3画面の資料を返信します。",
+      "asciiSeed": "signal-productdesign-v1"
     },
     "connectors": {
       "heroTitle": "CONNECTORS",
@@ -289,21 +301,25 @@
         {
           "label": "小規模事業",
           "title": "パン屋",
-          "description": "POSと仕入れシートを同期させ、レシピと在庫を一致させます。"
+          "description": "POSと仕入れシートを同期させ、レシピと在庫を一致させます。",
+          "icon": "Store"
         },
         {
           "label": "中規模事業",
           "title": "地方通信会社",
-          "description": "請求、CRM、ネットワークイベントをデータレイクへ統合します。"
+          "description": "請求、CRM、ネットワークイベントをデータレイクへ統合します。",
+          "icon": "Building2"
         },
         {
           "label": "大規模企業",
           "title": "金融グループ",
-          "description": "準拠層を通るトランザクションに安定したレイテンシと監査を提供します。"
+          "description": "準拠層を通るトランザクションに安定したレイテンシと監査を提供します。",
+          "icon": "Landmark"
         }
       ],
       "ctaLabel": "コネクタ設計図を請求",
-      "ctaSubtext": "2営業日以内に配線図を共有します。"
+      "ctaSubtext": "2営業日以内に配線図を共有します。",
+      "asciiSeed": "signal-connectors-v1"
     },
     "components": {
       "heroTitle": "COMPONENTS",
@@ -319,21 +335,25 @@
         {
           "label": "小規模事業",
           "title": "配管チーム",
-          "description": "再利用可能なテンプレートが派遣更新や領収書を処理します。"
+          "description": "再利用可能なテンプレートが派遣更新や領収書を処理します。",
+          "icon": "Wrench"
         },
         {
           "label": "中規模事業",
           "title": "医療機器メーカー",
-          "description": "QAチェックを自動化し、例外をエンジニアに回します。"
+          "description": "QAチェックを自動化し、例外をエンジニアに回します。",
+          "icon": "Factory"
         },
         {
           "label": "大規模企業",
           "title": "物流SaaS",
-          "description": "コンポーネントライブラリが新製品に同じセキュアな検索を提供します。"
+          "description": "コンポーネントライブラリが新製品に同じセキュアな検索を提供します。",
+          "icon": "HardDrive"
         }
       ],
       "ctaLabel": "自動化ロジックを再利用",
-      "ctaSubtext": "モジュールセットをデモし、再利用の推奨を共有します。"
+      "ctaSubtext": "モジュールセットをデモし、再利用の推奨を共有します。",
+      "asciiSeed": "signal-components-v1"
     },
     "governance": {
       "heroTitle": "GOVERNANCE",
@@ -349,21 +369,25 @@
         {
           "label": "小規模事業",
           "title": "単一オフィス診療所",
-          "description": "ランタイムガードレールがスタッフの問診を監査します。"
+          "description": "ランタイムガードレールがスタッフの問診を監査します。",
+          "icon": "Hospital"
         },
         {
           "label": "中規模事業",
           "title": "地方銀行",
-          "description": "監査証跡と承認を自動で収集して規制当局に備えます。"
+          "description": "監査証跡と承認を自動で収集して規制当局に備えます。",
+          "icon": "Landmark"
         },
         {
           "label": "大規模企業",
           "title": "ヘルスケアネットワーク",
-          "description": "ガバナンスダッシュボードがすべてのAIインタラクションを政策に紐づけます。"
+          "description": "ガバナンスダッシュボードがすべてのAIインタラクションを政策に紐づけます。",
+          "icon": "ShieldCheck"
         }
       ],
       "ctaLabel": "統制された監査を確保",
-      "ctaSubtext": "48時間以内に監視と監査プランを説明します。"
+      "ctaSubtext": "48時間以内に監視と監査プランを説明します。",
+      "asciiSeed": "signal-governance-v1"
     }
   }
 }

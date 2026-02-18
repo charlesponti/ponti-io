@@ -22,5 +22,5 @@ export async function getStaticPaths() {
 ---
 
 <BaseLayout>
-  <ServicePage content={serviceContent} slug={requestedKey} />
+  <ServicePage client:load content={serviceContent} slug={requestedKey} />
 </BaseLayout>

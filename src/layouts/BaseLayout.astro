@@ -39,12 +39,12 @@ const {
 			<div class="mx-auto max-w-6xl flex items-center justify-between">
 				{/* Studio name only - no decorative borders */}
 					<a href={locale === "en" ? "/" : "/ja/"}
-						class="text-(--font-size-meta) uppercase tracking-[0.35em] hover:opacity-80 transition-opacity">
+						class="text-(--font-size-meta) uppercase tracking-[0.35em]">
 						{messages.Navigation.home}
 					</a>
 				<a
-					href="mailto:cj@ponti.io"
-					class="text-(--font-size-meta) uppercase tracking-[0.35em] transition-colors duration-300"
+					href="mailto:cj@ponti.io?subject=GUIDED_AI_BRIEFING"
+					class="inline-flex items-center justify-center border border-[var(--border)] bg-white px-4 py-2 text-black text-[10px] font-semibold uppercase tracking-[0.28em]"
 					>{messages.Navigation.contact}</a>
 			</div>
 		</nav>	<main class="w-full z-10 relative flex flex-col">
